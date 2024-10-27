@@ -173,6 +173,7 @@ impl Default for Calculadora {
         Self {
             toks: [None; MAX_TOKENS],
             display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
+            cursor_pos: 0,
         }
     }
 }
