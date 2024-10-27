@@ -26,7 +26,7 @@
 - =/=
 - =^=
 - =.=: Punt decimal
-- ===
+- =\==
 - =Delete/Backspace=
 - =Clear/On=
 - =(=
@@ -36,14 +36,16 @@
 - =Right=
 
 ** Layout preliminari
-| bern   | p | q | d | Clear/On |
-| binom  | 7 | 8 | 9 | Del      |
-| pois   | 4 | 5 | 6 | +        |
-| nbinom | 1 | 2 | 3 | -        |
-| unif   | 0 | ( | ) | *        |
-| norm   |   |   |   | /        |
-|        |   |   |   | ^        |
-|        |   |   |   | =        |
+|     p | q      | d  | Clear/On |
+|  bern | norm   | <- | Del      |
+| binom | nbinom | -> | +        |
+|  pois | unif   | ,  | -        |
+|     7 | 8      | 9  | *        |
+|     4 | 5      | 6  | /        |
+|     1 | 2      | 3  | ^        |
+|     0 | (      | )  | =        |
+
+Falta el =.=. Potser dos utilitats poden unir-se i quedarien 32 botons (molt rodó, molt bonic).
 
 *** Extra possibles
 - `geom` 
