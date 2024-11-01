@@ -15,13 +15,20 @@ struct Calculadora {
 
 #[derive(Debug, Clone, Copy)]
 enum Token {
-    Digit(u8),
+    // 0..9
+    // TODO: reasses number type (hardware dependant)
+    Number(usize),
+    // + - * / ^
     Op(Operacio),
+    // (, )
     Paren(Paren),
+    // norm, binom, ...
     Dist(Distribucio),
+    // p, q, d
     VariantR(VariantR),
 }
 
+/// Una variant de les funcions de R que utilitzem: p, q, d
 #[derive(Debug, Clone, Copy)]
 enum VariantR {
     P,
@@ -56,6 +63,8 @@ enum Distribucio {
 
 impl Calculadora {
     /// Quan es prem quasi-bé qualsevol botó, s'insertarà a la posició del cursor
+    // TODO: - handle cursor existing
+    // TODO: - handle digits collapsing into a number
     pub fn add_token(&mut self, token: Token) {
         todo!("Tindre en consideració del cursor");
         //let on = self.toks.iter().position(|s| s.is_none());
@@ -93,9 +102,18 @@ impl Calculadora {
             }
             let t = t.unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
             match t {
-                Token::Digit(dig) => {
-                    self.display[d_idx] = dig + (0 as u8);
-                    d_idx += 1;
+                Token::Number(mut number) => {
+                    if number == 0 {
+                        self.display[d_idx] = b'0';
+                        d_idx += 1;
+                    } else {
+                        while number > 0 {
+                            self.display[d_idx] = (number % 10) as u8 + b'0';
+                            d_idx += 1;
+
+                            number /= 10;
+                        }
+                    }
                 }
                 Token::Op(op) => {
                     self.display[d_idx] = op.as_ascii();
