@@ -41,7 +41,7 @@ Legenda: =Normal Shifted=
 Nove versió (ara amb =Shift=)
 | Shift   | <-       | ->     | Bksp/On Clear |
 | 7 p     | 8 q      | 9  d   | *  ^          |
-| 4 bern  | 5 pois   | 6 unif | - /           |
+| 4 bern  | 5 pois   | 6 norm | - /           |
 | 1 binom | 2 nbinom | 3 unif | +             |
 | 0       | (  .     | ) ,    | =             |
 
