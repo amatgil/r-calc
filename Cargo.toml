@@ -7,11 +7,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-panic-halt = "0.2.0"
 
 [dependencies.arduino-hal]
 git = "https://github.com/Rahix/avr-hal"
-rev = "15080aa41e726bc720adf36ce0fc5a030390c822"
 features = ["arduino-mega2560"]
 
 [profile.dev]

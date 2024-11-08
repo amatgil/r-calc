@@ -1,5 +1,5 @@
 // Source: https://docs.rust-embedded.org/book/start/index.html
-#![no_std]
+#![cfg_attr(not(test), no_std)]
 
 use core::{
     default::Default,
@@ -210,9 +210,4 @@ impl Default for Calculadora {
             cursor_pos: 0,
         }
     }
-}
-
-#[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
-    loop {}
 }

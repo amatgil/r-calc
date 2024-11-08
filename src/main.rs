@@ -1,8 +1,9 @@
-#![no_std]
-#![no_main]
+#![cfg_attr(not(test), no_std)]
+#![cfg_attr(not(test), no_main)]
 
 use core::panic::PanicInfo;
 
+#[cfg(not(test))]
 #[arduino_hal::entry]
 fn main() -> ! {
     let dp = arduino_hal::Peripherals::take().unwrap();
@@ -16,7 +17,8 @@ fn main() -> ! {
     }
 }
 
+#[cfg(not(test))]
 #[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
+fn panic(_: &PanicInfo) -> ! {
     loop {}
 }
