@@ -1,5 +1,8 @@
 use crate::{Enter, Float};
 
+const TERMS: Enter = 10;
+const FACTORIAL_LOOKUP: [Enter; TERMS as usize] = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880];
+
 /// `x` a la `y`
 /// Cal perquè estem en no_std
 pub fn pow(x: Float, y: Float) -> Float {
@@ -9,26 +12,31 @@ pub fn pow(x: Float, y: Float) -> Float {
 /// e^x to reasonable precision
 /// Approximated with the taylor series definition
 pub fn exp(x: Float) -> Float {
-    const TERMS: Enter = 10;
     let mut r = 0.0;
+    let mut numerator = 1.0;
     for i in 0..TERMS {
-        r += 1.0 / (factorial(i)) as Float;
+        r += numerator / FACTORIAL_LOOKUP[i as usize] as Float;
+        numerator *= x;
     }
     r
 }
 
 // TODO: Write
-/// Natural logarithm, logarithm base e
+/// Logaritme base e
 pub fn ln(x: Float) -> Float {
-    if x < 0.0 {
+    if x <= 0.0 {
         Float::NAN
     } else {
         0.0
     }
 }
 
-// TODO: write
 /// x!
+#[inline(always)]
 pub fn factorial(x: Enter) -> Enter {
-    7
+    let mut r = 1;
+    for i in 1..x {
+        r *= i
+    }
+    r
 }
