@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use panic_halt as _;
+use core::panic::PanicInfo;
 
 #[arduino_hal::entry]
 fn main() -> ! {
@@ -14,4 +14,9 @@ fn main() -> ! {
         led.toggle();
         arduino_hal::delay_ms(1000);
     }
+}
+
+#[panic_handler]
+fn panic(info: &PanicInfo) -> ! {
+    loop {}
 }

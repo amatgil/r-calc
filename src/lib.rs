@@ -1,5 +1,14 @@
 // Source: https://docs.rust-embedded.org/book/start/index.html
+#![no_std]
 
+use core::{
+    default::Default,
+    iter::{IntoIterator, Iterator},
+    option::Option::{self, None},
+    panic::PanicInfo,
+};
+
+pub mod float_math;
 pub mod probability_functions;
 
 /// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim
@@ -17,16 +26,14 @@ pub type Enter = u32;
 /// Número real
 pub type Float = f32;
 
-#[derive(Debug, Clone, Copy)]
 struct Calculadora {
     toks: [Option<Token>; MAX_TOKENS],
     /// ASCII to show
     display: [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT],
-    /// Index de `toks`, apunta al token triat. Les insercions/deletes son fets sobre el cursor
+    /// Index de `toks`, apunta al token triat (o una posició rere l'últim). Les insercions/deletes son fets sobre el cursor
     cursor_pos: usize,
 }
 
-#[derive(Debug, Clone, Copy)]
 enum Token {
     // 0..9
     // TODO: reasses number type (hardware dependant)
@@ -42,14 +49,12 @@ enum Token {
 }
 
 /// Una variant de les funcions de R que utilitzem: p, q, d
-#[derive(Debug, Clone, Copy)]
 enum VariantR {
     P,
     Q,
     D,
 }
 
-#[derive(Debug, Clone, Copy)]
 enum Operacio {
     Add,
     Sub,
@@ -58,13 +63,11 @@ enum Operacio {
     Pow,
 }
 
-#[derive(Debug, Clone, Copy)]
 enum Paren {
     Open,
     Close,
 }
 
-#[derive(Debug, Clone, Copy)]
 enum Distribucio {
     Bernoulli,
     Binomial,
@@ -79,7 +82,7 @@ impl Calculadora {
     // TODO: - handle cursor existing
     // TODO: - handle digits collapsing into a number
     pub fn add_token(&mut self, token: Token) {
-        todo!("Tindre en consideració del cursor");
+        // TODO: Tindre en consideració del cursor"
         //let on = self.toks.iter().position(|s| s.is_none());
         //if let Some(p) = on {
         //    self.toks[p] = Some(token);
@@ -89,11 +92,11 @@ impl Calculadora {
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
-        todo!("Tindre en consideració del cursor");
-        //let q = self.toks.iter().take_while(|s| s.is_some()).count();
-        //if q > 0 {
-        //    self.toks[q - 1] = None;
-        //}
+        // TODO: Tindre en consideració del cursor"
+        let q = self.toks.iter().take_while(|s| s.is_some()).count();
+        if q > 0 {
+            self.toks[q - 1] = None;
+        }
         self.update_display();
     }
 
@@ -109,11 +112,11 @@ impl Calculadora {
 
         self.display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
 
-        for t in self.toks {
+        for t in &self.toks {
             if d_idx < self.display.len() || t.is_none() {
                 break;
             }
-            let t = t.unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
+            let t = t.as_ref().unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
             match t {
                 Token::Number(mut number) => {
                     if number == 0 {
@@ -202,9 +205,14 @@ impl Distribucio {
 impl Default for Calculadora {
     fn default() -> Self {
         Self {
-            toks: [None; MAX_TOKENS],
+            toks: [const { None }; MAX_TOKENS],
             display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
             cursor_pos: 0,
         }
     }
+}
+
+#[panic_handler]
+fn panic(info: &PanicInfo) -> ! {
+    loop {}
 }

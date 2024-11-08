@@ -1,5 +1,6 @@
+use self::float_math::{exp, pow};
 use crate::*;
-
+use core::todo;
 //  _   _      _
 // | | | | ___| |_ __   ___ _ __ ___
 // | |_| |/ _ \ | '_ \ / _ \ '__/ __|
@@ -23,12 +24,13 @@ fn choose(n: Enter, r: Enter) -> Enter {
 pub mod binomial {
     use crate::probability_functions::*;
     use crate::Float;
+
     /// Quina és la probabilitat de `k` èxits en `n` intents si la probabilitat d'un èxit és `prob`?
     pub fn dbinom(k: Enter, n: Enter, prob: Float) -> Float {
         if k > n {
             0.0
         } else {
-            (choose(n, k) as Float) * prob.powf(k as Float) * (1.0 - prob).powf((n - k) as Float)
+            (choose(n, k) as Float) * pow(prob, k as Float) * pow(1.0 - prob, (n - k) as Float)
         }
     }
 
@@ -46,8 +48,10 @@ pub mod binomial {
 pub mod poisson {
     use crate::probability_functions::*;
 
+    use self::float_math::exp;
+
     pub fn dpois(k: Enter, lambda: Float) -> Float {
-        let numerador = lambda.powf(k as Float) * Float::exp(-lambda); // lambda^k * e^(-lambda)
+        let numerador = pow(lambda, k as Float) * exp(-lambda); // lambda^k * e^(-lambda)
         let denominador = (1..k).map(|i| i as Float).fold(1.0, |acc, f| acc * f); // k!
         numerador / denominador
     }
