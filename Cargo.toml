@@ -1,5 +1,6 @@
 [package]
 name = "r-calc"
+description = "Code for a handheld R Calculator"
 version = "0.1.0"
 edition = "2021"
 
