@@ -1,8 +1,21 @@
 // Source: https://docs.rust-embedded.org/book/start/index.html
 
+pub mod probability_functions;
+
+/// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim
 const MAX_TOKENS: usize = 20; // TODO: This is hardware dependant
+
+/// Mida horizontal de la pantalla, mesurada en caràcters
 const DISPLAY_WIDTH: usize = 32;
+
+/// Mida vertical de la pantalla, mesurada en caràcters
 const DISPLAY_HEIGHT: usize = 16;
+
+/// Enter positiu
+pub type Enter = u32;
+
+/// Número real
+pub type Float = f32;
 
 #[derive(Debug, Clone, Copy)]
 struct Calculadora {

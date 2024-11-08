@@ -45,15 +45,17 @@ Nove versió (ara amb =Shift=)
 | 1 binom | 2 nbinom | 3 unif | +             |
 | 0       | (  .     | ) ,    | =             |
 
-Versió antiga (sense =Shift=): utilitza més botons i li'n falta un (=.=)
-|     p | q      | d  | Clear/On |
-|  bern | norm   | <- | Del      |
-| binom | nbinom | -> | +        |
-|  pois | unif   | ,  | -        |
-|     7 | 8      | 9  | *        |
-|     4 | 5      | 6  | /        |
-|     1 | 2      | 3  | ^        |
-|     0 | (      | )  | =        |
-
 *** Extra possibles
 - `geom` 
+
+** Hardware
+*** Prototip
+Arduino cutre
+
+*** Final
+TBD
+
+
+
+** Altres
+El protocol de communicació amb la LCD segurament tocarà escriure'l a mà. La veritat és que sona no-irònicament força divertit.
