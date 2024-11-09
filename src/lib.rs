@@ -13,7 +13,6 @@ pub(crate) use libm::powf as pow;
 use ufmt::derive::uDebug;
 
 pub mod i2c;
-pub mod lcd_protocol;
 pub mod probability_functions;
 
 /// Clock speed of device, in Hz

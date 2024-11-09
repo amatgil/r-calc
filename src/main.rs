@@ -3,17 +3,13 @@
 
 use arduino_hal::prelude::_unwrap_infallible_UnwrapInfallible;
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
-use r_calc::{
-    lcd_protocol::{lcd_init, lcd_write_str},
-    Calculadora, Operacio, Paren, Token,
-};
+use r_calc::{Calculadora, Operacio, Paren, Token};
 
 #[cfg(not(test))]
 #[arduino_hal::entry]
 fn main() -> ! {
     use arduino_hal::{delay_ms, Delay};
     use hd44780_driver::HD44780;
-    use r_calc::lcd_protocol::lcd_clear;
 
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
@@ -51,26 +47,19 @@ fn main() -> ! {
     let mut delay = Delay::new();
 
     let mut lcd = HD44780::new_4bit(rs, en, d4, d5, d6, d7, &mut delay).unwrap();
-    // Unshift display and set cursor to 0
     lcd.reset(&mut delay);
 
-    // Clear existing characters
     lcd.clear(&mut delay);
 
-    // Display the following string
-    lcd.write_str("Hello, world!", &mut delay);
-
     loop {
-        //lcd_write_str(
-        //    &[0b10101010, 0b10101010, 0b10101010],
-        //    &mut rs,
-        //    &mut en,
-        //    &mut d4,
-        //    &mut d5,
-        //    &mut d6,
-        //    &mut d7,
-        //);
-        delay_ms(1000);
+        lcd.clear(&mut delay);
+
+        // Display the following string
+        lcd.reset(&mut delay);
+        lcd.write_str(
+            core::str::from_utf8(&calculadora.display).unwrap_or("utf8 error"),
+            &mut delay,
+        );
         // read 4x4 pad
         let mut pressed = [false; 16];
         for row in 0..4 {
