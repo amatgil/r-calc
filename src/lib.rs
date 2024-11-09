@@ -12,7 +12,6 @@ pub(crate) use libm::expf as exp;
 pub(crate) use libm::powf as pow;
 use ufmt::derive::uDebug;
 
-pub mod i2c;
 pub mod probability_functions;
 
 /// Clock speed of device, in Hz
@@ -39,9 +38,11 @@ pub struct Calculadora {
     pub display: [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT],
     /// Index de `toks`, apunta al token triat (o una posició rere l'últim). Les insercions/deletes son fets sobre el cursor
     pub cursor: usize,
+    /// Whether the displayed contents are still valid. If not, they should be redrawn to the screen
+    pub is_cache_valid: bool,
 }
 
-#[derive(Debug, uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy)]
 pub enum Token {
     // 0..9
     Number(Enter),
@@ -56,14 +57,14 @@ pub enum Token {
 }
 
 /// Una variant de les funcions de R que utilitzem: p, q, d
-#[derive(Debug, uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy)]
 pub enum VariantR {
     P,
     Q,
     D,
 }
 
-#[derive(Debug, uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy)]
 pub enum Operacio {
     Add,
     Sub,
@@ -72,13 +73,13 @@ pub enum Operacio {
     Pow,
 }
 
-#[derive(Debug, uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy)]
 pub enum Paren {
     Open,
     Close,
 }
 
-#[derive(Debug, uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy)]
 pub enum Distribucio {
     Bernoulli,
     Binomial,
@@ -107,9 +108,11 @@ impl Calculadora {
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
-        // TODO: Tindre en consideració del cursor"
         if self.toks[self.cursor].is_some() {
-            self.toks[self.cursor] = None;
+            for i in self.cursor + 1..MAX_TOKENS - 1 {
+                self.toks.swap(i, i + 1);
+            }
+            self.toks[MAX_TOKENS - 1] = None;
         }
         self.cursor_back();
         self.update_display();
@@ -238,6 +241,7 @@ impl Default for Calculadora {
             toks: [const { None }; MAX_TOKENS],
             display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
             cursor: 0,
+            is_cache_valid: false,
         }
     }
 }
