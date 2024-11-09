@@ -13,6 +13,7 @@ pub(crate) use libm::powf as pow;
 use ufmt::derive::uDebug;
 
 pub mod i2c;
+pub mod lcd_protocol;
 pub mod probability_functions;
 
 /// Clock speed of device, in Hz
@@ -129,7 +130,7 @@ impl Calculadora {
 
     /// Mou el cursor una posició cap a la dreta
     pub fn cursor_advance(&mut self) {
-        if self.cursor < (MAX_TOKENS - 1) {
+        if self.cursor < (MAX_TOKENS - 1) && !self.toks[self.cursor].is_none() {
             self.cursor += 1
         }
     }
