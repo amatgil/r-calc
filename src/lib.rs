@@ -5,19 +5,27 @@ use core::{
     default::Default,
     iter::{IntoIterator, Iterator},
     option::Option::{self, None},
-    panic::PanicInfo,
 };
 
+pub(crate) use libm::ceilf as ceil;
+pub(crate) use libm::expf as exp;
+pub(crate) use libm::powf as pow;
+use ufmt::derive::uDebug;
+
+pub mod i2c;
 pub mod probability_functions;
+
+/// Clock speed of device, in Hz
+const CLOCK_SPEED: Enter = 16_000_000; // 16MHz
 
 /// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim
 const MAX_TOKENS: usize = 20; // TODO: This is hardware dependant
 
 /// Mida horizontal de la pantalla, mesurada en caràcters
-const DISPLAY_WIDTH: usize = 32;
+const DISPLAY_WIDTH: usize = 16;
 
 /// Mida vertical de la pantalla, mesurada en caràcters
-const DISPLAY_HEIGHT: usize = 16;
+const DISPLAY_HEIGHT: usize = 2;
 
 /// Enter positiu
 pub type Enter = u32;
@@ -25,18 +33,18 @@ pub type Enter = u32;
 /// Número real
 pub type Float = f32;
 
-struct Calculadora {
-    toks: [Option<Token>; MAX_TOKENS],
+pub struct Calculadora {
+    pub toks: [Option<Token>; MAX_TOKENS],
     /// ASCII to show
-    display: [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT],
+    pub display: [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT],
     /// Index de `toks`, apunta al token triat (o una posició rere l'últim). Les insercions/deletes son fets sobre el cursor
-    cursor_pos: usize,
+    pub cursor: usize,
 }
 
-enum Token {
+#[derive(Debug, uDebug, Clone, Copy)]
+pub enum Token {
     // 0..9
-    // TODO: reasses number type (hardware dependant)
-    Number(usize),
+    Number(Enter),
     // + - * / ^
     Op(Operacio),
     // (, )
@@ -48,13 +56,15 @@ enum Token {
 }
 
 /// Una variant de les funcions de R que utilitzem: p, q, d
-enum VariantR {
+#[derive(Debug, uDebug, Clone, Copy)]
+pub enum VariantR {
     P,
     Q,
     D,
 }
 
-enum Operacio {
+#[derive(Debug, uDebug, Clone, Copy)]
+pub enum Operacio {
     Add,
     Sub,
     Mul,
@@ -62,12 +72,14 @@ enum Operacio {
     Pow,
 }
 
-enum Paren {
+#[derive(Debug, uDebug, Clone, Copy)]
+pub enum Paren {
     Open,
     Close,
 }
 
-enum Distribucio {
+#[derive(Debug, uDebug, Clone, Copy)]
+pub enum Distribucio {
     Bernoulli,
     Binomial,
     Poisson,
@@ -81,21 +93,25 @@ impl Calculadora {
     // TODO: - handle cursor existing
     // TODO: - handle digits collapsing into a number
     pub fn add_token(&mut self, token: Token) {
-        // TODO: Tindre en consideració del cursor"
-        //let on = self.toks.iter().position(|s| s.is_none());
-        //if let Some(p) = on {
-        //    self.toks[p] = Some(token);
-        //}
+        if self.toks[self.cursor].is_none() {
+            self.toks[self.cursor] = Some(token);
+            self.cursor_advance();
+        } else {
+            for i in (self.cursor..MAX_TOKENS - 1).rev() {
+                self.toks.swap(i + 1, i);
+            }
+            self.toks[self.cursor] = Some(token);
+        }
         self.update_display();
     }
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
         // TODO: Tindre en consideració del cursor"
-        let q = self.toks.iter().take_while(|s| s.is_some()).count();
-        if q > 0 {
-            self.toks[q - 1] = None;
+        if self.toks[self.cursor].is_some() {
+            self.toks[self.cursor] = None;
         }
+        self.cursor_back();
         self.update_display();
     }
 
@@ -104,15 +120,29 @@ impl Calculadora {
         *self = Self::default();
     }
 
+    /// Mou el cursor una posició cap a l'esquerra
+    pub fn cursor_back(&mut self) {
+        if self.cursor > 0 {
+            self.cursor -= 1
+        }
+    }
+
+    /// Mou el cursor una posició cap a la dreta
+    pub fn cursor_advance(&mut self) {
+        if self.cursor < (MAX_TOKENS - 1) {
+            self.cursor += 1
+        }
+    }
+
     /// Actualitza self.display segons self.tokens
-    /// A executar-se: Cada cop que hi ha una entrada
+    /// A executar-se: Cada cop que hi ha un canvi
     pub fn update_display(&mut self) {
         let mut d_idx = 0; // On estem a punt d'escriure
 
         self.display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
 
         for t in &self.toks {
-            if d_idx < self.display.len() || t.is_none() {
+            if d_idx >= self.display.len() || t.is_none() {
                 break;
             }
             let t = t.as_ref().unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
@@ -154,6 +184,7 @@ impl Calculadora {
     }
 
     /// Quan es prem '='
+    // TODO: Write it
     pub fn compute(&mut self) {}
 }
 
@@ -206,7 +237,7 @@ impl Default for Calculadora {
         Self {
             toks: [const { None }; MAX_TOKENS],
             display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
-            cursor_pos: 0,
+            cursor: 0,
         }
     }
 }

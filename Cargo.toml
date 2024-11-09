@@ -7,7 +7,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+hd44780-driver = "0.4.0"
 libm = "0.2.11"
+ufmt = "0.2.0"
 
 [dependencies.arduino-hal]
 git = "https://github.com/Rahix/avr-hal"

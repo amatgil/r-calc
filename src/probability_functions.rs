@@ -1,7 +1,5 @@
 use crate::*;
 use core::todo;
-use libm::expf as exp;
-use libm::powf as pow;
 //  _   _      _
 // | | | | ___| |_ __   ___ _ __ ___
 // | |_| |/ _ \ | '_ \ / _ \ '__/ __|
