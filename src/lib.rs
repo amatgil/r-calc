@@ -8,7 +8,6 @@ use core::{
     panic::PanicInfo,
 };
 
-pub mod float_math;
 pub mod probability_functions;
 
 /// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim

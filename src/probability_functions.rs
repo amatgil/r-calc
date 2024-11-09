@@ -1,6 +1,7 @@
-use self::float_math::{exp, pow};
 use crate::*;
 use core::todo;
+use libm::expf as exp;
+use libm::powf as pow;
 //  _   _      _
 // | | | | ___| |_ __   ___ _ __ ___
 // | |_| |/ _ \ | '_ \ / _ \ '__/ __|
@@ -47,8 +48,6 @@ pub mod binomial {
 
 pub mod poisson {
     use crate::probability_functions::*;
-
-    use self::float_math::exp;
 
     pub fn dpois(k: Enter, lambda: Float) -> Float {
         let numerador = pow(lambda, k as Float) * exp(-lambda); // lambda^k * e^(-lambda)

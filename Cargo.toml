@@ -7,6 +7,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+libm = "0.2.11"
 
 [dependencies.arduino-hal]
 git = "https://github.com/Rahix/avr-hal"
@@ -20,6 +21,7 @@ opt-level = "s"
 [profile.release]
 panic = "abort"
 codegen-units = 1
-debug = true
+strip = true
+#debug = true
 lto = true
 opt-level = "s"

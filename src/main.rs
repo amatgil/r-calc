@@ -10,10 +10,23 @@ fn main() -> ! {
     let pins = arduino_hal::pins!(dp);
 
     let mut led = pins.d13.into_output().downgrade();
+    let mut button = pins.d11.into_floating_input();
 
     loop {
-        led.toggle();
-        arduino_hal::delay_ms(1000);
+        let x = core::hint::black_box(libm::powf(2.0, 4.0));
+        if x == 16.0 {
+            if button.is_high() {
+                led.set_high();
+            } else {
+                led.set_low();
+            }
+        } else {
+            if !button.is_high() {
+                led.set_high();
+            } else {
+                led.set_low();
+            }
+        }
     }
 }
 
