@@ -45,7 +45,7 @@ pub struct Calculadora {
 #[derive(uDebug, Clone, Copy)]
 pub enum Token {
     // 0..9
-    Number(Enter),
+    Digit(u8),
     // + - * / ^
     Op(Operacio),
     // (, )
@@ -109,12 +109,14 @@ impl Calculadora {
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
         if self.toks[self.cursor].is_some() {
-            for i in self.cursor + 1..MAX_TOKENS - 1 {
+            for i in self.cursor..MAX_TOKENS - 1 {
                 self.toks.swap(i, i + 1);
             }
             self.toks[MAX_TOKENS - 1] = None;
+        } else {
+            self.cursor_back();
+            self.toks[self.cursor] = None;
         }
-        self.cursor_back();
         self.update_display();
     }
 
@@ -150,7 +152,7 @@ impl Calculadora {
             }
             let t = t.as_ref().unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
             match t {
-                Token::Number(mut number) => {
+                Token::Digit(mut number) => {
                     if number == 0 {
                         self.display[d_idx] = b'0';
                         d_idx += 1;

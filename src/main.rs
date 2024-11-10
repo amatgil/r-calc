@@ -9,6 +9,7 @@ use r_calc::{Calculadora, Operacio, Paren, Token};
 fn main() -> ! {
     use arduino_hal::Delay;
     use hd44780_driver::HD44780;
+    use r_calc::Enter;
 
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
@@ -52,7 +53,10 @@ fn main() -> ! {
 
     let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
     let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
+
+    let mut pressed = [false; 16];
     loop {
+        pressed = [false; 16];
         if !calculadora.is_cache_valid {
             calculadora.is_cache_valid = true;
             let _ = lcd.reset(&mut delay);
@@ -65,7 +69,6 @@ fn main() -> ! {
         }
 
         // read 4x4 pad
-        let mut pressed = [false; 16];
         for row in 0..4 {
             rows[row].set_low();
             for col in 0..4 {
@@ -74,6 +77,14 @@ fn main() -> ! {
                 }
             }
             rows[row].set_high();
+        }
+        if pressed
+            .map(|b| if b { 1 as Enter } else { 0 })
+            .iter()
+            .sum::<Enter>()
+            > 1
+        {
+            continue; // No pressing multiple keys allowed
         }
 
         //let _ = ufmt::uwriteln!(&mut serial, "Cursor: {:?}", calculadora.cursor);
@@ -100,6 +111,23 @@ fn main() -> ! {
         }
         if !held && pressed[5] {
             calculadora.cursor_advance();
+            calculadora.is_cache_valid = false;
+        }
+
+        if !held && pressed[8] {
+            calculadora.add_token(Token::Digit(0));
+            calculadora.is_cache_valid = false;
+        }
+        if !held && pressed[9] {
+            calculadora.add_token(Token::Digit(1));
+            calculadora.is_cache_valid = false;
+        }
+        if !held && pressed[10] {
+            calculadora.add_token(Token::Digit(2));
+            calculadora.is_cache_valid = false;
+        }
+        if !held && pressed[11] {
+            calculadora.add_token(Token::Digit(3));
             calculadora.is_cache_valid = false;
         }
 
