@@ -7,11 +7,12 @@ use core::{
     option::Option::{self, None},
 };
 
-pub(crate) use libm::ceilf as ceil;
+use computacio::compute_tokens;
 pub(crate) use libm::expf as exp;
 pub(crate) use libm::powf as pow;
 use ufmt::derive::uDebug;
 
+mod computacio;
 pub mod probability_functions;
 
 /// Clock speed of device, in Hz
@@ -32,14 +33,30 @@ pub type Enter = u32;
 /// Número real
 pub type Float = f32;
 
+/// Array de bytes a mostrar
+/// Sempre han de ser ASCII vàlid
+pub type TextArea = [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT];
+
 pub struct Calculadora {
     pub toks: [Option<Token>; MAX_TOKENS],
-    /// ASCII to show
-    pub display: [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT],
+    /// ASCII to show when the user is inputting tokens
+    token_display: TextArea,
+    /// ASCII to show when the user wants to see the result
+    computation_display: TextArea,
     /// Index de `toks`, apunta al token triat (o una posició rere l'últim). Les insercions/deletes son fets sobre el cursor
     pub cursor: usize,
     /// Whether the displayed contents are still valid. If not, they should be redrawn to the screen
     pub is_cache_valid: bool,
+    /// Which buffer should be displayed at the current moment
+    pub currently_shown_buffer: BufferType,
+}
+
+#[derive(uDebug, Clone, Copy)]
+pub enum BufferType {
+    /// What the user typed
+    Tokens,
+    /// After computing
+    Resultat,
 }
 
 #[derive(uDebug, Clone, Copy)]
@@ -103,7 +120,7 @@ impl Calculadora {
             }
             self.toks[self.cursor] = Some(token);
         }
-        self.update_display();
+        self.update_token_display();
     }
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
@@ -117,7 +134,7 @@ impl Calculadora {
             self.cursor_back();
             self.toks[self.cursor] = None;
         }
-        self.update_display();
+        self.update_token_display();
     }
 
     /// Quan es prem 'Clear'. Full reset
@@ -139,26 +156,33 @@ impl Calculadora {
         }
     }
 
+    pub fn display(&self) -> [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT] {
+        match self.currently_shown_buffer {
+            BufferType::Tokens => self.token_display,
+            BufferType::Resultat => self.computation_display,
+        }
+    }
+
     /// Actualitza self.display segons self.tokens
     /// A executar-se: Cada cop que hi ha un canvi
-    pub fn update_display(&mut self) {
+    pub fn update_token_display(&mut self) {
         let mut d_idx = 0; // On estem a punt d'escriure
 
-        self.display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
+        self.token_display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
 
         for t in &self.toks {
-            if d_idx >= self.display.len() || t.is_none() {
+            if d_idx >= self.token_display.len() || t.is_none() {
                 break;
             }
             let t = t.as_ref().unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
             match t {
                 Token::Digit(mut number) => {
                     if number == 0 {
-                        self.display[d_idx] = b'0';
+                        self.token_display[d_idx] = b'0';
                         d_idx += 1;
                     } else {
                         while number > 0 {
-                            self.display[d_idx] = (number % 10) as u8 + b'0';
+                            self.token_display[d_idx] = (number % 10) as u8 + b'0';
                             d_idx += 1;
 
                             number /= 10;
@@ -166,21 +190,21 @@ impl Calculadora {
                     }
                 }
                 Token::Op(op) => {
-                    self.display[d_idx] = op.as_ascii();
+                    self.token_display[d_idx] = op.as_ascii();
                     d_idx += 1;
                 }
                 Token::Paren(p) => {
-                    self.display[d_idx] = p.as_ascii();
+                    self.token_display[d_idx] = p.as_ascii();
                     d_idx += 1;
                 }
                 Token::VariantR(v) => {
-                    self.display[d_idx] = v.as_ascii();
+                    self.token_display[d_idx] = v.as_ascii();
                     d_idx += 1;
                 }
                 Token::Dist(dist) => {
                     let text = dist.as_ascii();
                     for (i, ascii) in text.as_bytes().into_iter().enumerate() {
-                        self.display[d_idx + i] = *ascii;
+                        self.token_display[d_idx + i] = *ascii;
                     }
                     d_idx += text.len();
                 }
@@ -189,8 +213,16 @@ impl Calculadora {
     }
 
     /// Quan es prem '='
+    /// Recorre self.toks i computa el que demana, accessible amb Calculadora::display()
+    ///
+    /// Si hi ha un error de sintaxi, quedarà escrit també
     // TODO: Write it
-    pub fn compute(&mut self) {}
+    pub fn compute(&mut self) {
+        match compute_tokens(&self.toks) {
+            Ok(text) => self.computation_display = text,
+            Err(text) => self.computation_display = text,
+        }
+    }
 }
 
 impl VariantR {
@@ -241,9 +273,11 @@ impl Default for Calculadora {
     fn default() -> Self {
         Self {
             toks: [const { None }; MAX_TOKENS],
-            display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
+            token_display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
+            computation_display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
             cursor: 0,
             is_cache_valid: false,
+            currently_shown_buffer: BufferType::Tokens,
         }
     }
 }

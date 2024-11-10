@@ -2,7 +2,7 @@
 #![cfg_attr(not(test), no_main)]
 
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
-use r_calc::{Calculadora, Operacio, Paren, Token};
+use r_calc::{BufferType, Calculadora, Operacio, Paren, Token};
 
 #[cfg(not(test))]
 #[arduino_hal::entry]
@@ -62,7 +62,7 @@ fn main() -> ! {
             let _ = lcd.reset(&mut delay);
 
             let _ = lcd.write_str(
-                &core::str::from_utf8(&calculadora.display).unwrap_or("oopsie"),
+                &core::str::from_utf8(&calculadora.display()).unwrap_or("oopsie"),
                 &mut delay,
             );
             let _ = lcd.set_cursor_pos(calculadora.cursor as u8, &mut delay);
@@ -89,52 +89,56 @@ fn main() -> ! {
 
         //let _ = ufmt::uwriteln!(&mut serial, "Cursor: {:?}", calculadora.cursor);
 
-        if !held && pressed[0] {
-            calculadora.add_token(Token::Paren(Paren::Open));
+        if !held && pressed.iter().any(|&b| b) {
             calculadora.is_cache_valid = false;
         }
-        if !held && pressed[1] {
-            calculadora.add_token(Token::Op(Operacio::Add));
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[2] {
-            calculadora.del_token();
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[3] {
-            calculadora.clear();
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[4] {
-            calculadora.cursor_back();
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[5] {
-            calculadora.cursor_advance();
-            calculadora.is_cache_valid = false;
-        }
+        match calculadora.currently_shown_buffer {
+            BufferType::Tokens => {
+                if !held && pressed[0] {
+                    calculadora.add_token(Token::Paren(Paren::Open));
+                } else if !held && pressed[1] {
+                    calculadora.add_token(Token::Op(Operacio::Add));
+                } else if !held && pressed[2] {
+                    calculadora.del_token();
+                } else if !held && pressed[3] {
+                    calculadora.clear();
+                } else if !held && pressed[4] {
+                    calculadora.cursor_back();
+                } else if !held && pressed[5] {
+                    calculadora.cursor_advance();
+                } else if !held && pressed[8] {
+                    calculadora.add_token(Token::Digit(0));
+                } else if !held && pressed[9] {
+                    calculadora.add_token(Token::Digit(1));
+                } else if !held && pressed[10] {
+                    calculadora.add_token(Token::Digit(2));
+                } else if !held && pressed[11] {
+                    calculadora.add_token(Token::Digit(3));
+                } else if !held && pressed[11] {
+                    calculadora.add_token(Token::Digit(3));
+                } else if !held && pressed[15] {
+                    calculadora.compute();
+                    calculadora.currently_shown_buffer = BufferType::Resultat;
 
-        if !held && pressed[8] {
-            calculadora.add_token(Token::Digit(0));
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[9] {
-            calculadora.add_token(Token::Digit(1));
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[10] {
-            calculadora.add_token(Token::Digit(2));
-            calculadora.is_cache_valid = false;
-        }
-        if !held && pressed[11] {
-            calculadora.add_token(Token::Digit(3));
-            calculadora.is_cache_valid = false;
-        }
+                    let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
+                    let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
+                }
+            }
+            BufferType::Resultat => {
+                if !held && pressed.iter().any(|&b| b) {
+                    calculadora.currently_shown_buffer = BufferType::Tokens;
 
-        if pressed.iter().all(|b| !b) {
-            held = false;
-        } else {
-            held = true;
+                    let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
+                    let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
+                } else {
+                    held = false;
+                }
+            }
+        }
+        match (held, pressed.iter().any(|&b| b)) {
+            (false, true) => held = true,
+            (true, false) => held = false,
+            _ => {}
         }
     }
 }

@@ -49,8 +49,8 @@ pub mod poisson {
 
     pub fn dpois(k: Enter, lambda: Float) -> Float {
         let numerador = pow(lambda, k as Float) * exp(-lambda); // lambda^k * e^(-lambda)
-        let denominador = (1..k).map(|i| i as Float).fold(1.0, |acc, f| acc * f); // k!
-        numerador / denominador
+        let k_factorial = (1..k).fold(1.0, |acc, f| acc * f as Float); // k!
+        numerador / k_factorial
     }
     pub fn ppois(q: Enter, lambda: Float) -> Float {
         (0..q).map(|i| dpois(i, lambda)).sum()
