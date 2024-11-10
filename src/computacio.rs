@@ -12,6 +12,12 @@ pub enum ComputationError {
 
 impl ComputationError {
     pub fn as_text(&self) -> TextArea {
-        match self {}
+        let mut r = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
+        let s = match self {
+            ComputationError::NotYetImplemented => "No implementat",
+            ComputationError::MismatchedParens => "Error de parentesi",
+        };
+        r[..s.len().min(DISPLAY_HEIGHT * DISPLAY_WIDTH)].copy_from_slice(s.as_bytes());
+        r
     }
 }
