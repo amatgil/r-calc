@@ -220,7 +220,7 @@ impl Calculadora {
     pub fn compute(&mut self) {
         match compute_tokens(&self.toks) {
             Ok(text) => self.computation_display = text,
-            Err(text) => self.computation_display = text,
+            Err(e) => self.computation_display = e.as_text(),
         }
     }
 }
