@@ -1,11 +1,13 @@
 #![cfg_attr(not(test), no_std)]
 #![cfg_attr(not(test), no_main)]
 
+use arduino_hal::prelude::_unwrap_infallible_UnwrapInfallible;
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
 use r_calc::{
     BufferType, Calculadora, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT, DISPLAY_WIDTH,
     LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
 };
+use ufmt::uwriteln;
 
 //#[cfg(not(test))]
 #[arduino_hal::entry]
@@ -17,7 +19,7 @@ fn main() -> ! {
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
 
-    //let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
+    let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
 
     let mut calculadora = Calculadora::default();
     let mut held = false;
@@ -55,8 +57,8 @@ fn main() -> ! {
 
     let mut pressed: [bool; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
     loop {
-        pressed = [false; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
         if !calculadora.is_cache_valid {
+            //uwriteln!(&mut serial, "REDRAWING").unwrap_infallible();
             calculadora.is_cache_valid = true;
             let _ = lcd.reset(&mut delay);
 
@@ -74,6 +76,7 @@ fn main() -> ! {
             };
         }
 
+        pressed = [false; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
         // read scan matrix
         for row in 0..SCAN_MATRIX_HEIGHT {
             rows[row].set_low();
@@ -84,68 +87,70 @@ fn main() -> ! {
             }
             rows[row].set_high();
         }
-        if pressed
-            .map(|b| if b { 1 as Enter } else { 0 })
-            .iter()
-            .sum::<Enter>()
-            > 1
-        {
-            continue; // No pressing multiple keys allowed
+
+        // No pressing multiple keys allowed
+        if pressed.map(|b| if b { 1 } else { 0 }).iter().sum::<Enter>() > 1 {
+            continue;
         }
 
-        if !held && pressed.iter().any(|&b| b) {
-            calculadora.is_cache_valid = false;
-        }
-        match calculadora.currently_shown_buffer {
-            BufferType::Tokens => {
-                if !held && pressed[0] {
-                    calculadora.add_token(Token::Paren(Paren::Open));
-                } else if !held && pressed[1] {
-                    calculadora.add_token(Token::Op(Operacio::Add));
-                } else if !held && pressed[2] {
-                    calculadora.del_token();
-                } else if !held && pressed[3] {
-                    calculadora.clear();
-                } else if !held && pressed[4] {
-                    calculadora.cursor_back();
-                } else if !held && pressed[5] {
-                    calculadora.cursor_advance();
-                } else if !held && pressed[8] {
-                    calculadora.add_token(Token::Digit(0));
-                } else if !held && pressed[9] {
-                    calculadora.add_token(Token::Digit(1));
-                } else if !held && pressed[10] {
-                    calculadora.add_token(Token::Digit(2));
-                } else if !held && pressed[11] {
-                    calculadora.add_token(Token::Digit(3));
-                } else if !held && pressed[12] {
-                    calculadora.add_token(Token::Digit(4));
-                } else if !held && pressed[13] {
-                    calculadora.add_token(Token::Dist(r_calc::Distribucio::NegativaBinominal));
-                } else if !held && pressed[14] {
-                    calculadora.toggle_shift();
-                } else if !held && pressed[15] {
-                    calculadora.compute();
-                    calculadora.currently_shown_buffer = BufferType::Resultat;
+        let is_curr_pressed = pressed.iter().any(|&b| b);
 
-                    let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
-                    let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
+        // If nothing is pressed, no need to change
+        if let Some(pressed_idx) = pressed.iter().position(|b| *b) {
+            match calculadora.currently_shown_buffer {
+                BufferType::Tokens => {
+                    use ShiftStatus as S;
+                    if !held {
+                        calculadora.is_cache_valid = false;
+                        match (calculadora.shift_status, pressed_idx) {
+                            (S::Off, 0) => calculadora.add_token(Token::Paren(Paren::Open)),
+                            (S::Off, 1) => calculadora.add_token(Token::Op(Operacio::Add)),
+                            (S::Off, 2) => calculadora.del_token(),
+                            (S::Off, 3) => calculadora.clear(),
+                            (S::Off, 4) => calculadora.cursor_back(),
+                            (S::Off, 5) => calculadora.cursor_advance(),
+                            (S::Off, 8) => calculadora.add_token(Token::Digit(0)),
+                            (S::Off, 9) => calculadora.add_token(Token::Digit(1)),
+                            (S::Off, 10) => calculadora.add_token(Token::Digit(2)),
+                            (S::Off, 11) => calculadora.add_token(Token::Digit(3)),
+                            (S::Off, 12) => calculadora.add_token(Token::Digit(4)),
+                            (S::Off, 13) => calculadora
+                                .add_token(Token::Dist(r_calc::Distribucio::NegativaBinominal)),
+                            (S::Off, 14) => calculadora.toggle_shift(),
+                            (S::Off, 15) => {
+                                calculadora.compute();
+                                calculadora.currently_shown_buffer = BufferType::Resultat;
+
+                                let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
+                                let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
+                            }
+                            (S::On, 13) => {
+                                calculadora.add_token(Token::Dist(r_calc::Distribucio::Normal))
+                            }
+
+                            (S::On, _) => {
+                                calculadora.shift_status = S::Off;
+                            }
+                            _ => {} // unreachable if scan matrix is set up right
+                        }
+                    }
+                }
+                BufferType::Resultat => {
+                    if !held && is_curr_pressed {
+                        calculadora.is_cache_valid = false;
+                        calculadora.currently_shown_buffer = BufferType::Tokens;
+
+                        let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
+                        let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
+                    } else {
+                        held = false;
+                    }
                 }
             }
-            BufferType::Resultat => {
-                if !held && pressed.iter().any(|&b| b) {
-                    calculadora.currently_shown_buffer = BufferType::Tokens;
-
-                    let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
-                    let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
-                } else {
-                    held = false;
-                }
-            }
         }
-        match (held, pressed.iter().any(|&b| b)) {
-            (false, true) => held = true,
+        match (held, is_curr_pressed) {
             (true, false) => held = false,
+            (false, true) => held = true,
             _ => {}
         }
     }
