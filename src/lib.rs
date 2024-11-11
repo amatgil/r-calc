@@ -59,8 +59,15 @@ pub struct Calculadora {
     pub is_cache_valid: bool,
     /// Which buffer should be displayed at the current moment
     pub currently_shown_buffer: BufferType,
+    /// Shift status
+    pub shift_status: ShiftStatus,
 }
 
+#[derive(uDebug, Clone, Copy)]
+pub enum ShiftStatus {
+    On,
+    Off,
+}
 #[derive(uDebug, Clone, Copy)]
 pub enum BufferType {
     /// What the user typed
@@ -166,6 +173,12 @@ impl Calculadora {
         }
     }
 
+    pub fn toggle_shift(&mut self) {
+        self.shift_status = match self.shift_status {
+            ShiftStatus::On => ShiftStatus::Off,
+            ShiftStatus::Off => ShiftStatus::On,
+        }
+    }
     pub fn display(&self) -> [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT] {
         match self.currently_shown_buffer {
             BufferType::Tokens => self.token_display,
@@ -298,6 +311,7 @@ impl Default for Calculadora {
             cursor: 0,
             is_cache_valid: false,
             currently_shown_buffer: BufferType::Tokens,
+            shift_status: ShiftStatus::Off,
         }
     }
 }

@@ -3,7 +3,7 @@
 
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
 use r_calc::{
-    BufferType, Calculadora, Operacio, Paren, Token, DISPLAY_HEIGHT, DISPLAY_WIDTH,
+    BufferType, Calculadora, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT, DISPLAY_WIDTH,
     LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
 };
 
@@ -17,7 +17,7 @@ fn main() -> ! {
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
 
-    let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
+    //let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
 
     let mut calculadora = Calculadora::default();
     let mut held = false;
@@ -49,9 +49,7 @@ fn main() -> ! {
 
     let mut lcd = HD44780::new_4bit(rs, en, d4, d5, d6, d7, &mut delay).unwrap();
     let _ = lcd.reset(&mut delay);
-
     let _ = lcd.clear(&mut delay);
-
     let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
     let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
 
@@ -67,11 +65,13 @@ fn main() -> ! {
 
             let _ = lcd.set_cursor_pos(0, &mut delay);
             let _ = lcd.write_bytes(top, &mut delay);
-
             let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
             let _ = lcd.write_bytes(bottom, &mut delay);
-
             let _ = lcd.set_cursor_pos(calculadora.cursor as u8, &mut delay);
+            let _ = match calculadora.shift_status {
+                ShiftStatus::On => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
+                ShiftStatus::Off => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
+            };
         }
 
         // read scan matrix
@@ -122,6 +122,8 @@ fn main() -> ! {
                     calculadora.add_token(Token::Digit(4));
                 } else if !held && pressed[13] {
                     calculadora.add_token(Token::Dist(r_calc::Distribucio::NegativaBinominal));
+                } else if !held && pressed[14] {
+                    calculadora.toggle_shift();
                 } else if !held && pressed[15] {
                     calculadora.compute();
                     calculadora.currently_shown_buffer = BufferType::Resultat;
