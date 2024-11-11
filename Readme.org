@@ -57,5 +57,24 @@ TBD
 
 
 
-** Altres
+** Altres infos
 El protocol de communicació amb la LCD segurament tocarà escriure'l a mà. La veritat és que sona no-irònicament força divertit.
+
+- Analyze elf size: https://github.com/jedrzejboczar/elf-size-analyze
+- Hardware consideration for AVR in general, part 1: http://ww1.microchip.com/downloads/en/Appnotes/AN2519-AVR-Microcontroller-Hardware-Design-Considerations-00002519B.pdf
+- Capacitors, from phasors: https://www.electronics-tutorials.ws/filter/filter_1.html
+- Parasitic capacitance: https://circuitdigest.com/tutorial/understanding-esr-and-esl-in-capacitors
+- (Capacitor search terms: "second order filter", "ESL" "ESR")
+
+
+** Manufacturing options
+*** Basic
+- Arduino uno chip (ATMEGA328P-PU, https://www.digikey.es/en/products/filter/microcontrollers/685?s=N4IgTCBcDaIIIBUCyBRA4nAzGAHABQFo8BVEAXQF8g)
+- LCD with i2c translator
+- buttons  
+- usb to serial adapter (so that it can get programmed)
+
+*** Scalable
+- Very cheap MCU
+- LCD with i2c translator
+-
