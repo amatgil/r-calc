@@ -26,4 +26,4 @@ codegen-units = 1
 strip = true
 #debug = true
 lto = true
-opt-level = "s"
+opt-level = "z" # s ò z
