@@ -68,7 +68,7 @@ fn main() -> ! {
             let _ = lcd.set_cursor_pos(0, &mut delay);
             let _ = lcd.write_bytes(top, &mut delay);
 
-            let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH, &mut delay);
+            let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
             let _ = lcd.write_bytes(bottom, &mut delay);
 
             let _ = lcd.set_cursor_pos(calculadora.cursor as u8, &mut delay);
@@ -118,8 +118,10 @@ fn main() -> ! {
                     calculadora.add_token(Token::Digit(2));
                 } else if !held && pressed[11] {
                     calculadora.add_token(Token::Digit(3));
-                } else if !held && pressed[11] {
-                    calculadora.add_token(Token::Digit(3));
+                } else if !held && pressed[12] {
+                    calculadora.add_token(Token::Digit(4));
+                } else if !held && pressed[13] {
+                    calculadora.add_token(Token::Dist(r_calc::Distribucio::NegativaBinominal));
                 } else if !held && pressed[15] {
                     calculadora.compute();
                     calculadora.currently_shown_buffer = BufferType::Resultat;

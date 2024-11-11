@@ -29,7 +29,7 @@ pub const DISPLAY_HEIGHT: usize = 2;
 
 /// La mida horitzontal del buffer de la primera linia de la LCD
 /// Concretament, la HD44780 (1602A)
-pub const LCD_INTERNAL_WIDTH: u8 = 40;
+pub const LCD_INTERNAL_WIDTH: usize = 40;
 
 /// Mida horizontal de la scan matrix
 pub const SCAN_MATRIX_WIDTH: usize = 4;
@@ -191,6 +191,7 @@ impl Calculadora {
                         self.token_display[d_idx] = b'0';
                         d_idx += 1;
                     } else {
+                        // TODO: Calculate number of digits in number and d_idx = DISPLAY_WIDTH if it would break
                         while number > 0 {
                             self.token_display[d_idx] = (number % 10) as u8 + b'0';
                             d_idx += 1;
@@ -213,6 +214,11 @@ impl Calculadora {
                 }
                 Token::Dist(dist) => {
                     let text = dist.as_ascii();
+                    if d_idx < DISPLAY_WIDTH && text.len() > DISPLAY_WIDTH - d_idx {
+                        d_idx = DISPLAY_WIDTH;
+                    } else if d_idx + text.len() > DISPLAY_WIDTH * DISPLAY_HEIGHT {
+                        break;
+                    }
                     for (i, ascii) in text.as_bytes().into_iter().enumerate() {
                         self.token_display[d_idx + i] = *ascii;
                     }
