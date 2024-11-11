@@ -4,8 +4,8 @@
 use arduino_hal::prelude::_unwrap_infallible_UnwrapInfallible;
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
 use r_calc::{
-    BufferType, Calculadora, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT, DISPLAY_WIDTH,
-    LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
+    BufferType, Calculadora, Distribucio, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT,
+    DISPLAY_WIDTH, LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
 };
 use ufmt::uwriteln;
 
@@ -69,7 +69,7 @@ fn main() -> ! {
             let _ = lcd.write_bytes(top, &mut delay);
             let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
             let _ = lcd.write_bytes(bottom, &mut delay);
-            let _ = lcd.set_cursor_pos(calculadora.cursor as u8, &mut delay);
+            let _ = lcd.set_cursor_pos(calculadora.graphical_cursor as u8, &mut delay);
             let _ = match calculadora.shift_status {
                 ShiftStatus::On => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
                 ShiftStatus::Off => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
@@ -106,7 +106,7 @@ fn main() -> ! {
                             (S::Off, 0) => calculadora.add_token(Token::Paren(Paren::Open)),
                             (S::Off, 1) => calculadora.add_token(Token::Op(Operacio::Add)),
                             (S::Off, 2) => calculadora.del_token(),
-                            (S::Off, 3) => calculadora.clear(),
+                            (_, 3) => calculadora.clear(),
                             (S::Off, 4) => calculadora.cursor_back(),
                             (S::Off, 5) => calculadora.cursor_advance(),
                             (S::Off, 8) => calculadora.add_token(Token::Digit(0)),
@@ -114,10 +114,12 @@ fn main() -> ! {
                             (S::Off, 10) => calculadora.add_token(Token::Digit(2)),
                             (S::Off, 11) => calculadora.add_token(Token::Digit(3)),
                             (S::Off, 12) => calculadora.add_token(Token::Digit(4)),
-                            (S::Off, 13) => calculadora
-                                .add_token(Token::Dist(r_calc::Distribucio::NegativaBinominal)),
-                            (S::Off, 14) => calculadora.toggle_shift(),
-                            (S::Off, 15) => {
+                            (S::Off, 13) => {
+                                calculadora.add_token(Token::Dist(Distribucio::NegativaBinominal));
+                                calculadora.add_token(Token::Paren(Paren::Open));
+                            }
+                            (_, 14) => calculadora.toggle_shift(),
+                            (_, 15) => {
                                 calculadora.compute();
                                 calculadora.currently_shown_buffer = BufferType::Resultat;
 
@@ -125,11 +127,8 @@ fn main() -> ! {
                                 let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
                             }
                             (S::On, 13) => {
-                                calculadora.add_token(Token::Dist(r_calc::Distribucio::Normal))
-                            }
-
-                            (S::On, _) => {
-                                calculadora.shift_status = S::Off;
+                                calculadora.add_token(Token::Dist(Distribucio::Normal));
+                                calculadora.add_token(Token::Paren(Paren::Open));
                             }
                             _ => {} // unreachable if scan matrix is set up right
                         }

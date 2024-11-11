@@ -54,7 +54,9 @@ pub struct Calculadora {
     /// ASCII to show when the user wants to see the result
     computation_display: TextArea,
     /// Index de `toks`, apunta al token triat (o una posició rere l'últim). Les insercions/deletes son fets sobre el cursor
-    pub cursor: usize,
+    token_cursor: usize,
+    /// Graphical cursor, where the user thinks they're inserting
+    pub graphical_cursor: usize,
     /// Whether the displayed contents are still valid. If not, they should be redrawn to the screen
     pub is_cache_valid: bool,
     /// Which buffer should be displayed at the current moment
@@ -63,7 +65,7 @@ pub struct Calculadora {
     pub shift_status: ShiftStatus,
 }
 
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy, PartialEq)]
 pub enum ShiftStatus {
     On,
     Off,
@@ -128,28 +130,28 @@ impl Calculadora {
     // TODO: - handle cursor existing
     // TODO: - handle digits collapsing into a number
     pub fn add_token(&mut self, token: Token) {
-        if self.toks[self.cursor].is_none() {
-            self.toks[self.cursor] = Some(token);
+        if self.toks[self.token_cursor].is_none() {
+            self.toks[self.token_cursor] = Some(token);
             self.cursor_advance();
         } else {
-            for i in (self.cursor..MAX_TOKENS - 1).rev() {
+            for i in (self.token_cursor..MAX_TOKENS - 1).rev() {
                 self.toks.swap(i + 1, i);
             }
-            self.toks[self.cursor] = Some(token);
+            self.toks[self.token_cursor] = Some(token);
         }
         self.update_token_display();
     }
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
-        if self.toks[self.cursor].is_some() {
-            for i in self.cursor..MAX_TOKENS - 1 {
+        if self.toks[self.token_cursor].is_some() {
+            for i in self.token_cursor..MAX_TOKENS - 1 {
                 self.toks.swap(i, i + 1);
             }
             self.toks[MAX_TOKENS - 1] = None;
         } else {
             self.cursor_back();
-            self.toks[self.cursor] = None;
+            self.toks[self.token_cursor] = None;
         }
         self.update_token_display();
     }
@@ -161,15 +163,15 @@ impl Calculadora {
 
     /// Mou el cursor una posició cap a l'esquerra
     pub fn cursor_back(&mut self) {
-        if self.cursor > 0 {
-            self.cursor -= 1
+        if self.token_cursor > 0 {
+            self.token_cursor -= 1
         }
     }
 
     /// Mou el cursor una posició cap a la dreta
     pub fn cursor_advance(&mut self) {
-        if self.cursor < (MAX_TOKENS - 1) && !self.toks[self.cursor].is_none() {
-            self.cursor += 1
+        if self.token_cursor < (MAX_TOKENS - 1) && !self.toks[self.token_cursor].is_none() {
+            self.token_cursor += 1
         }
     }
 
@@ -190,6 +192,7 @@ impl Calculadora {
     /// A executar-se: Cada cop que hi ha un canvi
     pub fn update_token_display(&mut self) {
         let mut d_idx = 0; // On estem a punt d'escriure
+        let mut graphical_cursor = 0;
 
         self.token_display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
 
@@ -239,6 +242,7 @@ impl Calculadora {
                 }
             };
         }
+        self.graphical_cursor = d_idx;
     }
 
     /// Quan es prem '='
@@ -308,7 +312,8 @@ impl Default for Calculadora {
             toks: [const { None }; MAX_TOKENS],
             token_display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
             computation_display: [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH],
-            cursor: 0,
+            token_cursor: 0,
+            graphical_cursor: 0,
             is_cache_valid: false,
             currently_shown_buffer: BufferType::Tokens,
             shift_status: ShiftStatus::Off,
