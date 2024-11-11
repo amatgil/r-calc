@@ -48,15 +48,6 @@ Nove versió (ara amb =Shift=)
 *** Extra possibles
 - `geom` 
 
-** Hardware
-*** Prototip
-Arduino cutre
-
-*** Final
-TBD
-
-
-
 ** Altres infos
 El protocol de communicació amb la LCD segurament tocarà escriure'l a mà. La veritat és que sona no-irònicament força divertit.
 
