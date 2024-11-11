@@ -69,12 +69,12 @@ El protocol de communicació amb la LCD segurament tocarà escriure'l a mà. La 
 
 ** Manufacturing options
 *** Basic
-| Nom           | Preu | Funció                                | Misc                                                                                                        | Link                                                                                 |
-|---------------+------+---------------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------|
-| ATMEGA328P-PU | 2.7€ | La part que calcula de la calculadora | https://www.digikey.es/en/products/filter/microcontrollers/685?s=N4IgTCBcDaIIIBUCyBRA4nAzGAHABQFo8BVEAXQF8g | https://www.digikey.es/en/products/detail/microchip-technology/ATMEGA328P-PU/1914589 |
-| LCD           | 10€  | Output                                |                                                                                                             |                                                                                      |
-| Mòdul i2c     |      | Tradueix protocol per la LCD          |                                                                                                             |                                                                                      |
-| 4*5 botons    | 5€   | Input                                 |                                                                                                             | https://www.digikey.es/en/products/detail/adafruit-industries-llc/1010/7244937       |
+| Nom           | Preu | Funció                                | Link                                                                                 |
+|---------------+------+---------------------------------------+--------------------------------------------------------------------------------------|
+| ATMEGA328P-PU | 2.7€ | La part que calcula de la calculadora | https://www.digikey.es/en/products/detail/microchip-technology/ATMEGA328P-PU/1914589 |
+| LCD           | 10€  | Output                                |                                                                                      |
+| Mòdul i2c     |      | Tradueix protocol per la LCD          |                                                                                      |
+| 4*5 botons    | 5€   | Input                                 | https://www.digikey.es/en/products/detail/adafruit-industries-llc/1010/7244937       |
 
 També cal un =usb to serial adapter= (so that it can get programmed)
 
