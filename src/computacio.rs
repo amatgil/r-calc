@@ -1,7 +1,8 @@
 use crate::*;
 
 pub fn compute_tokens(toks: &[Option<Token>]) -> Result<TextArea, ComputationError> {
-    Err(ComputationError::NotYetImplemented)
+    //Err(ComputationError::NotYetImplemented)
+    Err(ComputationError::MismatchedParens)
 }
 
 pub enum ComputationError {
@@ -17,6 +18,7 @@ impl ComputationError {
             ComputationError::NotYetImplemented => "No implementat",
             ComputationError::MismatchedParens => "Error de parentesi",
         };
+
         r[..s.len().min(DISPLAY_HEIGHT * DISPLAY_WIDTH)].copy_from_slice(s.as_bytes());
         r
     }

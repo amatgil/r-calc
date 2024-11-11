@@ -2,9 +2,12 @@
 #![cfg_attr(not(test), no_main)]
 
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
-use r_calc::{BufferType, Calculadora, Operacio, Paren, Token};
+use r_calc::{
+    BufferType, Calculadora, Operacio, Paren, Token, DISPLAY_HEIGHT, DISPLAY_WIDTH,
+    LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
+};
 
-#[cfg(not(test))]
+//#[cfg(not(test))]
 #[arduino_hal::entry]
 fn main() -> ! {
     use arduino_hal::Delay;
@@ -14,7 +17,7 @@ fn main() -> ! {
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
 
-    //let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
+    let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
 
     let mut calculadora = Calculadora::default();
     let mut held = false;
@@ -42,8 +45,6 @@ fn main() -> ! {
     let d6 = pins.a4.into_output().downgrade();
     let d7 = pins.a5.into_output().downgrade();
 
-    //lcd_init(&mut rs, &mut en, &mut d4, &mut d5, &mut d6, &mut d7);
-    //lcd_clear(&mut rs, &mut en, &mut d4, &mut d5, &mut d6, &mut d7);
     let mut delay = Delay::new();
 
     let mut lcd = HD44780::new_4bit(rs, en, d4, d5, d6, d7, &mut delay).unwrap();
@@ -54,26 +55,31 @@ fn main() -> ! {
     let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
     let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
 
-    let mut pressed = [false; 16];
+    let mut pressed: [bool; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
     loop {
-        pressed = [false; 16];
+        pressed = [false; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
         if !calculadora.is_cache_valid {
             calculadora.is_cache_valid = true;
             let _ = lcd.reset(&mut delay);
 
-            let _ = lcd.write_str(
-                &core::str::from_utf8(&calculadora.display()).unwrap_or("oopsie"),
-                &mut delay,
-            );
+            let inner = calculadora.display();
+            let (top, bottom) = inner.split_at(DISPLAY_WIDTH);
+
+            let _ = lcd.set_cursor_pos(0, &mut delay);
+            let _ = lcd.write_bytes(top, &mut delay);
+
+            let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH, &mut delay);
+            let _ = lcd.write_bytes(bottom, &mut delay);
+
             let _ = lcd.set_cursor_pos(calculadora.cursor as u8, &mut delay);
         }
 
-        // read 4x4 pad
-        for row in 0..4 {
+        // read scan matrix
+        for row in 0..SCAN_MATRIX_HEIGHT {
             rows[row].set_low();
-            for col in 0..4 {
+            for col in 0..SCAN_MATRIX_WIDTH {
                 if cols[col].is_low() {
-                    pressed[row * 4 + col] = true;
+                    pressed[row * SCAN_MATRIX_WIDTH + col] = true;
                 }
             }
             rows[row].set_high();
@@ -86,8 +92,6 @@ fn main() -> ! {
         {
             continue; // No pressing multiple keys allowed
         }
-
-        //let _ = ufmt::uwriteln!(&mut serial, "Cursor: {:?}", calculadora.cursor);
 
         if !held && pressed.iter().any(|&b| b) {
             calculadora.is_cache_valid = false;

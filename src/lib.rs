@@ -16,16 +16,26 @@ mod computacio;
 pub mod probability_functions;
 
 /// Clock speed of device, in Hz
-const CLOCK_SPEED: Enter = 16_000_000; // 16MHz
+pub const CLOCK_SPEED: Enter = 16_000_000; // 16MHz
 
 /// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim
-const MAX_TOKENS: usize = 20; // TODO: This is hardware dependant
+pub const MAX_TOKENS: usize = 20; // TODO: This is hardware dependant
 
 /// Mida horizontal de la pantalla, mesurada en caràcters
-const DISPLAY_WIDTH: usize = 16;
+pub const DISPLAY_WIDTH: usize = 16;
 
 /// Mida vertical de la pantalla, mesurada en caràcters
-const DISPLAY_HEIGHT: usize = 2;
+pub const DISPLAY_HEIGHT: usize = 2;
+
+/// La mida horitzontal del buffer de la primera linia de la LCD
+/// Concretament, la HD44780 (1602A)
+pub const LCD_INTERNAL_WIDTH: u8 = 40;
+
+/// Mida horizontal de la scan matrix
+pub const SCAN_MATRIX_WIDTH: usize = 4;
+
+/// Mida vertical de la scan matrix
+pub const SCAN_MATRIX_HEIGHT: usize = 4;
 
 /// Enter positiu
 pub type Enter = u32;
@@ -222,6 +232,10 @@ impl Calculadora {
             Ok(text) => self.computation_display = text,
             Err(e) => self.computation_display = e.as_text(),
         }
+    }
+
+    pub fn set_backbuffer_text(&mut self, text: TextArea) {
+        self.computation_display = text;
     }
 }
 
