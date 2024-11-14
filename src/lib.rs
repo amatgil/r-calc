@@ -2,6 +2,7 @@
 #![cfg_attr(not(test), no_std)]
 
 use core::{
+    cmp::Ordering,
     default::Default,
     iter::{IntoIterator, Iterator},
     option::Option::{self, None},
@@ -100,7 +101,7 @@ pub enum VariantR {
     D,
 }
 
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Clone, Copy, PartialEq)]
 pub enum Operacio {
     Add,
     Sub,
@@ -318,5 +319,32 @@ impl Default for Calculadora {
             currently_shown_buffer: BufferType::Tokens,
             shift_status: ShiftStatus::Off,
         }
+    }
+}
+
+// Precendence
+impl PartialOrd for Operacio {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(match (self, other) {
+            (Operacio::Add, Operacio::Add)
+            | (Operacio::Sub, Operacio::Sub)
+            | (Operacio::Mul, Operacio::Mul)
+            | (Operacio::Div, Operacio::Div)
+            | (Operacio::Pow, Operacio::Pow)
+            | (Operacio::Add, Operacio::Sub)
+            | (Operacio::Sub, Operacio::Add)
+            | (Operacio::Mul, Operacio::Div)
+            | (Operacio::Div, Operacio::Mul) => Ordering::Equal,
+
+            (Operacio::Add, _) => Ordering::Less,
+            (Operacio::Sub, _) => Ordering::Less,
+            (_, Operacio::Add) => Ordering::Greater,
+            (_, Operacio::Sub) => Ordering::Greater,
+
+            (Operacio::Mul, Operacio::Pow) => Ordering::Less,
+            (Operacio::Div, Operacio::Pow) => Ordering::Less,
+
+            (Operacio::Pow, _) => Ordering::Greater,
+        })
     }
 }
