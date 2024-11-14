@@ -79,7 +79,7 @@ pub enum BufferType {
     Resultat,
 }
 
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Debug, Clone, Copy, PartialEq)]
 pub enum Token {
     // 0..9
     Digit(u8),
@@ -94,14 +94,14 @@ pub enum Token {
 }
 
 /// Una variant de les funcions de R que utilitzem: p, q, d
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Debug, Clone, Copy, PartialEq)]
 pub enum VariantR {
     P,
     Q,
     D,
 }
 
-#[derive(uDebug, Clone, Copy, PartialEq)]
+#[derive(uDebug, Debug, Clone, Copy, PartialEq)]
 pub enum Operacio {
     Add,
     Sub,
@@ -110,13 +110,13 @@ pub enum Operacio {
     Pow,
 }
 
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Debug, Clone, Copy, PartialEq)]
 pub enum Paren {
     Open,
     Close,
 }
 
-#[derive(uDebug, Clone, Copy)]
+#[derive(uDebug, Debug, Clone, Copy, PartialEq)]
 pub enum Distribucio {
     Bernoulli,
     Binomial,
