@@ -58,7 +58,6 @@ fn main() -> ! {
     let mut pressed: [bool; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
     loop {
         if !calculadora.is_cache_valid {
-            //uwriteln!(&mut serial, "REDRAWING").unwrap_infallible();
             calculadora.is_cache_valid = true;
             let _ = lcd.reset(&mut delay);
 
@@ -69,7 +68,13 @@ fn main() -> ! {
             let _ = lcd.write_bytes(top, &mut delay);
             let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
             let _ = lcd.write_bytes(bottom, &mut delay);
-            let _ = lcd.set_cursor_pos(calculadora.graphical_cursor as u8, &mut delay);
+            let lcd_cursor_pos = if calculadora.graphical_cursor >= DISPLAY_WIDTH {
+                LCD_INTERNAL_WIDTH + (calculadora.graphical_cursor - DISPLAY_WIDTH)
+            } else {
+                calculadora.graphical_cursor
+            };
+            //uwriteln!(&mut serial, "REDRAWING {}", lcd_cursor_pos).unwrap_infallible();
+            let _ = lcd.set_cursor_pos(lcd_cursor_pos as u8, &mut delay);
             let _ = match calculadora.shift_status {
                 ShiftStatus::On => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
                 ShiftStatus::Off => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
@@ -130,6 +135,8 @@ fn main() -> ! {
                                 calculadora.add_token(Token::Dist(Distribucio::Normal));
                                 calculadora.add_token(Token::Paren(Paren::Open));
                             }
+                            // Pressing a button with no defined Shift should reset shift
+                            (S::On, _unassigned_button) => calculadora.toggle_shift(),
                             _ => {} // unreachable if scan matrix is set up right
                         }
                     }

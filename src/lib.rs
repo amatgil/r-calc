@@ -20,7 +20,7 @@ pub mod probability_functions;
 pub const CLOCK_SPEED: Enter = 16_000_000; // 16MHz
 
 /// Quants tokens es poden mantindre en memòria en un moment donat, com a màxim
-pub const MAX_TOKENS: usize = 20; // TODO: This is hardware dependant
+pub const MAX_TOKENS: usize = DISPLAY_HEIGHT * DISPLAY_WIDTH; // TODO: This is hardware dependant
 
 /// Mida horizontal de la pantalla, mesurada en caràcters
 pub const DISPLAY_WIDTH: usize = 16;
@@ -30,7 +30,7 @@ pub const DISPLAY_HEIGHT: usize = 2;
 
 /// La mida horitzontal del buffer de la primera linia de la LCD
 /// Concretament, la HD44780 (1602A)
-pub const LCD_INTERNAL_WIDTH: usize = 40;
+pub const LCD_INTERNAL_WIDTH: usize = 64; //40;
 
 /// Mida horizontal de la scan matrix
 pub const SCAN_MATRIX_WIDTH: usize = 4;
