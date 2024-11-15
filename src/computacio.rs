@@ -2,9 +2,15 @@ use core::mem;
 
 use crate::*;
 
-pub fn compute_tokens(toks: &[Option<Token>]) -> Result<TextArea, ComputationError> {
-    //Err(ComputationError::NotYetImplemented)
-    Err(ComputationError::MismatchedParens)
+pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, ComputationError> {
+    // Temporal: si no retorna Err, mostra 'yay'. Si no, mostra l'error
+    to_postfix(toks).map(|_| {
+        [
+            b'y', b'a', b'y', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ',
+            b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ', b' ',
+            b' ', b' ', b' ', b' ',
+        ]
+    })
 }
 
 #[derive(Debug)]
@@ -22,8 +28,8 @@ impl ComputationError {
         let s = match self {
             ComputationError::NotYetImplemented => "No implementat",
             ComputationError::MismatchedParens => "Error de parentesi",
-            ComputationError::RVariantNotFollowedByDistFn => "p/q/d sense funció",
-            ComputationError::DistNotPrecededByRVariant => "funció sense p/q/d",
+            ComputationError::RVariantNotFollowedByDistFn => "p/q/d sense fn",
+            ComputationError::DistNotPrecededByRVariant => "fn sense p/q/d",
         };
 
         r[..s.len().min(DISPLAY_HEIGHT * DISPLAY_WIDTH)].copy_from_slice(s.as_bytes());
@@ -88,15 +94,15 @@ fn to_postfix(
                 op_stack.push(PseudoOp::Paren(Paren::Open));
             }
             Token::Paren(Paren::Close) => {
-                let end_range = op_idx; // Non-inclusive
-                while op_idx > 0 {
-                    op_idx -= 1;
-                    if matches!(op_stack[op_idx], Some(POp::Paren(Paren::Close))) {
-                        // TODO
-                        for i in op_idx + 1..end_range {}
-                        break;
-                    }
-                }
+                //let end_range = op_idx; // Non-inclusive
+                //while op_idx > 0 {
+                //    op_idx -= 1;
+                //    if matches!(op_stack[op_idx], Some(POp::Paren(Paren::Close))) {
+                //        // TODO
+                //        for i in op_idx + 1..end_range {}
+                //        break;
+                //    }
+                //}
             }
             Token::Dist(_) => return Err(ComputationError::DistNotPrecededByRVariant),
             Token::VariantR(v) => {

@@ -10,7 +10,7 @@ use r_calc::{
 use ufmt::uwriteln;
 
 //#[cfg(not(test))]
-//#[arduino_hal::entry]
+#[arduino_hal::entry]
 fn main() -> ! {
     use arduino_hal::Delay;
     use hd44780_driver::HD44780;
