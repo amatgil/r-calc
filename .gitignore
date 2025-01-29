@@ -1,2 +1,5 @@
 .direnv/
 target/
+/schematic/Calculadorra/Calculadorra-backups/
+/schematic/Calculadorra/~Calculadorra.kicad_sch.lck
+/schematic/Calculadorra/fp-info-cache
