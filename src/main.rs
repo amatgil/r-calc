@@ -51,33 +51,33 @@ fn main() -> ! {
     let mut delay = Delay::new();
 
     let mut lcd = HD44780::new_4bit(rs, en, d4, d5, d6, d7, &mut delay).unwrap();
-    let _ = lcd.reset(&mut delay);
-    let _ = lcd.clear(&mut delay);
-    let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
-    let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
+    _ = lcd.reset(&mut delay);
+    _ = lcd.clear(&mut delay);
+    _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
+    _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
 
     let mut pressed: [bool; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
 
     loop {
         if !calculadora.is_cache_valid {
             calculadora.is_cache_valid = true;
-            let _ = lcd.reset(&mut delay);
+            _ = lcd.reset(&mut delay);
 
             let inner = calculadora.display();
             let (top, bottom) = inner.split_at(DISPLAY_WIDTH);
 
-            let _ = lcd.set_cursor_pos(0, &mut delay);
-            let _ = lcd.write_bytes(top, &mut delay);
-            let _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
-            let _ = lcd.write_bytes(bottom, &mut delay);
+            _ = lcd.set_cursor_pos(0, &mut delay);
+            _ = lcd.write_bytes(top, &mut delay);
+            _ = lcd.set_cursor_pos(LCD_INTERNAL_WIDTH as u8, &mut delay);
+            _ = lcd.write_bytes(bottom, &mut delay);
             let lcd_cursor_pos = if calculadora.graphical_cursor >= DISPLAY_WIDTH {
                 LCD_INTERNAL_WIDTH + (calculadora.graphical_cursor - DISPLAY_WIDTH)
             } else {
                 calculadora.graphical_cursor
             };
             //uwriteln!(&mut serial, "REDRAWING {}", lcd_cursor_pos).unwrap_infallible();
-            let _ = lcd.set_cursor_pos(lcd_cursor_pos as u8, &mut delay);
-            let _ = match calculadora.shift_status {
+            _ = lcd.set_cursor_pos(lcd_cursor_pos as u8, &mut delay);
+            _ = match calculadora.shift_status {
                 ShiftStatus::Si => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
                 ShiftStatus::No => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
             };
@@ -122,11 +122,11 @@ fn main() -> ! {
                             (_, 3) => {
                                 calculadora.compute();
                                 calculadora.currently_shown_buffer = BufferType::Resultat;
-                                let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
-                                let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
+                                _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
+                                _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
                             }
                             (S::No, 4) => calculadora.add_token(Token::Digit(1)),
-                            (S::Si, 4) => calculadora.add_dist(Dist::Binom),
+                            (S::Si, 4) => calculadora.add_dist_tokens(Dist::Binom),
 
                             (S::No, 5) => calculadora.add_token(Token::Digit(2)),
                             (S::Si, 5) => calculadora.add_dist_tokens(Dist::NBinom),
@@ -143,7 +143,7 @@ fn main() -> ! {
                             (S::Si, 9) => calculadora.add_dist_tokens(Dist::Poisson),
 
                             (S::No, 10) => calculadora.add_token(Token::Digit(6)),
-                            (S::Si, 10) => calculadora.add_dist(Dist::Norm),
+                            (S::Si, 10) => calculadora.add_dist_tokens(Dist::Normal),
 
                             (S::No, 11) => calculadora.add_token(Token::Op(Operacio::Sub)),
                             (S::Si, 11) => calculadora.add_token(Token::Op(Operacio::Div)),
@@ -181,8 +181,8 @@ fn main() -> ! {
                         calculadora.is_cache_valid = false;
                         calculadora.currently_shown_buffer = BufferType::Tokens;
 
-                        let _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
-                        let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
+                        _ = lcd.set_cursor_visibility(Cursor::Visible, &mut delay);
+                        _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
                     } else {
                         held = false;
                     }

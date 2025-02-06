@@ -78,6 +78,7 @@ fn to_postfix(
                 None => current_number = Some(d as Enter),
                 Some(n) => current_number = Some(n * 10 + d as Enter),
             },
+            Token::DecimalPoint | Token::Comma => return Err(ComputationError::NotYetImplemented),
             Token::Op(curr_op) => {
                 // SAFETY: shortcircuiting means !is_empty() when we unwrap the top() call
                 if op_stack.is_empty() || (PseudoOp::Op(curr_op) > *op_stack.top().unwrap()) {
@@ -86,7 +87,7 @@ fn to_postfix(
                     // op_stack isn't empty from the previous condition (de Morgan my beloved)
                     // TODO: Verify this is what the algorithm says
                     let lower_op = op_stack.pop().unwrap();
-                    output_stack.push(PT::Op(lower_op));
+                    output_stack.push(PT::Op(lower_op)); //  TODO: propagate all of these errors
                     op_stack.push(POp::Op(curr_op));
                 }
             }

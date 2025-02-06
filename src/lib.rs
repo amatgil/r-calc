@@ -227,6 +227,7 @@ impl Calculadora {
                         }
                     }
                 }
+                // TODO: most of these can be joined into one
                 Token::Op(op) => {
                     self.token_display[d_idx] = op.as_ascii();
                     d_idx += 1;
@@ -250,6 +251,14 @@ impl Calculadora {
                         self.token_display[d_idx + i] = *ascii;
                     }
                     d_idx += text.len();
+                }
+                Token::DecimalPoint => {
+                    self.token_display[d_idx] = b'.';
+                    d_idx += 1;
+                }
+                Token::Comma => {
+                    self.token_display[d_idx] = b',';
+                    d_idx += 1;
                 }
             };
         }
