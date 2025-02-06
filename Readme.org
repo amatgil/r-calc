@@ -39,6 +39,8 @@
 Legenda: =Normal Shifted=
 
 Nove versió (ara amb =Shift=)
+(TODO: Make shift be ternary instead of binary ({A, B, C}) to add extra distributions and constats (pi, e, phi))
+
 | Shift   | <-       | ->     | Bksp/On Clear |
 | 7 p     | 8 q      | 9  d   | *  ^          |
 | 4 bern  | 5 pois   | 6 norm | - /           |
