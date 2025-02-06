@@ -3157,6 +3157,66 @@
 		)
 		(uuid "fff75a2c-8e49-4728-bd8f-5559a35030a1")
 	)
+	(text "D11"
+		(exclude_from_sim no)
+		(at 71.3163 58.6163 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "04237f72-4645-4373-998a-00986631271a")
+	)
+	(text "D13"
+		(exclude_from_sim no)
+		(at 71.2559 63.7354 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "24325dfa-61cd-4c08-8da7-595d655afbc6")
+	)
+	(text "D9"
+		(exclude_from_sim no)
+		(at 71.882 53.594 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "252f757c-7843-48dd-9619-84f5d8216a8b")
+	)
+	(text "D12"
+		(exclude_from_sim no)
+		(at 71.2596 61.1947 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5a37626d-cdb3-490a-b624-4c7087d66fcf")
+	)
+	(text "D8"
+		(exclude_from_sim no)
+		(at 71.882 51.054 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9560c892-1753-49f8-9ebe-9b79a0767a6f")
+	)
+	(text "D10"
+		(exclude_from_sim no)
+		(at 71.3446 56.1795 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cf7d367d-f5b1-4d3e-8f5e-30c94a11a34d")
+	)
 	(label "Per a l'ADC, ha d'estar connectat a VCC si no s'usa"
 		(at 67.31 40.64 0)
 		(fields_autoplaced yes)

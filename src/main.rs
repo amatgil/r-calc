@@ -26,7 +26,6 @@ fn main() -> ! {
 
     // membrane pad
     let cols = [
-        // right-most four wires of membrane pad
         pins.d4.into_pull_up_input().downgrade(), // PD4
         pins.d5.into_pull_up_input().downgrade(), // PD5
         pins.d6.into_pull_up_input().downgrade(), // PD6
@@ -34,11 +33,11 @@ fn main() -> ! {
     ];
 
     let mut rows = [
-        // left-most four wires of membrane pad
-        pins.a5.into_output().downgrade(), // PC5
-        pins.d0.into_output().downgrade(), // PD0
-        pins.d1.into_output().downgrade(), // PD1
+        pins.d3.into_output().downgrade(), // PD3
         pins.d2.into_output().downgrade(), // PD2
+        pins.d1.into_output().downgrade(), // PD1
+        pins.d0.into_output().downgrade(), // PD0
+        pins.a5.into_output().downgrade(), // PC5
     ];
 
     // lcd
@@ -111,33 +110,38 @@ fn main() -> ! {
                     if !held {
                         calculadora.is_cache_valid = false;
                         match (calculadora.shift_status, pressed_idx) {
-                            (S::Off, 0) => calculadora.add_token(Token::Paren(Paren::Open)),
-                            (S::Off, 1) => calculadora.add_token(Token::Op(Operacio::Add)),
-                            (S::Off, 2) => calculadora.del_token(),
-                            (_, 3) => calculadora.clear(),
-                            (S::Off, 4) => calculadora.cursor_back(),
-                            (S::Off, 5) => calculadora.cursor_advance(),
-                            (S::Off, 8) => calculadora.add_token(Token::Digit(0)),
-                            (S::Off, 9) => calculadora.add_token(Token::Digit(1)),
-                            (S::Off, 10) => calculadora.add_token(Token::Digit(2)),
-                            (S::Off, 11) => calculadora.add_token(Token::Digit(3)),
-                            (S::Off, 12) => calculadora.add_token(Token::Digit(4)),
-                            (S::Off, 13) => {
-                                calculadora.add_token(Token::Dist(Distribucio::NegativaBinominal));
-                                calculadora.add_token(Token::Paren(Paren::Open));
-                            }
-                            (_, 14) => calculadora.toggle_shift(),
-                            (_, 15) => {
+                            (S::Off, 0) => calculadora.add_token(Token::Digit(0)),
+                            (S::Off, 1) => calculadora.add_token(Token::Paren(Paren::Open)),
+                            (S::Off, 2) => calculadora.add_token(Token::Paren(Paren::Close)),
+                            (_, 3) => {
                                 calculadora.compute();
                                 calculadora.currently_shown_buffer = BufferType::Resultat;
 
                                 let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
                                 let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
                             }
+                            (S::Off, 4) => calculadora.add_token(Token::Digit(1)),
+                            (S::Off, 5) => calculadora.add_token(Token::Digit(2)),
+                            (S::Off, 6) => calculadora.add_token(Token::Digit(3)),
+                            (S::Off, 7) => calculadora.add_token(Token::Op(Operacio::Add)),
+                            (S::Off, 8) => calculadora.add_token(Token::Digit(4)),
+                            (S::Off, 9) => calculadora.add_token(Token::Digit(5)),
+                            (S::Off, 10) => calculadora.add_token(Token::Digit(6)),
+                            (S::Off, 11) => calculadora.add_token(Token::Op(Operacio::Sub)),
+                            (S::Off, 12) => calculadora.add_token(Token::Digit(7)),
+                            (S::Off, 13) => calculadora.add_token(Token::Digit(8)),
+                            (S::Off, 14) => calculadora.add_token(Token::Digit(9)),
+                            (S::Off, 15) => calculadora.add_token(Token::Op(Operacio::Mul)),
+                            (_, 16) => calculadora.toggle_shift(),
+                            (S::Off, 17) => calculadora.cursor_back(),
+                            (S::Off, 18) => calculadora.cursor_advance(),
+                            (_, 19) => calculadora.clear(),
+
+                            /*
                             (S::On, 13) => {
                                 calculadora.add_token(Token::Dist(Distribucio::Normal));
                                 calculadora.add_token(Token::Paren(Paren::Open));
-                            }
+                            }*/
                             // Pressing a button with no defined Shift should reset shift
                             (S::On, _unassigned_button) => calculadora.toggle_shift(),
                             _ => {} // unreachable if scan matrix is set up right

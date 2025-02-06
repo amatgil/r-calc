@@ -36,7 +36,7 @@ pub const LCD_INTERNAL_WIDTH: usize = 64; //40;
 pub const SCAN_MATRIX_WIDTH: usize = 4;
 
 /// Mida vertical de la scan matrix
-pub const SCAN_MATRIX_HEIGHT: usize = 4;
+pub const SCAN_MATRIX_HEIGHT: usize = 5;
 
 /// Enter positiu
 pub type Enter = u32;
