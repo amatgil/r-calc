@@ -3167,6 +3167,16 @@
 		)
 		(uuid "04237f72-4645-4373-998a-00986631271a")
 	)
+	(text "D4"
+		(exclude_from_sim no)
+		(at 71.882 104.394 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "20aec66b-0c08-40d1-a425-79311118d25d")
+	)
 	(text "D13"
 		(exclude_from_sim no)
 		(at 71.2559 63.7354 0)
@@ -3187,6 +3197,16 @@
 		)
 		(uuid "252f757c-7843-48dd-9619-84f5d8216a8b")
 	)
+	(text "D3"
+		(exclude_from_sim no)
+		(at 71.882 101.854 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4a5e0045-ccbb-4666-ae4f-1ca7888e2038")
+	)
 	(text "D12"
 		(exclude_from_sim no)
 		(at 71.2596 61.1947 0)
@@ -3196,6 +3216,46 @@
 			)
 		)
 		(uuid "5a37626d-cdb3-490a-b624-4c7087d66fcf")
+	)
+	(text "D1"
+		(exclude_from_sim no)
+		(at 71.882 96.774 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6aa92cba-7c32-4b9e-814d-92ac9d7d8461")
+	)
+	(text "A1"
+		(exclude_from_sim no)
+		(at 71.882 76.454 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7bcd314c-a422-485e-83ab-059099948162")
+	)
+	(text "D0"
+		(exclude_from_sim no)
+		(at 71.882 94.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8746782f-a95e-4fc7-99bb-ca63e0a00adb")
+	)
+	(text "D7"
+		(exclude_from_sim no)
+		(at 71.882 112.014 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8ea0ffc5-14c6-41b5-ac09-e1595e909cf6")
 	)
 	(text "D8"
 		(exclude_from_sim no)
@@ -3207,6 +3267,46 @@
 		)
 		(uuid "9560c892-1753-49f8-9ebe-9b79a0767a6f")
 	)
+	(text "A0\n"
+		(exclude_from_sim no)
+		(at 71.882 73.914 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9c27392b-c01d-4497-85e6-65fb7cdfb6ce")
+	)
+	(text "A3"
+		(exclude_from_sim no)
+		(at 71.882 81.534 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a550622f-6250-4cbb-880a-c9a654ea52ec")
+	)
+	(text "A4"
+		(exclude_from_sim no)
+		(at 71.882 84.074 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "bf4e2275-9a5a-4786-a3f6-fea889022430")
+	)
+	(text "D6"
+		(exclude_from_sim no)
+		(at 71.882 109.474 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c4e935c4-df28-405d-bf78-c4904a2f43f3")
+	)
 	(text "D10"
 		(exclude_from_sim no)
 		(at 71.3446 56.1795 0)
@@ -3216,6 +3316,46 @@
 			)
 		)
 		(uuid "cf7d367d-f5b1-4d3e-8f5e-30c94a11a34d")
+	)
+	(text "D5"
+		(exclude_from_sim no)
+		(at 71.882 106.934 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e4fb7b31-6a75-4f7d-a4e7-03126ad27717")
+	)
+	(text "A5"
+		(exclude_from_sim no)
+		(at 71.882 86.614 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ef138ad4-d8bd-4e3e-963b-8975af685de1")
+	)
+	(text "D2"
+		(exclude_from_sim no)
+		(at 71.882 99.314 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f33d6389-c168-44f5-b534-3e42dafdeb95")
+	)
+	(text "A2"
+		(exclude_from_sim no)
+		(at 71.882 78.994 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f7dd5ebd-06e2-400d-b54d-2f5be9ded9a2")
 	)
 	(label "Per a l'ADC, ha d'estar connectat a VCC si no s'usa"
 		(at 67.31 40.64 0)
