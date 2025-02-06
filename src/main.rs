@@ -4,7 +4,7 @@
 use arduino_hal::{port::PinOps, prelude::*, *};
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
 use r_calc::{
-    BufferType, Calculadora, Distribucio, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT,
+    BufferType, Calculadora, Dist, Operacio, Paren, ShiftStatus, Token, VariantR, DISPLAY_HEIGHT,
     DISPLAY_WIDTH, LCD_INTERNAL_WIDTH, SCAN_MATRIX_HEIGHT, SCAN_MATRIX_WIDTH,
 };
 use ufmt::uwriteln;
@@ -78,8 +78,8 @@ fn main() -> ! {
             //uwriteln!(&mut serial, "REDRAWING {}", lcd_cursor_pos).unwrap_infallible();
             let _ = lcd.set_cursor_pos(lcd_cursor_pos as u8, &mut delay);
             let _ = match calculadora.shift_status {
-                ShiftStatus::On => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
-                ShiftStatus::Off => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
+                ShiftStatus::Si => lcd.set_cursor_blink(CursorBlink::On, &mut delay),
+                ShiftStatus::No => lcd.set_cursor_blink(CursorBlink::Off, &mut delay),
             };
         }
 
@@ -110,14 +110,14 @@ fn main() -> ! {
                     if !held {
                         calculadora.is_cache_valid = false;
                         match (calculadora.shift_status, pressed_idx) {
-                            (S::Off, 0) => calculadora.add_token(Token::Digit(0)),
-                            (S::On, 0) => {}
+                            (S::No, 0) => calculadora.add_token(Token::Digit(0)),
+                            (S::Si, 0) => {}
 
-                            (S::Off, 1) => calculadora.add_token(Token::Paren(Paren::Open)),
-                            (S::On, 1) => calculadora.add_token(Token::DecimalPoint),
+                            (S::No, 1) => calculadora.add_token(Token::Paren(Paren::Open)),
+                            (S::Si, 1) => calculadora.add_token(Token::DecimalPoint),
 
-                            (S::Off, 2) => calculadora.add_token(Token::Paren(Paren::Close)),
-                            (S::On, 2) => calculadora.add_token(Token::Comma),
+                            (S::No, 2) => calculadora.add_token(Token::Paren(Paren::Close)),
+                            (S::Si, 2) => calculadora.add_token(Token::Comma),
 
                             (_, 3) => {
                                 calculadora.compute();
@@ -125,25 +125,49 @@ fn main() -> ! {
                                 let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
                                 let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
                             }
-                            (S::Off, 4) => calculadora.add_token(Token::Digit(1)),
-                            (S::On, 4) => calculadora.add_token(Token::Dist(Distribucio::Binomial)),
+                            (S::No, 4) => calculadora.add_token(Token::Digit(1)),
+                            (S::Si, 4) => calculadora.add_token(Token::Dist(Dist::Binom)),
 
-                            (S::Off, 5) => calculadora.add_token(Token::Digit(2)),
-                            (S::Off, 6) => calculadora.add_token(Token::Digit(3)),
-                            (S::Off, 7) => calculadora.add_token(Token::Op(Operacio::Add)),
-                            (S::Off, 8) => calculadora.add_token(Token::Digit(4)),
-                            (S::Off, 9) => calculadora.add_token(Token::Digit(5)),
-                            (S::Off, 10) => calculadora.add_token(Token::Digit(6)),
-                            (S::Off, 11) => calculadora.add_token(Token::Op(Operacio::Sub)),
-                            (S::Off, 12) => calculadora.add_token(Token::Digit(7)),
-                            (S::Off, 13) => calculadora.add_token(Token::Digit(8)),
-                            (S::Off, 14) => calculadora.add_token(Token::Digit(9)),
-                            (S::Off, 15) => calculadora.add_token(Token::Op(Operacio::Mul)),
+                            (S::No, 5) => calculadora.add_token(Token::Digit(2)),
+                            (S::Si, 5) => calculadora.add_token(Token::Dist(Dist::NBinom)),
+
+                            (S::No, 6) => calculadora.add_token(Token::Digit(3)),
+                            (S::Si, 6) => calculadora.add_token(Token::Dist(Dist::Uniforme)),
+
+                            (_, 7) => calculadora.add_token(Token::Op(Operacio::Add)),
+
+                            (S::No, 8) => calculadora.add_token(Token::Digit(4)),
+                            (S::Si, 8) => calculadora.add_token(Token::Dist(Dist::Bernoulli)),
+
+                            (S::No, 9) => calculadora.add_token(Token::Digit(5)),
+                            (S::Si, 9) => calculadora.add_token(Token::Dist(Dist::Poisson)),
+
+                            (S::No, 10) => calculadora.add_token(Token::Digit(6)),
+                            (S::Si, 10) => calculadora.add_token(Token::Dist(Dist::Norm)),
+
+                            (S::No, 11) => calculadora.add_token(Token::Op(Operacio::Sub)),
+                            (S::Si, 11) => calculadora.add_token(Token::Op(Operacio::Div)),
+
+                            (S::No, 12) => calculadora.add_token(Token::Digit(7)),
+                            (S::Si, 12) => calculadora.add_token(Token::VariantR(VariantR::P)),
+
+                            (S::No, 13) => calculadora.add_token(Token::Digit(8)),
+                            (S::Si, 13) => calculadora.add_token(Token::VariantR(VariantR::Q)),
+
+                            (S::No, 14) => calculadora.add_token(Token::Digit(9)),
+                            (S::Si, 14) => calculadora.add_token(Token::VariantR(VariantR::D)),
+
+                            (S::No, 15) => calculadora.add_token(Token::Op(Operacio::Mul)),
+                            (S::Si, 15) => calculadora.add_token(Token::Op(Operacio::Pow)),
+
                             (_, 16) => calculadora.toggle_shift(),
-                            (S::Off, 17) => calculadora.cursor_back(),
-                            (S::Off, 18) => calculadora.cursor_advance(),
-                            (S::Off, 19) => calculadora.clear(),
-                            (S::On, 19) => calculadora.del_token(),
+
+                            (_, 17) => calculadora.cursor_back(),
+
+                            (_, 18) => calculadora.cursor_advance(),
+
+                            (S::No, 19) => calculadora.clear(),
+                            (S::Si, 19) => calculadora.del_token(),
 
                             /*
                             (S::On, 13) => {
@@ -151,7 +175,7 @@ fn main() -> ! {
                                 calculadora.add_token(Token::Paren(Paren::Open));
                             }*/
                             // Pressing a button with no defined Shift should reset shift
-                            (S::On, _unassigned_button) => calculadora.toggle_shift(),
+                            (S::Si, _unassigned_button) => calculadora.toggle_shift(),
                             _ => {} // unreachable if scan matrix is set up right
                         }
                     }

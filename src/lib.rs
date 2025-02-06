@@ -68,8 +68,10 @@ pub struct Calculadora {
 
 #[derive(uDebug, Clone, Copy, PartialEq)]
 pub enum ShiftStatus {
-    On,
-    Off,
+    /// Enabled
+    Si,
+    // Not enabled
+    No,
 }
 #[derive(uDebug, Clone, Copy)]
 pub enum BufferType {
@@ -92,7 +94,7 @@ pub enum Token {
     // (, )
     Paren(Paren),
     // norm, binom, ...
-    Dist(Distribucio),
+    Dist(Dist),
     // p, q, d
     VariantR(VariantR),
 }
@@ -121,11 +123,11 @@ pub enum Paren {
 }
 
 #[derive(uDebug, Debug, Clone, Copy, PartialEq)]
-pub enum Distribucio {
+pub enum Dist {
     Bernoulli,
-    Binomial,
+    Binom,
     Poisson,
-    NegativaBinominal,
+    NBinom,
     Uniforme,
     Normal,
 }
@@ -182,8 +184,8 @@ impl Calculadora {
 
     pub fn toggle_shift(&mut self) {
         self.shift_status = match self.shift_status {
-            ShiftStatus::On => ShiftStatus::Off,
-            ShiftStatus::Off => ShiftStatus::On,
+            ShiftStatus::Si => ShiftStatus::No,
+            ShiftStatus::No => ShiftStatus::Si,
         }
     }
     pub fn display(&self) -> [u8; DISPLAY_WIDTH * DISPLAY_HEIGHT] {
@@ -297,16 +299,16 @@ impl Paren {
     }
 }
 
-impl Distribucio {
+impl Dist {
     /// Returns string that's always valid ascii
     fn as_ascii(&self) -> &'static str {
         match self {
-            Distribucio::Bernoulli => "bern",
-            Distribucio::Binomial => "binom",
-            Distribucio::Poisson => "pois",
-            Distribucio::NegativaBinominal => "nbinom",
-            Distribucio::Uniforme => "unif",
-            Distribucio::Normal => "norm",
+            Dist::Bernoulli => "bern",
+            Dist::Binom => "binom",
+            Dist::Poisson => "pois",
+            Dist::NBinom => "nbinom",
+            Dist::Uniforme => "unif",
+            Dist::Normal => "norm",
         }
     }
 }
@@ -321,7 +323,7 @@ impl Default for Calculadora {
             graphical_cursor: 0,
             is_cache_valid: false,
             currently_shown_buffer: BufferType::Tokens,
-            shift_status: ShiftStatus::Off,
+            shift_status: ShiftStatus::No,
         }
     }
 }

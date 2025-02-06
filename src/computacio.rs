@@ -47,7 +47,7 @@ enum PseudoToken {
 }
 #[derive(Debug, Clone, Copy, PartialEq)]
 enum PseudoOp {
-    FuncioR(VariantR, Distribucio),
+    FuncioR(VariantR, Dist),
     Paren(Paren),
     Op(Operacio),
 }
