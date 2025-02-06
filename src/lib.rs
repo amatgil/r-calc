@@ -148,6 +148,10 @@ impl Calculadora {
         }
         self.update_token_display();
     }
+    pub fn add_dist_tokens(&mut self, dist: Dist) {
+        self.add_token(Token::Dist(dist));
+        self.add_token(Token::Paren(Paren::Open));
+    }
 
     /// Quan es prem Delete. Si no n'hi ha cap, no fa res
     pub fn del_token(&mut self) {
