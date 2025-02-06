@@ -1,7 +1,7 @@
 #![cfg_attr(not(test), no_std)]
 #![cfg_attr(not(test), no_main)]
 
-use arduino_hal::prelude::_unwrap_infallible_UnwrapInfallible;
+use arduino_hal::{port::PinOps, prelude::*, *};
 use hd44780_driver::{Cursor, CursorBlink, Display, DisplayMode};
 use r_calc::{
     BufferType, Calculadora, Distribucio, Operacio, Paren, ShiftStatus, Token, DISPLAY_HEIGHT,
@@ -19,33 +19,35 @@ fn main() -> ! {
     let dp = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(dp);
 
-    let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
+    //let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
 
     let mut calculadora = Calculadora::default();
     let mut held = false;
 
     // membrane pad
     let cols = [
-        pins.d8.into_pull_up_input().downgrade(),
-        pins.d9.into_pull_up_input().downgrade(),
-        pins.d10.into_pull_up_input().downgrade(),
-        pins.d11.into_pull_up_input().downgrade(),
+        // right-most four wires of membrane pad
+        pins.d4.into_pull_up_input().downgrade(), // PD4
+        pins.d5.into_pull_up_input().downgrade(), // PD5
+        pins.d6.into_pull_up_input().downgrade(), // PD6
+        pins.d7.into_pull_up_input().downgrade(), // PD7
     ];
 
     let mut rows = [
-        pins.d4.into_output().downgrade(),
-        pins.d5.into_output().downgrade(),
-        pins.d6.into_output().downgrade(),
-        pins.d7.into_output().downgrade(),
+        // left-most four wires of membrane pad
+        pins.a5.into_output().downgrade(), // PC5
+        pins.d0.into_output().downgrade(), // PD0
+        pins.d1.into_output().downgrade(), // PD1
+        pins.d2.into_output().downgrade(), // PD2
     ];
 
     // lcd
-    let rs = pins.a0.into_output().downgrade();
-    let en = pins.a1.into_output().downgrade();
-    let d4 = pins.a2.into_output().downgrade();
-    let d5 = pins.a3.into_output().downgrade();
-    let d6 = pins.a4.into_output().downgrade();
-    let d7 = pins.a5.into_output().downgrade();
+    let rs = pins.d9.into_output().downgrade();
+    let en = pins.d8.into_output().downgrade();
+    let d4 = pins.d10.into_output().downgrade();
+    let d5 = pins.d11.into_output().downgrade();
+    let d6 = pins.d12.into_output().downgrade();
+    let d7 = pins.d13.into_output().downgrade();
 
     let mut delay = Delay::new();
 
@@ -56,6 +58,7 @@ fn main() -> ! {
     let _ = lcd.set_cursor_blink(CursorBlink::On, &mut delay);
 
     let mut pressed: [bool; SCAN_MATRIX_HEIGHT * SCAN_MATRIX_WIDTH];
+
     loop {
         if !calculadora.is_cache_valid {
             calculadora.is_cache_valid = true;

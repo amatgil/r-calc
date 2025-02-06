@@ -13,7 +13,7 @@ ufmt = "0.2.0"
 
 [dependencies.arduino-hal]
 git = "https://github.com/Rahix/avr-hal"
-features = ["arduino-mega2560"]
+features = ["arduino-uno"]
 
 [profile.dev]
 panic = "abort"
