@@ -111,16 +111,23 @@ fn main() -> ! {
                         calculadora.is_cache_valid = false;
                         match (calculadora.shift_status, pressed_idx) {
                             (S::Off, 0) => calculadora.add_token(Token::Digit(0)),
+                            (S::On, 0) => {}
+
                             (S::Off, 1) => calculadora.add_token(Token::Paren(Paren::Open)),
+                            (S::On, 1) => calculadora.add_token(Token::DecimalPoint),
+
                             (S::Off, 2) => calculadora.add_token(Token::Paren(Paren::Close)),
+                            (S::On, 2) => calculadora.add_token(Token::Comma),
+
                             (_, 3) => {
                                 calculadora.compute();
                                 calculadora.currently_shown_buffer = BufferType::Resultat;
-
                                 let _ = lcd.set_cursor_visibility(Cursor::Invisible, &mut delay);
                                 let _ = lcd.set_cursor_blink(CursorBlink::Off, &mut delay);
                             }
                             (S::Off, 4) => calculadora.add_token(Token::Digit(1)),
+                            (S::On, 4) => calculadora.add_token(Token::Dist(Distribucio::Binomial)),
+
                             (S::Off, 5) => calculadora.add_token(Token::Digit(2)),
                             (S::Off, 6) => calculadora.add_token(Token::Digit(3)),
                             (S::Off, 7) => calculadora.add_token(Token::Op(Operacio::Add)),
@@ -135,7 +142,8 @@ fn main() -> ! {
                             (_, 16) => calculadora.toggle_shift(),
                             (S::Off, 17) => calculadora.cursor_back(),
                             (S::Off, 18) => calculadora.cursor_advance(),
-                            (_, 19) => calculadora.clear(),
+                            (S::Off, 19) => calculadora.clear(),
+                            (S::On, 19) => calculadora.del_token(),
 
                             /*
                             (S::On, 13) => {

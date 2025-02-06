@@ -83,6 +83,10 @@ pub enum BufferType {
 pub enum Token {
     // 0..9
     Digit(u8),
+    // `.` (as in `3.2`)
+    DecimalPoint,
+    // `,` (as in `pnorm(3, 2)`)
+    Comma,
     // + - * / ^
     Op(Operacio),
     // (, )
