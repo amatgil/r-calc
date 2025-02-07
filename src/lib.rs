@@ -202,9 +202,12 @@ impl Calculadora {
     /// Actualitza self.display segons self.tokens
     /// A executar-se: Cada cop que hi ha un canvi
     pub fn update_token_display(&mut self) {
-        let mut d_idx = 0; // On estem a punt d'escriure
-        let mut graphical_cursor = 0;
+        fn update(display: &mut [u8], d_idx: &mut usize, c: u8) {
+            display[*d_idx] = c;
+            *d_idx += 1;
+        }
 
+        let mut d_idx = 0; // On estem a punt d'escriure
         self.token_display = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
 
         for t in &self.toks {
@@ -213,33 +216,12 @@ impl Calculadora {
             }
             let t = t.as_ref().unwrap(); // SAFETY: Acabem de mirar que !t.is_none() és cert
             match t {
-                Token::Digit(mut number) => {
-                    if number == 0 {
-                        self.token_display[d_idx] = b'0';
-                        d_idx += 1;
-                    } else {
-                        // TODO: Calculate number of digits in number and d_idx = DISPLAY_WIDTH if it would break
-                        while number > 0 {
-                            self.token_display[d_idx] = (number % 10) as u8 + b'0';
-                            d_idx += 1;
-
-                            number /= 10;
-                        }
-                    }
-                }
-                // TODO: most of these can be joined into one
-                Token::Op(op) => {
-                    self.token_display[d_idx] = op.as_ascii();
-                    d_idx += 1;
-                }
-                Token::Paren(p) => {
-                    self.token_display[d_idx] = p.as_ascii();
-                    d_idx += 1;
-                }
-                Token::VariantR(v) => {
-                    self.token_display[d_idx] = v.as_ascii();
-                    d_idx += 1;
-                }
+                Token::Digit(n) => update(&mut self.token_display, &mut d_idx, n + b'0'),
+                Token::Op(op) => update(&mut self.token_display, &mut d_idx, op.as_ascii()),
+                Token::Paren(p) => update(&mut self.token_display, &mut d_idx, p.as_ascii()),
+                Token::VariantR(v) => update(&mut self.token_display, &mut d_idx, v.as_ascii()),
+                Token::DecimalPoint => update(&mut self.token_display, &mut d_idx, b'.'),
+                Token::Comma => update(&mut self.token_display, &mut d_idx, b','),
                 Token::Dist(dist) => {
                     let text = dist.as_ascii();
                     if d_idx < DISPLAY_WIDTH && text.len() > DISPLAY_WIDTH - d_idx {
@@ -251,14 +233,6 @@ impl Calculadora {
                         self.token_display[d_idx + i] = *ascii;
                     }
                     d_idx += text.len();
-                }
-                Token::DecimalPoint => {
-                    self.token_display[d_idx] = b'.';
-                    d_idx += 1;
-                }
-                Token::Comma => {
-                    self.token_display[d_idx] = b',';
-                    d_idx += 1;
                 }
             };
         }
