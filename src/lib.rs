@@ -229,7 +229,7 @@ impl Calculadora {
                     } else if d_idx + text.len() > DISPLAY_WIDTH * DISPLAY_HEIGHT {
                         break;
                     }
-                    for (i, ascii) in text.as_bytes().into_iter().enumerate() {
+                    for (i, ascii) in text.into_iter().enumerate() {
                         self.token_display[d_idx + i] = *ascii;
                     }
                     d_idx += text.len();
@@ -288,14 +288,14 @@ impl Paren {
 
 impl Dist {
     /// Returns string that's always valid ascii
-    fn as_ascii(&self) -> &'static str {
+    fn as_ascii(&self) -> &'static [u8] {
         match self {
-            Dist::Bernoulli => "bern",
-            Dist::Binom => "binom",
-            Dist::Poisson => "pois",
-            Dist::NBinom => "nbinom",
-            Dist::Uniforme => "unif",
-            Dist::Normal => "norm",
+            Dist::Bernoulli => b"bern",
+            Dist::Binom => b"binom",
+            Dist::Poisson => b"pois",
+            Dist::NBinom => b"nbinom",
+            Dist::Uniforme => b"unif",
+            Dist::Normal => b"norm",
         }
     }
 }
