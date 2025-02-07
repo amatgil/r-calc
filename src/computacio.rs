@@ -2,7 +2,7 @@ use core::mem;
 
 use crate::*;
 
-pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, ComputationError> {
+pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, ComputError> {
     // Temporal: si no retorna Err, mostra 'yay'. Si no, mostra l'error
     to_postfix(toks).map(|_| {
         [
@@ -14,22 +14,29 @@ pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, Co
 }
 
 #[derive(Debug)]
-pub enum ComputationError {
+pub enum ComputError {
+    /// Pensive emoji
     NotYetImplemented,
+    /// Mismatched parens
     MismatchedParens,
+    /// `p`, `q` sense e.g. norm
     RVariantNotFollowedByDistFn,
+    /// Functions like `norm` must be preceded by `p`, `q`,..
     DistNotPrecededByRVariant,
+    /// Stack overflow in one of the inner stacks
+    InnerSO,
     // TODO: Afegir-ne
 }
 
-impl ComputationError {
+impl ComputError {
     pub fn as_text(&self) -> TextArea {
         let mut r = [b' '; DISPLAY_HEIGHT * DISPLAY_WIDTH];
         let s = match self {
-            ComputationError::NotYetImplemented => "No implementat",
-            ComputationError::MismatchedParens => "Error de parentesi",
-            ComputationError::RVariantNotFollowedByDistFn => "p/q/d sense fn",
-            ComputationError::DistNotPrecededByRVariant => "fn sense p/q/d",
+            ComputError::NotYetImplemented => "No implementat",
+            ComputError::MismatchedParens => "Error de parentesi",
+            ComputError::RVariantNotFollowedByDistFn => "p/q/d sense fn",
+            ComputError::DistNotPrecededByRVariant => "fn sense p/q/d",
+            ComputError::InnerSO => "Overflow stack intern",
         };
 
         r[..s.len().min(DISPLAY_HEIGHT * DISPLAY_WIDTH)].copy_from_slice(s.as_bytes());
@@ -55,7 +62,7 @@ enum PseudoOp {
 /// Shunting yard implementation
 fn to_postfix(
     input: &[Option<Token>; MAX_TOKENS],
-) -> Result<[Option<PseudoToken>; MAX_TOKENS], ComputationError> {
+) -> Result<[Option<PseudoToken>; MAX_TOKENS], ComputError> {
     use PseudoOp as POp;
     use PseudoToken as PT;
 
@@ -69,7 +76,9 @@ fn to_postfix(
 
         // If we were parsing a number but it's over, push to output stack
         if current_number.is_some() && !matches!(token, Token::Digit(_)) {
-            output_stack.push(PseudoToken::Number(current_number.unwrap()));
+            output_stack
+                .push(PseudoToken::Number(current_number.unwrap()))
+                .map_err(|_| ComputError::InnerSO)?;
             current_number = None;
         }
 
@@ -78,21 +87,29 @@ fn to_postfix(
                 None => current_number = Some(d as Enter),
                 Some(n) => current_number = Some(n * 10 + d as Enter),
             },
-            Token::DecimalPoint | Token::Comma => return Err(ComputationError::NotYetImplemented),
+            Token::DecimalPoint | Token::Comma => return Err(ComputError::NotYetImplemented),
             Token::Op(curr_op) => {
                 // SAFETY: shortcircuiting means !is_empty() when we unwrap the top() call
                 if op_stack.is_empty() || (PseudoOp::Op(curr_op) > *op_stack.top().unwrap()) {
-                    op_stack.push(POp::Op(curr_op));
+                    op_stack
+                        .push(POp::Op(curr_op))
+                        .map_err(|_| ComputError::InnerSO)?;
                 } else {
                     // op_stack isn't empty from the previous condition (de Morgan my beloved)
                     // TODO: Verify this is what the algorithm says
                     let lower_op = op_stack.pop().unwrap();
-                    output_stack.push(PT::Op(lower_op)); //  TODO: propagate all of these errors
-                    op_stack.push(POp::Op(curr_op));
+                    output_stack
+                        .push(PT::Op(lower_op))
+                        .map_err(|_| ComputError::InnerSO)?;
+                    op_stack
+                        .push(POp::Op(curr_op))
+                        .map_err(|_| ComputError::InnerSO)?;
                 }
             }
             Token::Paren(Paren::Open) => {
-                op_stack.push(PseudoOp::Paren(Paren::Open));
+                op_stack
+                    .push(PseudoOp::Paren(Paren::Open))
+                    .map_err(|_| ComputError::InnerSO)?;
             }
             Token::Paren(Paren::Close) => {
                 //let end_range = op_idx; // Non-inclusive
@@ -105,15 +122,17 @@ fn to_postfix(
                 //    }
                 //}
             }
-            Token::Dist(_) => return Err(ComputationError::DistNotPrecededByRVariant),
+            Token::Dist(_) => return Err(ComputError::DistNotPrecededByRVariant),
             Token::VariantR(v) => {
                 if token_idx + 1 < MAX_TOKENS {
                     match input[token_idx + 1] {
                         Some(Token::Dist(d)) => {
-                            op_stack.push(PseudoOp::FuncioR(v, d));
+                            op_stack
+                                .push(PseudoOp::FuncioR(v, d))
+                                .map_err(|_| ComputError::InnerSO)?;
                             token_idx += 1; // We took 2 instead of 1
                         }
-                        _ => return Err(ComputationError::RVariantNotFollowedByDistFn),
+                        _ => return Err(ComputError::RVariantNotFollowedByDistFn),
                     }
                 }
             }
@@ -123,7 +142,9 @@ fn to_postfix(
     }
 
     while let Some(op) = op_stack.pop() {
-        output_stack.push(PT::Op(op));
+        output_stack
+            .push(PT::Op(op))
+            .map_err(|_| ComputError::InnerSO)?;
     }
 
     Ok(output_stack.as_elements())
