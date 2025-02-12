@@ -2,6 +2,8 @@ use core::mem;
 
 use crate::*;
 
+// Canvis irrellevants :D
+
 pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, ComputError> {
     // Temporal: si no retorna Err, mostra 'yay'. Si no, mostra l'error
     to_postfix(toks).map(|_| {
