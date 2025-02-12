@@ -3584,7 +3584,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "25d6e634-e063-4ecd-ac3e-d398a829c794")
-		(property "Reference" "B_Left"
+		(property "Reference" "B_Left1"
 			(at 119.38 132.334 0)
 			(effects
 				(font
@@ -3637,7 +3637,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Left")
+					(reference "B_Left1")
 					(unit 1)
 				)
 			)
@@ -3924,7 +3924,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3a7e8fd6-091c-44fd-a3fb-39d786436e6e")
-		(property "Reference" "B_Right"
+		(property "Reference" "B_Right1"
 			(at 132.08 132.334 0)
 			(effects
 				(font
@@ -3977,7 +3977,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Right")
+					(reference "B_Right1")
 					(unit 1)
 				)
 			)
@@ -3993,7 +3993,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46ded18e-b228-4801-a739-c1c5b50da983")
-		(property "Reference" "B_="
+		(property "Reference" "B_=1"
 			(at 144.78 172.72 0)
 			(effects
 				(font
@@ -4046,7 +4046,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_=")
+					(reference "B_=1")
 					(unit 1)
 				)
 			)
@@ -4128,7 +4128,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "502d0a90-95f2-460d-af5a-a829cda65d7c")
-		(property "Reference" "B_Sub"
+		(property "Reference" "B_Sub1"
 			(at 144.78 152.4 0)
 			(effects
 				(font
@@ -4181,7 +4181,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Sub")
+					(reference "B_Sub1")
 					(unit 1)
 				)
 			)
@@ -4395,7 +4395,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6fb75d67-edf9-4d2d-883e-8ec834473c1d")
-		(property "Reference" "B_Mul"
+		(property "Reference" "B_Mul1"
 			(at 144.78 142.494 0)
 			(effects
 				(font
@@ -4448,7 +4448,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Mul")
+					(reference "B_Mul1")
 					(unit 1)
 				)
 			)
@@ -4529,7 +4529,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b973360-99aa-4833-a62e-8ff7c5dd4623")
-		(property "Reference" "B_Add"
+		(property "Reference" "B_Add1"
 			(at 144.78 162.56 0)
 			(effects
 				(font
@@ -4582,7 +4582,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Add")
+					(reference "B_Add1")
 					(unit 1)
 				)
 			)
@@ -4933,7 +4933,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92311cf3-32c3-47e1-b0e1-8e378820b1c9")
-		(property "Reference" "B_)"
+		(property "Reference" "B_)1"
 			(at 132.08 172.72 0)
 			(effects
 				(font
@@ -4986,7 +4986,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_)")
+					(reference "B_)1")
 					(unit 1)
 				)
 			)
@@ -5001,7 +5001,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a1542cf0-d63f-4586-aa08-3dfa20f10e9f")
-		(property "Reference" "B_On"
+		(property "Reference" "B_On1"
 			(at 144.78 132.334 0)
 			(effects
 				(font
@@ -5054,7 +5054,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_On")
+					(reference "B_On1")
 					(unit 1)
 				)
 			)
@@ -5327,7 +5327,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4c77bb1-e2ce-4869-bf18-d4bee3c1ec79")
-		(property "Reference" "B_Shift"
+		(property "Reference" "B_Shift1"
 			(at 106.68 132.334 0)
 			(effects
 				(font
@@ -5380,7 +5380,7 @@
 		(instances
 			(project ""
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Shift")
+					(reference "B_Shift1")
 					(unit 1)
 				)
 			)
@@ -5812,7 +5812,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebdec6e9-4f7e-4dd1-aff7-0019612bae79")
-		(property "Reference" "B_("
+		(property "Reference" "B_(1"
 			(at 119.38 172.72 0)
 			(effects
 				(font
@@ -5865,7 +5865,7 @@
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_(")
+					(reference "B_(1")
 					(unit 1)
 				)
 			)
