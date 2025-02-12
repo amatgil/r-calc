@@ -15,6 +15,7 @@ pub fn compute_tokens(toks: &[Option<Token>; MAX_TOKENS]) -> Result<TextArea, Co
     })
 }
 
+
 #[derive(Debug)]
 pub enum ComputError {
     /// Pensive emoji
