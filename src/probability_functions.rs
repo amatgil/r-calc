@@ -94,9 +94,12 @@ pub mod exponencial {
 
 pub mod normal {
     use crate::probability_functions::*;
+    use std::f32::consts::PI;
+
+    const sqrt2pi: Float = (2*PI).sqrt();
 
     pub fn dnorm(x: Enter, mu: Float, sigma: Float) -> Float {
-        todo!()
+        (1/(sigma*sqrt2pi))*exp(-(x-mu)*(x-mu)/(2*sigma*sigma))
     }
     pub fn pnorm(q: Enter, mu: Float, sigma: Float) -> Float {
         todo!()
@@ -104,7 +107,15 @@ pub mod normal {
     pub fn qnorm(p: Float, mu: Float, sigma: Float) -> Enter {
         todo!()
     }
+
+    #[test]
+    fn test_dnorm() {
+        const DELTA: Float = 0.0001;
+        assert!((dnorm(0.5, 0.0, 1.0) - 0.3520653).abs() < DELTA);
+    }
 }
+
+ 
 
 // _____         _
 // |_   _|__  ___| |_ ___
