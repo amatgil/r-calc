@@ -14,6 +14,24 @@ fn choose(n: Enter, r: Enter) -> Enter {
     }
 }
 
+fn newton(x0: Float, f: impl Fn(Float) -> Float, fp: impl Fn(Float) -> Float) -> Option<Float> {
+    const DELTA: Float = 0.001;
+    const MAXITERS: Enter = 30;
+
+    let mut x = x0;
+    let mut iters = 0;
+
+    while iters < MAXITERS {
+        x = x - f(x) / fp(x);
+        if f(x).abs() < DELTA {
+            return Some(x);
+        }
+
+        iters += 1;
+    }
+    return None;
+}
+
 //  ____  _                   _
 // |  _ \(_)___  ___ _ __ ___| |_ ___  ___
 // | | | | / __|/ __| '__/ _ \ __/ _ \/ __|
