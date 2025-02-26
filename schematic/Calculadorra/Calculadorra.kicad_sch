@@ -9,6 +9,194 @@
 		(rev "0")
 	)
 	(lib_symbols
+		(symbol "Button_Gerard:COM-10302"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "S"
+				(at 26.67 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "COM-10302"
+				(at 26.67 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "COM10302"
+				(at 26.67 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+				(at 26.67 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "SparkFun Accessories Tactile Button Assortment"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "7.3"
+				(at 26.67 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "474-COM-10302"
+				(at 26.67 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+				(at 26.67 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "SparkFun"
+				(at 26.67 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "COM-10302"
+				(at 26.67 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "COM-10302_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 25.4 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "COM_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "NO_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 0 180)
+					(length 5.08)
+					(name "COM_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -2.54 180)
+					(length 5.08)
+					(name "NO_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R_Potentiometer"
 			(pin_names
 				(offset 1.016)
@@ -1305,156 +1493,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1785,7 +1823,7 @@
 	)
 	(text "D11"
 		(exclude_from_sim no)
-		(at 71.3163 58.6163 0)
+		(at 48.4563 39.5663 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1795,7 +1833,7 @@
 	)
 	(text "D4"
 		(exclude_from_sim no)
-		(at 71.882 104.394 0)
+		(at 49.022 85.344 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1805,7 +1843,7 @@
 	)
 	(text "D13"
 		(exclude_from_sim no)
-		(at 71.2559 63.7354 0)
+		(at 48.3959 44.6854 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1815,7 +1853,7 @@
 	)
 	(text "D9"
 		(exclude_from_sim no)
-		(at 71.882 53.594 0)
+		(at 49.022 34.544 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1825,7 +1863,7 @@
 	)
 	(text "D3"
 		(exclude_from_sim no)
-		(at 71.882 101.854 0)
+		(at 49.022 82.804 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1835,7 +1873,7 @@
 	)
 	(text "D12"
 		(exclude_from_sim no)
-		(at 71.2596 61.1947 0)
+		(at 48.3996 42.1447 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1845,7 +1883,7 @@
 	)
 	(text "D1"
 		(exclude_from_sim no)
-		(at 71.882 96.774 0)
+		(at 49.022 77.724 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1855,7 +1893,7 @@
 	)
 	(text "A1"
 		(exclude_from_sim no)
-		(at 71.882 76.454 0)
+		(at 49.022 57.404 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1865,7 +1903,7 @@
 	)
 	(text "D0"
 		(exclude_from_sim no)
-		(at 71.882 94.234 0)
+		(at 49.022 75.184 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1875,7 +1913,7 @@
 	)
 	(text "D7"
 		(exclude_from_sim no)
-		(at 71.882 112.014 0)
+		(at 49.022 92.964 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1885,7 +1923,7 @@
 	)
 	(text "D8"
 		(exclude_from_sim no)
-		(at 71.882 51.054 0)
+		(at 49.022 32.004 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1895,7 +1933,7 @@
 	)
 	(text "A0\n"
 		(exclude_from_sim no)
-		(at 71.882 73.914 0)
+		(at 49.022 54.864 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1905,7 +1943,7 @@
 	)
 	(text "A3"
 		(exclude_from_sim no)
-		(at 71.882 81.534 0)
+		(at 49.022 62.484 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1915,7 +1953,7 @@
 	)
 	(text "A4"
 		(exclude_from_sim no)
-		(at 71.882 84.074 0)
+		(at 49.022 65.024 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1925,7 +1963,7 @@
 	)
 	(text "D6"
 		(exclude_from_sim no)
-		(at 71.882 109.474 0)
+		(at 49.022 90.424 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1935,7 +1973,7 @@
 	)
 	(text "D10"
 		(exclude_from_sim no)
-		(at 71.3446 56.1795 0)
+		(at 48.4846 37.1295 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1945,7 +1983,7 @@
 	)
 	(text "D5"
 		(exclude_from_sim no)
-		(at 71.882 106.934 0)
+		(at 49.022 87.884 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1955,7 +1993,7 @@
 	)
 	(text "A5"
 		(exclude_from_sim no)
-		(at 71.882 86.614 0)
+		(at 49.022 67.564 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1965,7 +2003,7 @@
 	)
 	(text "D2"
 		(exclude_from_sim no)
-		(at 71.882 99.314 0)
+		(at 49.022 80.264 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1975,7 +2013,7 @@
 	)
 	(text "A2"
 		(exclude_from_sim no)
-		(at 71.882 78.994 0)
+		(at 49.022 59.944 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1984,268 +2022,274 @@
 		(uuid "f7dd5ebd-06e2-400d-b54d-2f5be9ded9a2")
 	)
 	(junction
-		(at 111.76 137.16)
+		(at 153.67 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "25c32e62-ddcb-488f-9e52-4107a3fe5a14")
+		(uuid "1105e3b0-b7aa-4492-8987-fb52e1defc7b")
 	)
 	(junction
-		(at 127 139.7)
+		(at 223.52 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "28b9802f-a91b-498d-9ae6-a7db097502c5")
+		(uuid "197de5ca-8a22-436d-8a74-a9c722bdfab6")
 	)
 	(junction
-		(at 114.3 170.18)
+		(at 153.67 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2a4f0d99-21ed-42ec-8979-fd578edf965a")
+		(uuid "225749c7-fb3d-436b-b3c6-261cfe229cef")
 	)
 	(junction
-		(at 124.46 167.64)
+		(at 78.74 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "375d44a3-f64f-41e0-9494-ec14b6e5317b")
+		(uuid "3cf23796-ee07-4b5d-8c6e-5a6be7aae287")
 	)
 	(junction
-		(at 149.86 137.16)
+		(at 78.74 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "377f5e82-2f5e-4cd5-86f6-eabe2791a0b4")
+		(uuid "40b067f9-485d-4a4a-8cf3-71ab4f977304")
 	)
 	(junction
-		(at 114.3 149.86)
+		(at 111.76 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3f2d67ac-fa8d-4d86-bba7-264e4bacdb3a")
+		(uuid "424469e5-16bf-4ad4-b6eb-0973a9cc0a0b")
 	)
 	(junction
-		(at 114.3 139.7)
+		(at 223.52 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "41011628-b82a-488c-ab01-4802659b1a62")
+		(uuid "474db82e-04f2-4957-803f-61c34c1329df")
 	)
 	(junction
-		(at 149.86 147.32)
+		(at 111.76 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "50614255-0437-4137-bcef-59b8de33ec2d")
+		(uuid "496e338a-6dcb-434f-bf48-9f51ca9bc209")
 	)
 	(junction
-		(at 101.6 160.02)
+		(at 78.74 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "590a7099-a140-4178-8203-2e84b88e77ec")
+		(uuid "4be6f908-aefc-4b9d-9721-e1cc121d41d9")
 	)
 	(junction
-		(at 124.46 137.16)
+		(at 148.59 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5e00640a-0f85-49ed-a2ca-ddac0c24dba0")
+		(uuid "4ece81fc-f6ba-4353-9680-2c40fb0718ff")
 	)
 	(junction
-		(at 137.16 147.32)
+		(at 153.67 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "64be7ccc-10d7-445d-93e1-06d5dfe883b7")
+		(uuid "5d57503e-f33a-4c0b-bfe0-ffc6504eef58")
 	)
 	(junction
-		(at 114.3 180.34)
+		(at 115.57 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6b7f4da2-1a68-4afa-9b89-c0efc6d73375")
+		(uuid "630e1785-2101-4c10-aa00-2caad053b5aa")
 	)
 	(junction
-		(at 114.3 160.02)
+		(at 148.59 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7418c236-0198-4a8f-881e-c936d2ade18e")
+		(uuid "67d58dae-9f57-446a-ad6a-a45bf617ca22")
 	)
 	(junction
-		(at 127 180.34)
+		(at 115.57 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7a45e7f0-2aed-414c-89fb-9b023abcfbc4")
+		(uuid "7194a697-afd9-40a9-b9b0-d4261e55b60c")
 	)
 	(junction
-		(at 101.6 149.86)
+		(at 186.69 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9a5e2561-e0ec-4154-835f-bf82d98441aa")
+		(uuid "7ad30f8c-8230-46be-9dd4-45e58c92f744")
 	)
 	(junction
-		(at 101.6 139.7)
+		(at 78.74 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9d013227-f535-4dd1-b037-6aeeea3f9b88")
+		(uuid "8145b343-5ca7-4595-9372-1309223d2c46")
 	)
 	(junction
-		(at 111.76 147.32)
+		(at 115.57 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a0d6802b-f983-413f-b09b-24c32f93abc9")
+		(uuid "82ae2f21-f2a0-45af-99e7-419840c6d5c5")
 	)
 	(junction
-		(at 101.6 180.34)
+		(at 153.67 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a18a7f6c-518c-4871-ad51-fd68445eecfb")
+		(uuid "8870260e-68b5-42bb-9481-72eb30518a43")
 	)
 	(junction
-		(at 124.46 147.32)
+		(at 186.69 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a94c157d-4d4c-456d-b109-b24446aa3305")
+		(uuid "9a4e6bfb-a09f-48a8-a686-570ef2914a71")
 	)
 	(junction
-		(at 127 170.18)
+		(at 111.76 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b6143915-1bda-493b-82c8-c5afca0441e6")
+		(uuid "9a5cba40-d2d9-4902-8abd-89cabb46720a")
 	)
 	(junction
-		(at 64.77 41.91)
+		(at 111.76 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9dad4959-4707-4139-b549-08941aa6a5ca")
+	)
+	(junction
+		(at 115.57 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6766d7d-64a3-4d9c-a87c-dc457698be6d")
+	)
+	(junction
+		(at 78.74 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6adb067-fd70-4043-8a05-f0f75abaf7a5")
+	)
+	(junction
+		(at 153.67 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aacfefd9-51f2-4c6a-a889-db17aca86244")
+	)
+	(junction
+		(at 186.69 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ab7633a7-f1bb-4561-8ac5-51d41222fd9c")
+	)
+	(junction
+		(at 223.52 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8971d6a-a625-4998-8638-8eb8a69e2be4")
+	)
+	(junction
+		(at 115.57 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bddb74fb-bf1a-4eac-bcaf-63aa71223976")
+	)
+	(junction
+		(at 41.91 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3c89c23-cc43-4922-bdfb-56925ac36dc1")
 	)
 	(junction
-		(at 137.16 137.16)
+		(at 223.52 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c769a9ca-3c3b-4187-9226-d275483ae93f")
+		(uuid "c79489dd-02d5-4f96-9060-2a126ffcd1e7")
 	)
 	(junction
-		(at 111.76 167.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d8642818-2d22-4f63-845c-9e1c7bebd2a5")
-	)
-	(junction
-		(at 64.77 120.65)
+		(at 41.91 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1f70bbb-fb0d-4457-9cde-e0d212d14512")
 	)
 	(junction
-		(at 101.6 170.18)
+		(at 148.59 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e400a29f-6031-4319-8a9c-4aa38031a17a")
+		(uuid "e4b4833e-414a-4194-87cc-cd276018cb0c")
 	)
 	(junction
-		(at 137.16 157.48)
+		(at 78.74 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e484fe51-d417-4a0e-a876-067dfb01d7f9")
+		(uuid "e767a7ba-8144-458f-b1ba-f9a8d20bcbf9")
 	)
 	(junction
-		(at 149.86 167.64)
+		(at 148.59 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ecaf5c82-5fca-4291-8d20-70254f224386")
+		(uuid "ea7376fb-7275-48f1-8e4c-6736e412c218")
 	)
 	(junction
-		(at 137.16 167.64)
+		(at 186.69 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f00bbcdf-a3cb-4b27-bed4-6a5f1c0be015")
-	)
-	(junction
-		(at 111.76 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f1bec1dc-e771-4a31-905c-d1cc3c7e39f3")
-	)
-	(junction
-		(at 149.86 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f32489b0-7c5d-404f-8a0d-87ead7cc49b8")
-	)
-	(junction
-		(at 124.46 157.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f597e136-217e-4978-9753-4b3142361687")
-	)
-	(junction
-		(at 127 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f60d8419-2c68-4a6d-b242-793e3b769856")
-	)
-	(junction
-		(at 127 160.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fccd4c59-4aad-43c0-aaeb-91580e9dce15")
+		(uuid "f9e0df9b-20c5-4a71-89fd-3b32f102a1f2")
 	)
 	(no_connect
-		(at 80.01 81.28)
+		(at 57.15 62.23)
 		(uuid "04b63d78-0d26-45dd-8eca-fb533cca60b5")
 	)
 	(no_connect
-		(at 80.01 78.74)
+		(at 57.15 59.69)
 		(uuid "29642b46-4567-461f-97b8-1a02b8035fe0")
 	)
 	(no_connect
-		(at 80.01 73.66)
+		(at 57.15 54.61)
 		(uuid "41f065b8-a9e6-45c5-8765-b2761cd3c494")
 	)
 	(no_connect
-		(at 49.53 50.8)
+		(at 26.67 31.75)
 		(uuid "7de81f6f-37c2-41b4-8f4c-2578c86ffe4a")
 	)
 	(no_connect
-		(at 80.01 66.04)
+		(at 57.15 46.99)
 		(uuid "c287e443-be34-419b-806c-29b116098a90")
 	)
 	(no_connect
-		(at 80.01 83.82)
+		(at 57.15 64.77)
 		(uuid "c9d5fbe8-4845-4411-bedb-ff2660d40263")
 	)
 	(no_connect
-		(at 80.01 68.58)
+		(at 57.15 49.53)
 		(uuid "da6dcabe-1816-4b21-aeac-8a5729e61249")
 	)
 	(no_connect
-		(at 80.01 76.2)
+		(at 57.15 57.15)
 		(uuid "ff3c3150-cd64-4a91-bed3-a2fcf976a71e")
 	)
 	(wire
 		(pts
-			(xy 92.71 170.18) (xy 101.6 170.18)
+			(xy 223.52 114.3) (xy 223.52 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "019d7bcf-9ec4-4172-a8a1-e231fc517553")
+		(uuid "004cef15-f267-415b-9a6d-9fe365d5d9be")
 	)
 	(wire
 		(pts
-			(xy 137.16 167.64) (xy 137.16 177.8)
+			(xy 153.67 120.65) (xy 190.5 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0359ddc1-43c8-423b-8251-ca611bd1abe1")
+		(uuid "00faf565-cfda-44df-ac5d-a7d9fdcb4737")
 	)
 	(wire
 		(pts
-			(xy 127 149.86) (xy 139.7 149.86)
+			(xy 57.15 67.31) (xy 77.47 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "06067f52-c6c2-4eed-bbb3-7b694b1d3fba")
+		(uuid "064d691d-dcdf-424d-8433-4bdeba0a3fc0")
 	)
 	(wire
 		(pts
-			(xy 118.11 76.2) (xy 111.76 76.2)
+			(xy 95.25 57.15) (xy 88.9 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2255,7 +2299,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 81.28) (xy 106.68 81.28)
+			(xy 95.25 62.23) (xy 83.82 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2265,37 +2309,67 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 157.48) (xy 114.3 160.02)
+			(xy 77.47 105.41) (xy 78.74 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0b0226c6-26a4-4250-895e-457e40f5c535")
+		(uuid "0a5d5642-cc3e-40bd-a106-58517570f97e")
 	)
 	(wire
 		(pts
-			(xy 127 170.18) (xy 139.7 170.18)
+			(xy 220.98 114.3) (xy 223.52 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0d5c0730-cb97-40d9-9d89-9a195c0fe7de")
+		(uuid "0ba8554f-3ba2-4a83-947e-167df96e9fd0")
 	)
 	(wire
 		(pts
-			(xy 139.7 177.8) (xy 139.7 180.34)
+			(xy 223.52 92.71) (xy 223.52 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0f04cefc-4190-4df8-a433-48d07dc0230c")
+		(uuid "0e9acfdc-3d33-44aa-bc9c-9c686fb82824")
 	)
 	(wire
 		(pts
-			(xy 118.11 55.88) (xy 115.57 55.88)
+			(xy 57.15 77.47) (xy 72.39 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ed9127d-127b-4194-b0cd-bc68f97f10f1")
+	)
+	(wire
+		(pts
+			(xy 146.05 129.54) (xy 148.59 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "155c479f-6482-4942-b82d-0adf276e0764")
+	)
+	(wire
+		(pts
+			(xy 184.15 99.06) (xy 186.69 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16ab682c-391e-4ab0-b173-e27d693f12d0")
+	)
+	(wire
+		(pts
+			(xy 95.25 36.83) (xy 92.71 36.83)
 		)
 		(stroke
 			(width 0)
@@ -2305,37 +2379,57 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 167.64) (xy 149.86 177.8)
+			(xy 184.15 129.54) (xy 186.69 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19312ffe-3fc1-440d-88a6-a87bfdfc991a")
+		(uuid "1791c518-69d8-4fb7-9782-d5cc21be03ca")
 	)
 	(wire
 		(pts
-			(xy 101.6 139.7) (xy 114.3 139.7)
+			(xy 69.85 80.01) (xy 69.85 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1adc0bab-388c-49f2-a481-ceb99f9918fe")
+		(uuid "1aaa18d1-2ccf-476a-9f68-e5fd0842c799")
 	)
 	(wire
 		(pts
-			(xy 85.09 125.73) (xy 85.09 106.68)
+			(xy 67.31 82.55) (xy 67.31 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1ae40b42-155a-4f7a-9085-c7cb10f458e9")
+		(uuid "1e547605-c34e-498b-804f-b7a502669176")
 	)
 	(wire
 		(pts
-			(xy 64.77 119.38) (xy 64.77 120.65)
+			(xy 78.74 105.41) (xy 115.57 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e845837-dee4-4150-8f96-4ee0fe48a555")
+	)
+	(wire
+		(pts
+			(xy 57.15 82.55) (xy 67.31 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "213ae52e-fa83-4100-9dad-bcb55d78163d")
+	)
+	(wire
+		(pts
+			(xy 41.91 100.33) (xy 41.91 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2345,37 +2439,87 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 157.48) (xy 149.86 167.64)
+			(xy 148.59 87.63) (xy 148.59 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2508ca0e-0664-45e4-9da5-fc0a3c563866")
+		(uuid "25b8ea25-3373-4c9b-8efa-eaadf2696f06")
 	)
 	(wire
 		(pts
-			(xy 100.33 86.36) (xy 80.01 86.36)
+			(xy 153.67 101.6) (xy 153.67 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "28bd4236-e9ce-4ab2-a446-128bd0bfe2d7")
+		(uuid "26016d8c-a304-44d1-ada3-cefc1cc604c7")
 	)
 	(wire
 		(pts
-			(xy 127 180.34) (xy 139.7 180.34)
+			(xy 111.76 85.09) (xy 111.76 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2cc19f28-9013-40e9-abc2-2a182e4c6db5")
+		(uuid "26051201-a2e7-494c-8529-0c2d67c2cfbe")
 	)
 	(wire
 		(pts
-			(xy 115.57 55.88) (xy 115.57 53.34)
+			(xy 146.05 114.3) (xy 148.59 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27051227-a220-42da-8742-b68f2859423b")
+	)
+	(wire
+		(pts
+			(xy 69.85 151.13) (xy 78.74 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28db124c-03d2-4130-878b-33c5e1180caa")
+	)
+	(wire
+		(pts
+			(xy 148.59 129.54) (xy 148.59 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c618930-4593-4b34-b307-558a1961a3a7")
+	)
+	(wire
+		(pts
+			(xy 146.05 99.06) (xy 148.59 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dea040c-e0b9-46b2-9875-fdf7acddddbc")
+	)
+	(wire
+		(pts
+			(xy 57.15 85.09) (xy 111.76 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e709b7c-5fcd-4c88-85d8-41f5439b62b7")
+	)
+	(wire
+		(pts
+			(xy 92.71 36.83) (xy 92.71 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2385,7 +2529,27 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 50.8) (xy 138.43 50.8)
+			(xy 220.98 129.54) (xy 223.52 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "316c9ac7-0917-4fa2-a75e-71c155295ced")
+	)
+	(wire
+		(pts
+			(xy 78.74 162.56) (xy 78.74 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31b99a6d-9501-44fe-bb33-0bd4ffbe4e23")
+	)
+	(wire
+		(pts
+			(xy 124.46 31.75) (xy 115.57 31.75)
 		)
 		(stroke
 			(width 0)
@@ -2395,27 +2559,27 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 170.18) (xy 127 170.18)
+			(xy 223.52 144.78) (xy 220.98 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "368ffd92-605a-428f-9502-00e40ce86219")
+		(uuid "36590570-9b51-43ad-a343-e540e58e52c3")
 	)
 	(wire
 		(pts
-			(xy 114.3 139.7) (xy 127 139.7)
+			(xy 153.67 116.84) (xy 153.67 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "36982da2-1a2a-4fdc-8015-859a6822998b")
+		(uuid "38a2169d-dd4e-465b-ba6d-82fb265402c2")
 	)
 	(wire
 		(pts
-			(xy 109.22 78.74) (xy 109.22 60.96)
+			(xy 86.36 59.69) (xy 86.36 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2425,47 +2589,67 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 125.73) (xy 124.46 125.73)
+			(xy 184.15 144.78) (xy 186.69 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3b190549-cc8b-428c-9ea1-d24b436313f5")
+		(uuid "3a8673b3-2d0d-4cba-9b52-81a2558399f3")
 	)
 	(wire
 		(pts
-			(xy 80.01 96.52) (xy 95.25 96.52)
+			(xy 78.74 151.13) (xy 115.57 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "402c96a5-d400-415e-8af7-a105107aa950")
+		(uuid "3b9c3b1c-8fc2-49f1-8ebb-cdfb12b91b33")
 	)
 	(wire
 		(pts
-			(xy 111.76 123.19) (xy 111.76 137.16)
+			(xy 153.67 147.32) (xy 153.67 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "405af44d-a42f-4909-af42-5455ff367711")
+		(uuid "3d3c7682-d83d-48de-a4e9-f6e6102d12d0")
 	)
 	(wire
 		(pts
-			(xy 127 137.16) (xy 127 139.7)
+			(xy 190.5 162.56) (xy 190.5 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "415611eb-dbdd-4961-818f-d1f0bd785804")
+		(uuid "3dfc1516-3b6e-4fa1-a5ed-0ecfe48e4cd7")
 	)
 	(wire
 		(pts
-			(xy 64.77 41.91) (xy 64.77 43.18)
+			(xy 78.74 120.65) (xy 115.57 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42ae069f-19cf-4d92-a6f6-7641d5a12acd")
+	)
+	(wire
+		(pts
+			(xy 184.15 160.02) (xy 186.69 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "431d266c-45a4-42bb-8f35-9592e5187ab4")
+	)
+	(wire
+		(pts
+			(xy 41.91 22.86) (xy 41.91 24.13)
 		)
 		(stroke
 			(width 0)
@@ -2475,67 +2659,67 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 170.18) (xy 92.71 99.06)
+			(xy 78.74 132.08) (xy 78.74 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "474cae9e-6d7a-4d5e-bc4f-12a26225d3a3")
+		(uuid "4a86d24d-4611-430d-82fa-5203ab3a1d25")
 	)
 	(wire
 		(pts
-			(xy 97.79 149.86) (xy 97.79 93.98)
+			(xy 190.5 116.84) (xy 190.5 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "47630174-f7e2-42e8-9ce3-75f9c6212d4e")
+		(uuid "4b74ee86-71e2-4a9a-a1d4-a83842a16931")
 	)
 	(wire
 		(pts
-			(xy 149.86 147.32) (xy 149.86 157.48)
+			(xy 57.15 92.71) (xy 223.52 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "477b6828-1ca7-4bfa-a82d-f7de98d07f5d")
+		(uuid "4cfcacd0-210f-41f6-8d57-76108bfa06f9")
 	)
 	(wire
 		(pts
-			(xy 127 177.8) (xy 127 180.34)
+			(xy 146.05 144.78) (xy 148.59 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "47bcf78e-2ed6-48c3-b235-94740746b2bc")
+		(uuid "4d527649-1fd7-41f6-a751-95db7682e0db")
 	)
 	(wire
 		(pts
-			(xy 139.7 137.16) (xy 139.7 139.7)
+			(xy 78.74 116.84) (xy 80.01 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4d3f2f62-f49e-4293-9472-2121d9c26e1b")
+		(uuid "4db60261-21b2-4ce2-88fe-672bb1b5d80f")
 	)
 	(wire
 		(pts
-			(xy 90.17 180.34) (xy 90.17 101.6)
+			(xy 223.52 129.54) (xy 223.52 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4e5b050d-c89e-47fa-9825-2c93cc912c84")
+		(uuid "4eeb6999-e429-4520-9dda-563b6508a8c2")
 	)
 	(wire
 		(pts
-			(xy 106.68 63.5) (xy 80.01 63.5)
+			(xy 83.82 44.45) (xy 57.15 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2545,17 +2729,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 167.64) (xy 127 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f81e9f9-8761-4aa6-88de-e3290aab1e25")
-	)
-	(wire
-		(pts
-			(xy 106.68 81.28) (xy 106.68 63.5)
+			(xy 83.82 62.23) (xy 83.82 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2565,7 +2739,27 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 78.74) (xy 109.22 78.74)
+			(xy 57.15 80.01) (xy 69.85 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51b58079-ba63-4248-a849-6ccc3250b4e3")
+	)
+	(wire
+		(pts
+			(xy 78.74 101.6) (xy 78.74 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52f30eb0-b579-4f3d-8ace-22d7b84e6b4e")
+	)
+	(wire
+		(pts
+			(xy 95.25 59.69) (xy 86.36 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2575,17 +2769,77 @@
 	)
 	(wire
 		(pts
-			(xy 127 147.32) (xy 127 149.86)
+			(xy 74.93 120.65) (xy 78.74 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5b6f02e3-43a2-4d03-9adb-0473368e4413")
+		(uuid "54199aa0-34cc-438e-aad4-e2f67e9a19e6")
 	)
 	(wire
 		(pts
-			(xy 111.76 76.2) (xy 111.76 58.42)
+			(xy 77.47 67.31) (xy 77.47 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56dce559-3344-4ec4-8db3-39bd78d46fd2")
+	)
+	(wire
+		(pts
+			(xy 190.5 147.32) (xy 190.5 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57d585d8-ea91-439c-94fb-983130264ca5")
+	)
+	(wire
+		(pts
+			(xy 186.69 114.3) (xy 184.15 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c49cb8d-5645-429d-9008-96ba74ba90db")
+	)
+	(wire
+		(pts
+			(xy 109.22 129.54) (xy 111.76 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dc51624-6ba0-4c32-9e86-c56f393ba9d7")
+	)
+	(wire
+		(pts
+			(xy 223.52 160.02) (xy 223.52 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e615a41-cf26-48ba-aea2-61959d0e4ed9")
+	)
+	(wire
+		(pts
+			(xy 190.5 101.6) (xy 190.5 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e9046bd-bc3c-433d-9888-214f1b9d442b")
+	)
+	(wire
+		(pts
+			(xy 88.9 57.15) (xy 88.9 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2595,77 +2849,27 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 177.8) (xy 114.3 180.34)
+			(xy 146.05 160.02) (xy 148.59 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "63d10d28-0caf-4f39-878a-e38dc7280f85")
+		(uuid "62fc2505-96ea-4644-8513-78ac4cdb20a0")
 	)
 	(wire
 		(pts
-			(xy 139.7 157.48) (xy 139.7 160.02)
+			(xy 111.76 114.3) (xy 111.76 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "648368ab-9925-4108-ae16-4cac9573533f")
+		(uuid "6440b05d-d8e9-4675-994d-7ee71ebe7730")
 	)
 	(wire
 		(pts
-			(xy 124.46 147.32) (xy 124.46 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66ca7193-2edb-4c56-88a9-40c271f99dfd")
-	)
-	(wire
-		(pts
-			(xy 101.6 160.02) (xy 114.3 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67f8d861-f02d-4009-ab0a-d5fd01c8c60b")
-	)
-	(wire
-		(pts
-			(xy 114.3 137.16) (xy 114.3 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6816a3e8-c2ab-4fb6-8671-763bce240830")
-	)
-	(wire
-		(pts
-			(xy 124.46 157.48) (xy 124.46 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68a0a013-b66b-4cfb-9f71-db25f7361463")
-	)
-	(wire
-		(pts
-			(xy 80.01 93.98) (xy 97.79 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68f82112-4d98-4a7b-a7fa-9aad6b62f968")
-	)
-	(wire
-		(pts
-			(xy 111.76 58.42) (xy 80.01 58.42)
+			(xy 88.9 39.37) (xy 57.15 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2675,47 +2879,137 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 160.02) (xy 101.6 160.02)
+			(xy 190.5 132.08) (xy 190.5 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6af2ed54-23a2-4c5d-815e-8ad3f8bfc17d")
+		(uuid "6d9106b0-4a7f-4082-86c5-4d5c860fa3fc")
 	)
 	(wire
 		(pts
-			(xy 82.55 128.27) (xy 137.16 128.27)
+			(xy 72.39 135.89) (xy 78.74 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "722509df-6e2e-413f-bad7-1eeaa8715b43")
+		(uuid "6f420310-f4ff-4d43-b870-32230d09d444")
 	)
 	(wire
 		(pts
-			(xy 101.6 137.16) (xy 101.6 139.7)
+			(xy 109.22 160.02) (xy 111.76 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "779613cd-3ecc-4a28-9a8d-31b345c28f17")
+		(uuid "766bc3b2-3636-44b6-bf72-3e8e557a05d5")
 	)
 	(wire
 		(pts
-			(xy 124.46 167.64) (xy 124.46 177.8)
+			(xy 148.59 160.02) (xy 148.59 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7c89cf5b-bbf6-4db0-afd5-d51d953ffac6")
+		(uuid "77d9443a-591e-496a-a3f5-88a6109c099e")
 	)
 	(wire
 		(pts
-			(xy 64.77 120.65) (xy 64.77 121.92)
+			(xy 78.74 135.89) (xy 115.57 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78bf50f7-5677-489c-ab2e-68aaf42b8390")
+	)
+	(wire
+		(pts
+			(xy 115.57 120.65) (xy 153.67 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b142492-5f5d-4e85-a5ff-ae512b69c8fa")
+	)
+	(wire
+		(pts
+			(xy 153.67 162.56) (xy 153.67 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b709f62-2a24-411f-88fd-8577f14beaec")
+	)
+	(wire
+		(pts
+			(xy 153.67 105.41) (xy 190.5 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d95d963-c60f-41b4-aa31-4143ae6945c8")
+	)
+	(wire
+		(pts
+			(xy 153.67 151.13) (xy 190.5 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7da6a881-9e4b-4aab-901a-96636104d1c8")
+	)
+	(wire
+		(pts
+			(xy 223.52 99.06) (xy 223.52 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e647a01-6340-401e-9251-6c7b3a65ca1d")
+	)
+	(wire
+		(pts
+			(xy 115.57 132.08) (xy 115.57 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eb8097a-f0fe-48d6-b661-fdfd383aae66")
+	)
+	(wire
+		(pts
+			(xy 115.57 135.89) (xy 153.67 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fa6e7ca-b573-4099-8e9b-754c6f6f6be0")
+	)
+	(wire
+		(pts
+			(xy 57.15 87.63) (xy 148.59 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80118c5d-689c-4776-ae87-f9934be86b98")
+	)
+	(wire
+		(pts
+			(xy 41.91 101.6) (xy 41.91 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2725,87 +3019,47 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 86.36) (xy 100.33 139.7)
+			(xy 220.98 99.06) (xy 223.52 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "815c381e-5785-4879-843c-e2604ff6f944")
+		(uuid "838c9c1f-0890-4f55-94b5-25490b7125aa")
 	)
 	(wire
 		(pts
-			(xy 87.63 123.19) (xy 87.63 104.14)
+			(xy 186.69 144.78) (xy 186.69 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "81614a01-fe18-4c87-8fc7-f03113b33a6b")
+		(uuid "8514beed-1525-4934-8f2e-88521544d152")
 	)
 	(wire
 		(pts
-			(xy 101.6 180.34) (xy 90.17 180.34)
+			(xy 57.15 74.93) (xy 74.93 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "817c99b4-eaf2-405d-8a92-ebd96424c56e")
+		(uuid "862842b7-0bef-4ba2-a5b3-bd6f0b449f2c")
 	)
 	(wire
 		(pts
-			(xy 149.86 130.81) (xy 149.86 137.16)
+			(xy 115.57 105.41) (xy 153.67 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8547b8dd-c585-4208-bb04-f6224bb088b6")
+		(uuid "871af0ee-1197-4fcc-aca4-deec3c279e46")
 	)
 	(wire
 		(pts
-			(xy 127 157.48) (xy 127 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86608940-faad-49a0-995d-0b9c55374060")
-	)
-	(wire
-		(pts
-			(xy 80.01 99.06) (xy 92.71 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87f422d5-804c-4552-94c0-9ffba6b1f31d")
-	)
-	(wire
-		(pts
-			(xy 87.63 123.19) (xy 111.76 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8819a3f4-c185-42cd-a088-c8f85ce9ca0a")
-	)
-	(wire
-		(pts
-			(xy 127 139.7) (xy 139.7 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88927fa7-9b71-4d51-9c9e-270fd47ed02a")
-	)
-	(wire
-		(pts
-			(xy 118.11 73.66) (xy 114.3 73.66)
+			(xy 95.25 54.61) (xy 91.44 54.61)
 		)
 		(stroke
 			(width 0)
@@ -2815,67 +3069,17 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 147.32) (xy 111.76 157.48)
+			(xy 111.76 160.02) (xy 111.76 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8b3e80ac-b646-4ebe-ac45-1760c8cc9795")
+		(uuid "8f1d22c7-9713-4d3b-a295-eac71d140268")
 	)
 	(wire
 		(pts
-			(xy 111.76 157.48) (xy 111.76 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8dbb21e8-08d3-4628-b669-e06660ca5a38")
-	)
-	(wire
-		(pts
-			(xy 149.86 137.16) (xy 149.86 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ec17bea-a072-4d6b-90bb-080433cebfb4")
-	)
-	(wire
-		(pts
-			(xy 139.7 147.32) (xy 139.7 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f0e8de2-fdc9-4d25-88d1-db079cddf7e5")
-	)
-	(wire
-		(pts
-			(xy 114.3 167.64) (xy 114.3 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f82dc56-83a4-4288-ac09-89ba01b7f53e")
-	)
-	(wire
-		(pts
-			(xy 114.3 147.32) (xy 114.3 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9405601c-bfd2-4b7f-8f96-2a626cba6f2d")
-	)
-	(wire
-		(pts
-			(xy 67.31 39.37) (xy 67.31 43.18)
+			(xy 44.45 20.32) (xy 44.45 24.13)
 		)
 		(stroke
 			(width 0)
@@ -2885,87 +3089,137 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 128.27) (xy 137.16 137.16)
+			(xy 186.69 160.02) (xy 186.69 144.78)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9aea0a82-2d60-4060-94c1-8a6753049bda")
+		(uuid "9b9c1b8e-db0d-41e3-abe5-3118a042a8cc")
 	)
 	(wire
 		(pts
-			(xy 87.63 104.14) (xy 80.01 104.14)
+			(xy 78.74 116.84) (xy 78.74 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9d6ec0d8-4c76-4a4e-b61e-e5a8d5b06a90")
+		(uuid "9dcb8e12-af09-429f-a544-0b9f47ad515d")
 	)
 	(wire
 		(pts
-			(xy 127 160.02) (xy 139.7 160.02)
+			(xy 78.74 147.32) (xy 78.74 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9ddbcd86-f00a-41f1-96c7-4a686b34136d")
+		(uuid "9f1eb806-bf3a-4a5e-ba25-0bc86ffa1cfd")
 	)
 	(wire
 		(pts
-			(xy 82.55 128.27) (xy 82.55 109.22)
+			(xy 111.76 129.54) (xy 111.76 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9df9cf3f-5ceb-4a5c-ab71-4b57dbba78d9")
+		(uuid "a14fb8f7-8e62-486f-bbc9-3cadfe618298")
 	)
 	(wire
 		(pts
-			(xy 114.3 160.02) (xy 127 160.02)
+			(xy 72.39 77.47) (xy 72.39 135.89)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a3564ddc-2517-433c-8952-07abfc20a064")
+		(uuid "a3fe5eb2-94df-497f-a4d0-f2787a0adf62")
 	)
 	(wire
 		(pts
-			(xy 114.3 149.86) (xy 127 149.86)
+			(xy 186.69 90.17) (xy 186.69 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ad17901e-d8bb-44bb-a432-adbd09d74776")
+		(uuid "a4c0453c-8ddd-4416-98ec-bcaaa4cca284")
 	)
 	(wire
 		(pts
-			(xy 124.46 125.73) (xy 124.46 137.16)
+			(xy 153.67 166.37) (xy 190.5 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aedb97a5-ee8b-4d2b-ae00-64d0f26e734a")
+		(uuid "a502493a-36e1-4b1d-8b59-ea04f77f8c62")
 	)
 	(wire
 		(pts
-			(xy 111.76 167.64) (xy 111.76 177.8)
+			(xy 109.22 114.3) (xy 111.76 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "af13f8f8-69c7-456c-822c-a28089250d67")
+		(uuid "a9f4c473-060d-4b0e-9cd3-49ee8ee87c35")
 	)
 	(wire
 		(pts
-			(xy 116.84 53.34) (xy 118.11 53.34)
+			(xy 109.22 144.78) (xy 111.76 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab828ab1-569c-45eb-96b8-2d527605ebbd")
+	)
+	(wire
+		(pts
+			(xy 153.67 135.89) (xy 190.5 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2be7272-b7af-44bc-8600-fd73eeb4235c")
+	)
+	(wire
+		(pts
+			(xy 148.59 99.06) (xy 148.59 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b55e2399-6d8b-4816-bc3b-e3d28dad1048")
+	)
+	(wire
+		(pts
+			(xy 115.57 101.6) (xy 115.57 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6172f45-1e0f-461f-8d39-76bcd40de6c9")
+	)
+	(wire
+		(pts
+			(xy 115.57 162.56) (xy 115.57 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6ea23a2-ede9-4b6a-8f96-2699407dd45d")
+	)
+	(wire
+		(pts
+			(xy 93.98 34.29) (xy 95.25 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2975,17 +3229,17 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 147.32) (xy 137.16 157.48)
+			(xy 67.31 166.37) (xy 78.74 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c02b24ed-0c8e-4512-aafd-2278b89c393e")
+		(uuid "c1392e48-06ab-48c2-acd1-a5189f119c92")
 	)
 	(wire
 		(pts
-			(xy 116.84 45.72) (xy 116.84 53.34)
+			(xy 93.98 26.67) (xy 93.98 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2995,27 +3249,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 160.02) (xy 95.25 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4f6e307-aa7f-4d25-a36a-ec37523ff976")
-	)
-	(wire
-		(pts
-			(xy 101.6 177.8) (xy 101.6 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c59c74ec-23b1-45d2-860a-8517fa077bfe")
-	)
-	(wire
-		(pts
-			(xy 146.05 58.42) (xy 147.32 58.42)
+			(xy 123.19 39.37) (xy 124.46 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3025,7 +3259,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 55.88) (xy 114.3 73.66)
+			(xy 91.44 36.83) (xy 91.44 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3035,17 +3269,17 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 109.22) (xy 80.01 109.22)
+			(xy 186.69 99.06) (xy 186.69 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ce03caf8-0b48-4ea6-8d1f-f2384453db2f")
+		(uuid "cdbd3125-08c1-4452-bd00-9b9d7a1371ad")
 	)
 	(wire
 		(pts
-			(xy 80.01 50.8) (xy 118.11 50.8)
+			(xy 57.15 31.75) (xy 95.25 31.75)
 		)
 		(stroke
 			(width 0)
@@ -3055,37 +3289,17 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 157.48) (xy 101.6 160.02)
+			(xy 78.74 166.37) (xy 115.57 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d38eb716-2a26-4b8f-8289-02575fc2eebe")
+		(uuid "d4aec811-b904-44b9-baa8-2d04620394c9")
 	)
 	(wire
 		(pts
-			(xy 101.6 170.18) (xy 114.3 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4f91a7e-d523-4d86-91a9-9272a8ccd68d")
-	)
-	(wire
-		(pts
-			(xy 85.09 106.68) (xy 80.01 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6013fff-96d6-42c1-ac86-36cd5fa253b9")
-	)
-	(wire
-		(pts
-			(xy 109.22 60.96) (xy 80.01 60.96)
+			(xy 86.36 41.91) (xy 57.15 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3095,67 +3309,67 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 101.6) (xy 80.01 101.6)
+			(xy 115.57 151.13) (xy 153.67 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d9786ba2-d73c-4e35-b266-77e19fd106ce")
+		(uuid "da7bd3da-2293-4587-bb7a-7d0a9a25fbea")
 	)
 	(wire
 		(pts
-			(xy 149.86 130.81) (xy 80.01 130.81)
+			(xy 109.22 99.06) (xy 111.76 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d9f97079-f085-4a2f-939e-983e49e6f670")
+		(uuid "ddf66054-1950-4d0b-b092-107520239cb9")
 	)
 	(wire
 		(pts
-			(xy 137.16 157.48) (xy 137.16 167.64)
+			(xy 115.57 147.32) (xy 115.57 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "da4c1302-4856-4dfa-8a60-9b10b550a399")
+		(uuid "deae7ac4-5e2d-4a83-b57f-3b1ed2c5903e")
 	)
 	(wire
 		(pts
-			(xy 101.6 180.34) (xy 114.3 180.34)
+			(xy 111.76 144.78) (xy 111.76 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "db53e3aa-57ae-4c34-8e5a-23dfc8650c68")
+		(uuid "df4d522e-fae2-447e-86a1-f488005b3840")
 	)
 	(wire
 		(pts
-			(xy 124.46 137.16) (xy 124.46 147.32)
+			(xy 74.93 74.93) (xy 74.93 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "df61364d-16a6-4685-aa5d-5514e0a9abd8")
+		(uuid "e03a5fe5-6888-43a5-84dc-131a26888e04")
 	)
 	(wire
 		(pts
-			(xy 101.6 147.32) (xy 101.6 149.86)
+			(xy 115.57 166.37) (xy 153.67 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dff74d1a-8a3f-46ec-a8bc-32cd6ba6a004")
+		(uuid "e1b88973-2cf9-46ce-a1c1-28d53cf6ae03")
 	)
 	(wire
 		(pts
-			(xy 115.57 53.34) (xy 80.01 53.34)
+			(xy 92.71 34.29) (xy 57.15 34.29)
 		)
 		(stroke
 			(width 0)
@@ -3165,7 +3379,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 39.37) (xy 64.77 41.91)
+			(xy 41.91 20.32) (xy 41.91 22.86)
 		)
 		(stroke
 			(width 0)
@@ -3175,7 +3389,47 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 43.18) (xy 147.32 50.8)
+			(xy 148.59 114.3) (xy 148.59 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e819a5b4-8b6c-4cd7-b6d7-8fa57c1a47b3")
+	)
+	(wire
+		(pts
+			(xy 115.57 116.84) (xy 115.57 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb9b487b-098b-4fd0-9b6a-018092bb86ff")
+	)
+	(wire
+		(pts
+			(xy 186.69 129.54) (xy 186.69 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec6c6660-2206-4b7d-8c87-fb6a71d427e4")
+	)
+	(wire
+		(pts
+			(xy 153.67 132.08) (xy 153.67 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee784738-b4a6-4ead-9689-b92c1d6ed711")
+	)
+	(wire
+		(pts
+			(xy 124.46 24.13) (xy 124.46 31.75)
 		)
 		(stroke
 			(width 0)
@@ -3185,47 +3439,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 180.34) (xy 127 180.34)
+			(xy 220.98 160.02) (xy 223.52 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f00c6958-f8da-442f-8b57-59a366ef2086")
+		(uuid "f4ca6652-4778-4971-bc3b-a95bd92d4df6")
 	)
 	(wire
 		(pts
-			(xy 80.01 130.81) (xy 80.01 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2bcb1ab-8f65-41b4-81c3-c950388f6b13")
-	)
-	(wire
-		(pts
-			(xy 101.6 167.64) (xy 101.6 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f36f12d8-2c70-47d4-b860-645c749c2dd1")
-	)
-	(wire
-		(pts
-			(xy 100.33 139.7) (xy 101.6 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f511163e-4740-414c-bc14-db54c35ad491")
-	)
-	(wire
-		(pts
-			(xy 80.01 55.88) (xy 114.3 55.88)
+			(xy 57.15 36.83) (xy 91.44 36.83)
 		)
 		(stroke
 			(width 0)
@@ -3235,56 +3459,16 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 137.16) (xy 137.16 147.32)
+			(xy 57.15 90.17) (xy 186.69 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fcbefaaf-f6b8-4068-8a5c-0c620a8f4c72")
-	)
-	(wire
-		(pts
-			(xy 111.76 137.16) (xy 111.76 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fceceefb-8509-4865-b7e1-c6b25dcad759")
-	)
-	(wire
-		(pts
-			(xy 139.7 167.64) (xy 139.7 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd43ef96-ba52-49b6-a322-127a7363a523")
-	)
-	(wire
-		(pts
-			(xy 101.6 149.86) (xy 114.3 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffb90ab2-9555-4670-bed7-0037a7337813")
-	)
-	(wire
-		(pts
-			(xy 97.79 149.86) (xy 101.6 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fff75a2c-8e49-4728-bd8f-5559a35030a1")
+		(uuid "fa9f320e-2567-4d3d-890c-f0f8c11a62d2")
 	)
 	(label "Per a l'ADC, ha d'estar connectat a VCC si no s'usa"
-		(at 67.31 40.64 0)
+		(at 44.45 21.59 0)
 		(effects
 			(font
 				(size 0.635 0.635)
@@ -3294,8 +3478,134 @@
 		(uuid "81c99956-8d0b-4739-a92a-815d240c514d")
 	)
 	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 190.5 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "000e8daa-2818-4ec2-bc7a-511a6f85dcaf")
+		(property "Reference" "B_On2"
+			(at 205.74 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 205.74 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 217.17 209.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 217.17 309.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 190.5 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 217.17 509.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 217.17 609.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 217.17 709.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 217.17 809.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 217.17 909.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "35afa5ae-e08c-46e7-9671-e30728d8f656")
+		)
+		(pin "2"
+			(uuid "56adc83b-a034-4383-b2b3-862ce6b8ba3f")
+		)
+		(pin "1"
+			(uuid "e036d991-f343-4daa-899a-290a64ac5649")
+		)
+		(pin "4"
+			(uuid "dcd888f8-9363-4b89-8900-bb1e54ac9b00")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_On2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
-		(at 142.24 58.42 90)
+		(at 119.38 39.37 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3303,7 +3613,7 @@
 		(dnp no)
 		(uuid "05c2b77b-6db0-490d-8e77-4b76cbd0abe2")
 		(property "Reference" "R1"
-			(at 142.24 53.848 90)
+			(at 119.38 34.798 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3311,7 +3621,7 @@
 			)
 		)
 		(property "Value" "220"
-			(at 142.24 56.388 90)
+			(at 119.38 37.338 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3319,7 +3629,7 @@
 			)
 		)
 		(property "Footprint" "OptoDevice:R_LDR_4.9x4.2mm_P2.54mm_Vertical"
-			(at 142.494 57.404 90)
+			(at 119.634 38.354 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3328,7 +3638,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 58.42 0)
+			(at 119.38 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3337,7 +3647,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 142.24 58.42 0)
+			(at 119.38 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3362,7 +3672,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer")
-		(at 147.32 39.37 270)
+		(at 124.46 20.32 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3370,7 +3680,7 @@
 		(dnp no)
 		(uuid "0768da46-e6a2-4b21-9065-eeb77c3dbc85")
 		(property "Reference" "RV1"
-			(at 149.098 34.544 90)
+			(at 126.238 15.494 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3379,7 +3689,7 @@
 			)
 		)
 		(property "Value" "R_Potentiometer"
-			(at 161.29 36.576 90)
+			(at 138.43 17.526 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3388,7 +3698,7 @@
 			)
 		)
 		(property "Footprint" "Potentiometer_SMD:Potentiometer_ACP_CA6-VSMD_Vertical_Hole"
-			(at 147.32 39.37 0)
+			(at 124.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3397,7 +3707,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 147.32 39.37 0)
+			(at 124.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3406,7 +3716,7 @@
 			)
 		)
 		(property "Description" "Potentiometer"
-			(at 147.32 39.37 0)
+			(at 124.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3433,24 +3743,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 106.68 157.48 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 153.67 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "09ae441b-9152-489a-8291-f952b516b59d")
-		(property "Reference" "B_4"
-			(at 106.426 152.4 0)
+		(fields_autoplaced yes)
+		(uuid "0ff4f5d7-b97a-4428-97b9-fe785551427b")
+		(property "Reference" "B_Right4"
+			(at 168.91 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 106.68 152.4 0)
+		(property "Value" "COM-10302"
+			(at 168.91 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 180.34 239.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 180.34 339.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 153.67 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3458,67 +3797,125 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 106.68 152.4 0)
+		(property "Height" "7.3"
+			(at 180.34 539.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 106.68 152.4 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 180.34 639.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 106.68 157.48 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 180.34 739.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "b3051ad3-aee5-429d-a94d-270eda03b9c5")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 180.34 839.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 180.34 939.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7eec62ce-e5da-4a8b-8a72-d1870263ea23")
 		)
 		(pin "1"
-			(uuid "5bc59ab7-7cd2-4e91-93c7-d82b46093d29")
+			(uuid "1b542463-f9d5-4b84-bf88-6263a1305f91")
+		)
+		(pin "4"
+			(uuid "65d04e46-051a-4ab1-b480-d48182ca0f53")
+		)
+		(pin "2"
+			(uuid "eed7514f-6d20-47da-9e28-8ad6d095f758")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_4")
+					(reference "B_Right4")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 137.16 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 190.5 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "25d6e634-e063-4ecd-ac3e-d398a829c794")
-		(property "Reference" "B_Left1"
-			(at 119.38 132.334 0)
+		(fields_autoplaced yes)
+		(uuid "18056f49-9aa6-4510-9916-f129e23959eb")
+		(property "Reference" "B_On5"
+			(at 205.74 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 119.38 132.08 0)
+		(property "Value" "COM-10302"
+			(at 205.74 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 217.17 254.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 217.17 354.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 190.5 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3526,67 +3923,125 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 119.38 132.08 0)
+		(property "Height" "7.3"
+			(at 217.17 554.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 119.38 132.08 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 217.17 654.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 119.38 137.16 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 217.17 754.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 217.17 854.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 217.17 954.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "4574085d-1b9f-41e0-9af6-3966974281d7")
 		)
 		(pin "2"
-			(uuid "7eaae0d9-2fb8-4b5f-9bae-0e29b2034564")
+			(uuid "dcff129a-7e95-40e7-98e4-36c4fc938e53")
 		)
 		(pin "1"
-			(uuid "206d5b58-715d-4832-9a91-54af3078aa6a")
+			(uuid "2a7e1b20-8117-4706-ac2e-ab6b4b58e3b2")
+		)
+		(pin "4"
+			(uuid "763fd921-eb45-4063-8d34-9a58e075ea63")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Left1")
+					(reference "B_On5")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 106.68 147.32 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 115.57 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "27f82265-19ef-4664-ba28-ad5413b41b17")
-		(property "Reference" "B_7"
-			(at 106.68 142.494 0)
+		(fields_autoplaced yes)
+		(uuid "1a8d5b8f-849e-40e1-853e-71512069abed")
+		(property "Reference" "S4"
+			(at 130.81 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 106.68 142.24 0)
+		(property "Value" "COM-10302"
+			(at 130.81 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 142.24 209.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 142.24 309.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 115.57 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3594,43 +4049,324 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 106.68 142.24 0)
+		(property "Height" "7.3"
+			(at 142.24 509.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 106.68 142.24 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 142.24 609.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 106.68 147.32 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 142.24 709.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 142.24 809.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 142.24 909.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 				(hide yes)
 			)
 		)
 		(pin "2"
-			(uuid "d3478571-b377-4bf3-84ad-0b8be4e03c00")
+			(uuid "fc37b101-e021-4bd3-8949-d5f64ee3de67")
+		)
+		(pin "3"
+			(uuid "16c24c14-7e35-4c67-951d-6fceba8de6b7")
 		)
 		(pin "1"
-			(uuid "7560f935-54ac-4dba-a802-c124f204b0bc")
+			(uuid "ae9213f2-1b93-4b5f-81be-9efe32b792bd")
+		)
+		(pin "4"
+			(uuid "6febbf39-04bc-4414-82c3-2bae852c5186")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_7")
+					(reference "S4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 78.74 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1b4b08f4-6b01-4e9c-9206-cca913deee84")
+		(property "Reference" "S5"
+			(at 93.98 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 93.98 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 105.41 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 105.41 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 78.74 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 105.41 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 105.41 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 105.41 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 105.41 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 105.41 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "c49ac3a0-18da-4377-aec8-6da3f165e87e")
+		)
+		(pin "1"
+			(uuid "4068b15c-f7fc-4d92-b880-89484c55664d")
+		)
+		(pin "2"
+			(uuid "4a6f1191-4819-46bd-b6bc-14916bc86d69")
+		)
+		(pin "4"
+			(uuid "1649e36b-462d-4cf3-af17-ad68304c45fe")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "S5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 190.5 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ebe6fd1-3a32-46b4-a873-0c0c99daa36b")
+		(property "Reference" "B_On4"
+			(at 205.74 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 205.74 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 217.17 239.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 217.17 339.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 190.5 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 217.17 539.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 217.17 639.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 217.17 739.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 217.17 839.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 217.17 939.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "da728ffa-be66-4e47-aa05-d8bed90bd72f")
+		)
+		(pin "2"
+			(uuid "6dd36a2c-494b-4953-b699-f917aade0a19")
+		)
+		(pin "1"
+			(uuid "571ce5cf-0766-4ad1-b1ae-7b098b873199")
+		)
+		(pin "4"
+			(uuid "d9e757c9-1ca0-4c00-b126-e208cd4803b0")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_On4")
 					(unit 1)
 				)
 			)
@@ -3638,7 +4374,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 80.01 88.9 270)
+		(at 57.15 69.85 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3647,7 +4383,7 @@
 		(fields_autoplaced yes)
 		(uuid "2b47f925-cff4-4678-862e-fe91153ad255")
 		(property "Reference" "#PWR03"
-			(at 76.2 88.9 0)
+			(at 53.34 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3656,7 +4392,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 83.82 88.8999 90)
+			(at 60.96 69.8499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3665,7 +4401,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 88.9 0)
+			(at 57.15 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3674,7 +4410,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 88.9 0)
+			(at 57.15 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3683,7 +4419,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 80.01 88.9 0)
+			(at 57.15 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3704,93 +4440,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 132.08 157.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2e4cb610-c3d6-413a-8c47-b742901a9a47")
-		(property "Reference" "B_6"
-			(at 131.826 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 132.08 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 132.08 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 132.08 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "28cafcc9-e0f9-4a26-b592-2085fc31d458")
-		)
-		(pin "1"
-			(uuid "687b71c2-7c57-4704-b8ee-4afed733aac2")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 132.08 167.64 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 78.74 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "354c3d98-5443-42fb-bbf0-6e583efb5a8d")
-		(property "Reference" "B_3"
-			(at 132.08 162.56 0)
+		(uuid "2eb1e6d3-e992-4b24-9d20-2c4fd5473991")
+		(property "Reference" "S7"
+			(at 93.98 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 132.08 162.56 0)
+		(property "Value" "COM-10302"
+			(at 93.98 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 105.41 239.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 105.41 339.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 78.74 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3798,67 +4494,125 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 132.08 162.56 0)
+		(property "Height" "7.3"
+			(at 105.41 539.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 132.08 162.56 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 105.41 639.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 132.08 167.64 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 105.41 739.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "6f0390ba-184e-4bb0-ba64-b3de73ec6a2f")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 105.41 839.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 105.41 939.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "24360cb7-a562-4a68-9dd6-2724638cc3a7")
 		)
 		(pin "1"
-			(uuid "b5058426-3ea7-455b-a3b1-492c740b1a1c")
+			(uuid "80d30e8a-7d7d-4068-8130-439ca0f9957f")
+		)
+		(pin "2"
+			(uuid "8e4642de-761c-4a9a-b336-8b137b28000a")
+		)
+		(pin "4"
+			(uuid "d8357cdc-c019-426a-892e-6bac7d695319")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_3")
+					(reference "S7")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 132.08 137.16 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 153.67 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3a7e8fd6-091c-44fd-a3fb-39d786436e6e")
+		(fields_autoplaced yes)
+		(uuid "363fbc5a-8d1e-457a-9a29-6ac112f228c3")
 		(property "Reference" "B_Right1"
-			(at 132.08 132.334 0)
+			(at 168.91 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 132.08 132.08 0)
+		(property "Value" "COM-10302"
+			(at 168.91 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 180.34 193.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 180.34 293.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 153.67 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3866,41 +4620,70 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 132.08 132.08 0)
+		(property "Height" "7.3"
+			(at 180.34 493.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 132.08 132.08 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 180.34 593.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 132.08 137.16 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 180.34 693.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "cfbc5aa9-f3b7-427d-95ad-5b62bf6e4313")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 180.34 793.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 180.34 893.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "abccf788-e77a-471a-b595-213a17d55551")
 		)
 		(pin "1"
-			(uuid "8d41640e-998e-47bf-b6f3-f3e5420d0bb8")
+			(uuid "6915acb6-23a3-4b93-b225-a5858c171b84")
+		)
+		(pin "4"
+			(uuid "20e7586a-2dcc-4f4a-bebb-a16ace9e8d13")
+		)
+		(pin "2"
+			(uuid "03f21b2a-aa73-459c-8b05-fae482a70489")
 		)
 		(instances
-			(project "Calculadorra"
+			(project ""
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
 					(reference "B_Right1")
 					(unit 1)
@@ -3909,25 +4692,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 177.8 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 78.74 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "46ded18e-b228-4801-a739-c1c5b50da983")
-		(property "Reference" "B_=1"
-			(at 144.78 172.72 0)
+		(uuid "42422359-e5a5-4ab4-a379-391ea9f83d57")
+		(property "Reference" "S9"
+			(at 93.98 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 144.78 172.72 0)
+		(property "Value" "COM-10302"
+			(at 93.98 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 105.41 254.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 105.41 354.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 78.74 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3935,43 +4746,72 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 144.78 172.72 0)
+		(property "Height" "7.3"
+			(at 105.41 554.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 144.78 172.72 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 105.41 654.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 177.8 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 105.41 754.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "8c9ab760-4377-42f7-9eb8-768b47f92388")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 105.41 854.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 105.41 954.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "444840f4-1728-4003-852e-1fcd0b04714b")
 		)
 		(pin "1"
-			(uuid "232a4909-07f6-4c9a-bf1a-39bfa33e8785")
+			(uuid "be61dc1f-ad8a-4d9e-bbea-5637710f3710")
+		)
+		(pin "2"
+			(uuid "403c1cdc-b658-46f2-91b0-5586f72c32de")
+		)
+		(pin "4"
+			(uuid "3a8b5cee-98dc-460a-9d79-e19928edc6f1")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_=1")
+					(reference "S9")
 					(unit 1)
 				)
 			)
@@ -3979,7 +4819,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 45.72 180)
+		(at 93.98 26.67 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3988,7 +4828,7 @@
 		(fields_autoplaced yes)
 		(uuid "476f5602-c654-4868-afcf-673ed7323df6")
 		(property "Reference" "#PWR09"
-			(at 116.84 39.37 0)
+			(at 93.98 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3997,7 +4837,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 116.84 40.64 0)
+			(at 93.98 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4005,7 +4845,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 45.72 0)
+			(at 93.98 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4014,7 +4854,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 45.72 0)
+			(at 93.98 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4023,7 +4863,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 116.84 45.72 0)
+			(at 93.98 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4044,77 +4884,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 157.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "502d0a90-95f2-460d-af5a-a829cda65d7c")
-		(property "Reference" "B_Sub1"
-			(at 144.78 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 144.78 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 144.78 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ec6b08c9-0411-4b2e-875b-ff4a97640dda")
-		)
-		(pin "1"
-			(uuid "4ce2d967-e507-44ac-a499-9bbd9346265b")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Sub1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VCC")
-		(at 128.27 45.72 0)
+		(at 105.41 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4123,7 +4894,7 @@
 		(fields_autoplaced yes)
 		(uuid "53222bc2-48d8-4ea8-8615-0886eee60706")
 		(property "Reference" "#PWR04"
-			(at 128.27 49.53 0)
+			(at 105.41 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4132,7 +4903,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 128.27 40.64 0)
+			(at 105.41 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4140,7 +4911,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 45.72 0)
+			(at 105.41 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4149,7 +4920,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 45.72 0)
+			(at 105.41 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4158,7 +4929,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 128.27 45.72 0)
+			(at 105.41 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4179,24 +4950,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 147.32 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 115.57 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5819181b-53f7-4755-879a-8742f02ecb56")
-		(property "Reference" "B_8"
-			(at 119.38 142.494 0)
+		(fields_autoplaced yes)
+		(uuid "54323d30-5763-4570-af5d-a08f6e636373")
+		(property "Reference" "S10"
+			(at 130.81 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 119.38 142.24 0)
+		(property "Value" "COM-10302"
+			(at 130.81 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 142.24 254.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 142.24 354.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 115.57 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4204,43 +5004,324 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 119.38 142.24 0)
+		(property "Height" "7.3"
+			(at 142.24 554.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 119.38 142.24 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 142.24 654.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 119.38 147.32 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 142.24 754.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 142.24 854.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 142.24 954.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 				(hide yes)
 			)
 		)
 		(pin "2"
-			(uuid "e3cb98d3-87d3-49ab-a034-92aed9627576")
+			(uuid "8fadf49f-868b-48c8-b422-3ced17b27216")
+		)
+		(pin "3"
+			(uuid "f8e95334-46c0-4999-a154-2cf6d9130862")
 		)
 		(pin "1"
-			(uuid "298a7108-2b84-4323-acce-5318fa1e7eb5")
+			(uuid "4842b625-5c48-4e85-9ed7-59c0d2ddd033")
+		)
+		(pin "4"
+			(uuid "a9c8704a-8132-4c21-ac02-d68d8cd30539")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_8")
+					(reference "S10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 115.57 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "564f0a0d-1373-46c7-8f47-b95bcda800c6")
+		(property "Reference" "S6"
+			(at 130.81 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 130.81 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 142.24 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 142.24 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 115.57 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 142.24 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 142.24 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 142.24 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 142.24 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 142.24 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "55a513f1-4f8c-427f-b806-331c81d7910a")
+		)
+		(pin "3"
+			(uuid "f4c4b811-bac8-4812-862c-bcad20f253ce")
+		)
+		(pin "1"
+			(uuid "02b366b7-1ce3-4910-a6bf-4752169bbb92")
+		)
+		(pin "4"
+			(uuid "8bbe216c-18cb-458c-8ef3-a4f3759d4583")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "S6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 153.67 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5cf34d00-64c3-42c7-b5fe-242a2c8b4a88")
+		(property "Reference" "B_Right2"
+			(at 168.91 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 168.91 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 180.34 209.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 180.34 309.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 153.67 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 180.34 509.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 180.34 609.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 180.34 709.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 180.34 809.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 180.34 909.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "78fe6774-43a7-4f43-97ac-0cb8e677f468")
+		)
+		(pin "1"
+			(uuid "dde5ee6e-9737-4b3d-a101-01191246f262")
+		)
+		(pin "4"
+			(uuid "05629c94-814d-4de2-bfe2-e8e4be3a9fee")
+		)
+		(pin "2"
+			(uuid "5c22b2f8-4ef9-4201-8c32-e90141a18234")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_Right2")
 					(unit 1)
 				)
 			)
@@ -4248,7 +5329,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 151.13 39.37 90)
+		(at 128.27 20.32 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4256,7 +5337,7 @@
 		(dnp no)
 		(uuid "6d7654e1-70db-40e3-8e7b-a38199382266")
 		(property "Reference" "#PWR07"
-			(at 157.48 39.37 0)
+			(at 134.62 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4265,7 +5346,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 156.21 39.37 90)
+			(at 133.35 20.32 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4273,7 +5354,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 151.13 39.37 0)
+			(at 128.27 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4282,7 +5363,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 151.13 39.37 0)
+			(at 128.27 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4291,7 +5372,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 151.13 39.37 0)
+			(at 128.27 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4312,24 +5393,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 147.32 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 78.74 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6fb75d67-edf9-4d2d-883e-8ec834473c1d")
-		(property "Reference" "B_Mul1"
-			(at 144.78 142.494 0)
+		(fields_autoplaced yes)
+		(uuid "6dedfe6d-0791-44cd-a9dd-4270c5bd860e")
+		(property "Reference" "B_Shift+1"
+			(at 93.98 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 144.78 142.24 0)
+		(property "Value" "COM-10302"
+			(at 93.98 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 105.41 193.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 105.41 293.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 78.74 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4337,43 +5447,72 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 144.78 142.24 0)
+		(property "Height" "7.3"
+			(at 105.41 493.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 144.78 142.24 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 105.41 593.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 147.32 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 105.41 693.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "5eb16b79-59b9-45d8-8120-b4f431af7bad")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 105.41 793.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 105.41 893.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "fc74ace6-048a-4c7b-b544-fe7b1c22b339")
 		)
 		(pin "1"
-			(uuid "d9ea756f-bfe7-4a1a-b99d-636775b062a6")
+			(uuid "22cb35bf-6968-41f7-b5df-97dff70bd3b2")
+		)
+		(pin "2"
+			(uuid "130dddf3-1ba3-4d59-bafc-4ea389c3f042")
+		)
+		(pin "4"
+			(uuid "73e777eb-37c9-493a-b743-369bafd7f611")
 		)
 		(instances
-			(project "Calculadorra"
+			(project ""
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Mul1")
+					(reference "B_Shift+1")
 					(unit 1)
 				)
 			)
@@ -4381,7 +5520,7 @@
 	)
 	(symbol
 		(lib_id "Display_Character:WC1602A")
-		(at 128.27 66.04 0)
+		(at 105.41 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4390,7 +5529,7 @@
 		(fields_autoplaced yes)
 		(uuid "742249a1-d52e-4397-a285-7c6b0ae9e8c8")
 		(property "Reference" "DS1"
-			(at 130.4133 43.18 0)
+			(at 107.5533 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4399,7 +5538,7 @@
 			)
 		)
 		(property "Value" "WC1602A"
-			(at 130.4133 45.72 0)
+			(at 107.5533 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4408,7 +5547,7 @@
 			)
 		)
 		(property "Footprint" "Display:WC1602A"
-			(at 128.27 88.9 0)
+			(at 105.41 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4418,7 +5557,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.wincomlcd.com/pdf/WC1602A-SFYLYHTC06.pdf"
-			(at 146.05 66.04 0)
+			(at 123.19 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4427,7 +5566,7 @@
 			)
 		)
 		(property "Description" "LCD 16x2 Alphanumeric , 8 bit parallel bus, 5V VDD"
-			(at 128.27 66.04 0)
+			(at 105.41 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4494,7 +5633,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 143.51 39.37 90)
+		(at 120.65 20.32 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4502,7 +5641,7 @@
 		(dnp no)
 		(uuid "78fc044a-c197-462b-b796-bfeaa40c1ca1")
 		(property "Reference" "#PWR06"
-			(at 147.32 39.37 0)
+			(at 124.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4511,7 +5650,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 138.43 39.37 90)
+			(at 115.57 20.32 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4519,7 +5658,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 39.37 0)
+			(at 120.65 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4528,7 +5667,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 39.37 0)
+			(at 120.65 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4537,7 +5676,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 143.51 39.37 0)
+			(at 120.65 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4558,77 +5697,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 167.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7b973360-99aa-4833-a62e-8ff7c5dd4623")
-		(property "Reference" "B_Add1"
-			(at 144.78 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 144.78 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 144.78 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "99af809a-689f-4f36-9504-71b3acab5492")
-		)
-		(pin "1"
-			(uuid "9aa39d3d-1a5f-452f-ad23-2cb6c303a3d3")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Add1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 64.77 121.92 0)
+		(at 41.91 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4637,7 +5707,7 @@
 		(fields_autoplaced yes)
 		(uuid "7f0afe5f-9f85-426d-a1a9-24d90ee6560a")
 		(property "Reference" "#PWR02"
-			(at 64.77 128.27 0)
+			(at 41.91 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4646,7 +5716,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 64.77 127 0)
+			(at 41.91 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4654,7 +5724,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 64.77 121.92 0)
+			(at 41.91 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4663,7 +5733,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 121.92 0)
+			(at 41.91 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4672,7 +5742,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 64.77 121.92 0)
+			(at 41.91 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4694,7 +5764,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 67.31 39.37 0)
+		(at 44.45 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4703,7 +5773,7 @@
 		(fields_autoplaced yes)
 		(uuid "82f88d89-8ddf-4a3b-8c42-21bdbf184051")
 		(property "Reference" "#PWR011"
-			(at 67.31 43.18 0)
+			(at 44.45 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4712,7 +5782,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 67.31 34.29 0)
+			(at 44.45 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4720,7 +5790,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 67.31 39.37 0)
+			(at 44.45 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4729,7 +5799,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 39.37 0)
+			(at 44.45 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4738,7 +5808,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 67.31 39.37 0)
+			(at 44.45 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4760,7 +5830,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 64.77 120.65 90)
+		(at 41.91 101.6 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4769,7 +5839,7 @@
 		(fields_autoplaced yes)
 		(uuid "84230533-9848-4a62-856e-74aef3cb8ece")
 		(property "Reference" "#FLG02"
-			(at 62.865 120.65 0)
+			(at 40.005 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4778,7 +5848,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 60.96 120.6499 90)
+			(at 38.1 101.5999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4787,7 +5857,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 64.77 120.65 0)
+			(at 41.91 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4796,7 +5866,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 120.65 0)
+			(at 41.91 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4805,7 +5875,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 64.77 120.65 0)
+			(at 41.91 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4826,8 +5896,134 @@
 		)
 	)
 	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 190.5 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8775e21f-8310-4dea-81f5-991342cf4a9a")
+		(property "Reference" "B_On3"
+			(at 205.74 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 205.74 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 217.17 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 217.17 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 190.5 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 217.17 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 217.17 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 217.17 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 217.17 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 217.17 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "34803153-97e6-4db7-8946-a882b875c8bc")
+		)
+		(pin "2"
+			(uuid "2c611c83-05d6-471f-8750-8b894d3f5f07")
+		)
+		(pin "1"
+			(uuid "46880a08-0daa-4dc5-8824-3ac2ccc35279")
+		)
+		(pin "4"
+			(uuid "6ef3341f-0cdb-49e7-926c-722e648486c4")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_On3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
-		(at 147.32 58.42 270)
+		(at 124.46 39.37 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4836,7 +6032,7 @@
 		(fields_autoplaced yes)
 		(uuid "87a685e1-fd09-494d-8ced-07900a159be8")
 		(property "Reference" "#PWR010"
-			(at 143.51 58.42 0)
+			(at 120.65 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4845,7 +6041,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 151.13 58.4199 90)
+			(at 128.27 39.3699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4854,7 +6050,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 58.42 0)
+			(at 124.46 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4863,7 +6059,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 58.42 0)
+			(at 124.46 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4872,7 +6068,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 147.32 58.42 0)
+			(at 124.46 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4893,25 +6089,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 167.64 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 115.57 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8e6b6788-c110-47bb-9fad-aa4e0ab3f936")
-		(property "Reference" "B_2"
-			(at 119.38 162.56 0)
+		(uuid "96977534-21aa-413b-bb8d-a9088c7f0f17")
+		(property "Reference" "S2"
+			(at 130.81 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 119.38 162.56 0)
+		(property "Value" "COM-10302"
+			(at 130.81 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 142.24 193.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 142.24 293.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 115.57 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4919,249 +6143,72 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 119.38 162.56 0)
+		(property "Height" "7.3"
+			(at 142.24 493.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 119.38 162.56 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 142.24 593.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 119.38 167.64 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 142.24 693.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "98ae9bcd-d380-4c1f-a9d1-b9c52de2b70b")
-		)
-		(pin "1"
-			(uuid "8acb4d10-4dde-4fe5-8b06-2bd726479aa6")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 132.08 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "92311cf3-32c3-47e1-b0e1-8e378820b1c9")
-		(property "Reference" "B_)1"
-			(at 132.08 172.72 0)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 142.24 793.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 132.08 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 132.08 172.72 0)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 142.24 893.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 132.08 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+				(justify left top)
 				(hide yes)
 			)
 		)
 		(pin "2"
-			(uuid "c9b13a50-be32-48d2-8049-a1b70dc7273f")
+			(uuid "5a3952a4-5d25-484f-9bef-33c2b8fd7451")
+		)
+		(pin "3"
+			(uuid "e37b7acf-2b39-4ac7-bbf6-329452d42275")
 		)
 		(pin "1"
-			(uuid "ea183519-2a6a-4a50-93ff-fd6a22c3ba73")
+			(uuid "d5176ec7-4b21-47e7-945b-054a71671aa5")
+		)
+		(pin "4"
+			(uuid "64442b27-f067-465c-acb2-d7bd3e2eff00")
 		)
 		(instances
-			(project "Calculadorra"
+			(project ""
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_)1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 144.78 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a1542cf0-d63f-4586-aa08-3dfa20f10e9f")
-		(property "Reference" "B_On1"
-			(at 144.78 132.334 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 144.78 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 144.78 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 144.78 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fd739368-1ce9-474d-9ce5-5170471ab902")
-		)
-		(pin "1"
-			(uuid "31536bcb-cae8-48b8-8555-cf0644bfa83b")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_On1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 106.68 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a32319e6-5474-4972-b2df-380be4f2934e")
-		(property "Reference" "B_0"
-			(at 106.68 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 106.68 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 106.68 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 106.68 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 106.68 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e00c4693-9fb8-4f0a-9aeb-b761bdf1fe9b")
-		)
-		(pin "1"
-			(uuid "b332ba33-ce51-4160-9f22-aa06205ba41e")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_0")
+					(reference "S2")
 					(unit 1)
 				)
 			)
@@ -5169,7 +6216,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 64.77 39.37 0)
+		(at 41.91 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5178,7 +6225,7 @@
 		(fields_autoplaced yes)
 		(uuid "a8904da4-03af-43df-80dc-f5fbd98385e6")
 		(property "Reference" "#PWR01"
-			(at 64.77 43.18 0)
+			(at 41.91 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5187,7 +6234,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 64.77 34.29 0)
+			(at 41.91 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5195,7 +6242,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 64.77 39.37 0)
+			(at 41.91 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5204,7 +6251,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 64.77 39.37 0)
+			(at 41.91 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5213,7 +6260,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 64.77 39.37 0)
+			(at 41.91 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5234,24 +6281,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 106.68 137.16 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 78.74 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b4c77bb1-e2ce-4869-bf18-d4bee3c1ec79")
-		(property "Reference" "B_Shift1"
-			(at 106.68 132.334 0)
+		(fields_autoplaced yes)
+		(uuid "bd947b3f-3621-46dc-948d-ebfeebc9ceab")
+		(property "Reference" "S3"
+			(at 93.98 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 106.68 132.08 0)
+		(property "Value" "COM-10302"
+			(at 93.98 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 105.41 209.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 105.41 309.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 78.74 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5259,43 +6335,198 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 106.68 132.08 0)
+		(property "Height" "7.3"
+			(at 105.41 509.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 106.68 132.08 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 105.41 609.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 106.68 137.16 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 105.41 709.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "7c21b801-388e-49d1-8c1e-71809038f0f6")
+		(property "Manufacturer_Name" "SparkFun"
+			(at 105.41 809.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 105.41 909.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "22677d3f-552d-4443-8d0b-3061a82e30e2")
 		)
 		(pin "1"
-			(uuid "cd93d864-7abe-4902-8edd-e784288f1bd7")
+			(uuid "c69b2ffa-a12a-4764-a9d9-5b36a76f61db")
+		)
+		(pin "2"
+			(uuid "92dbb70e-d07d-43b6-b7a0-6ffffded3a7f")
+		)
+		(pin "4"
+			(uuid "dba47fcb-274e-4548-8b0e-a5b888ee8cf0")
 		)
 		(instances
-			(project ""
+			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_Shift1")
+					(reference "S3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 153.67 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c26aee70-29b7-4f35-ba38-53392d6eeb44")
+		(property "Reference" "B_Right5"
+			(at 168.91 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 168.91 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 180.34 254.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 180.34 354.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 153.67 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 180.34 554.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 180.34 654.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 180.34 754.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 180.34 854.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 180.34 954.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "d37baf5d-81ad-4987-9063-558913494a20")
+		)
+		(pin "1"
+			(uuid "6a788131-d085-470d-a860-71779bd4304a")
+		)
+		(pin "4"
+			(uuid "5a5d0752-43d2-4178-842f-5f95563723fa")
+		)
+		(pin "2"
+			(uuid "e8f8ab67-faf4-427e-90d5-c84906f89b0b")
+		)
+		(instances
+			(project "Calculadorra"
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_Right5")
 					(unit 1)
 				)
 			)
@@ -5303,7 +6534,7 @@
 	)
 	(symbol
 		(lib_id "MCU_Microchip_ATmega:ATmega328-P")
-		(at 64.77 81.28 0)
+		(at 41.91 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5312,7 +6543,7 @@
 		(fields_autoplaced yes)
 		(uuid "c4242620-eb6f-4acf-9f45-c04a9cfde672")
 		(property "Reference" "U1"
-			(at 43.18 44.4814 0)
+			(at 20.32 25.4314 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5320,7 +6551,7 @@
 			)
 		)
 		(property "Value" "ATmega328-P"
-			(at 43.18 47.0214 0)
+			(at 20.32 27.9714 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5328,7 +6559,7 @@
 			)
 		)
 		(property "Footprint" "Package_DIP:DIP-28_W7.62mm"
-			(at 64.77 81.28 0)
+			(at 41.91 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5338,7 +6569,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf"
-			(at 64.77 81.28 0)
+			(at 41.91 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5347,7 +6578,7 @@
 			)
 		)
 		(property "Description" "20MHz, 32kB Flash, 2kB SRAM, 1kB EEPROM, DIP-28"
-			(at 64.77 81.28 0)
+			(at 41.91 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5450,7 +6681,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 138.43 60.96 90)
+		(at 115.57 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5459,7 +6690,7 @@
 		(fields_autoplaced yes)
 		(uuid "c707331f-2676-4cf1-a06b-87448c628f1f")
 		(property "Reference" "#PWR08"
-			(at 144.78 60.96 0)
+			(at 121.92 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5468,7 +6699,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 142.24 60.9599 90)
+			(at 119.38 41.9099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5477,7 +6708,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 60.96 0)
+			(at 115.57 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5486,7 +6717,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 60.96 0)
+			(at 115.57 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5495,7 +6726,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 60.96 0)
+			(at 115.57 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5516,24 +6747,53 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 157.48 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 115.57 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d115bdfa-e499-4c47-9d6c-eb08d5050b9f")
-		(property "Reference" "B_5"
-			(at 119.126 152.4 0)
+		(fields_autoplaced yes)
+		(uuid "c7ef2e48-9d52-4f54-8c60-9edb9e83d263")
+		(property "Reference" "S8"
+			(at 130.81 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 119.38 152.4 0)
+		(property "Value" "COM-10302"
+			(at 130.81 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 142.24 239.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 142.24 339.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 115.57 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5541,67 +6801,125 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 119.38 152.4 0)
+		(property "Height" "7.3"
+			(at 142.24 539.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 119.38 152.4 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 142.24 639.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 119.38 157.48 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 142.24 739.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 142.24 839.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 142.24 939.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 				(hide yes)
 			)
 		)
 		(pin "2"
-			(uuid "13091a8b-36a2-49c3-b3f4-4219423162c1")
+			(uuid "14d20719-6a02-4b5b-9eae-6359b3a5cf68")
+		)
+		(pin "3"
+			(uuid "02ae41b9-65ff-4c2d-a9c7-339079a65a2d")
 		)
 		(pin "1"
-			(uuid "58702a92-9ba6-40c8-8734-ebc70b5f7ebe")
+			(uuid "80554dfe-ee7b-45d3-8e10-06c314538cf1")
+		)
+		(pin "4"
+			(uuid "94ec9432-efee-41bf-986d-e6166c544b18")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_5")
+					(reference "S8")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 106.68 167.64 0)
+		(lib_id "Button_Gerard:COM-10302")
+		(at 190.5 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "db291fa0-08ab-4eb2-a2c0-9a80e0b84c4f")
-		(property "Reference" "B_1"
-			(at 106.68 162.306 0)
+		(fields_autoplaced yes)
+		(uuid "d5a10f54-9584-4dbe-940f-021112c7ed44")
+		(property "Reference" "B_On1"
+			(at 205.74 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 106.68 162.56 0)
+		(property "Value" "COM-10302"
+			(at 205.74 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 217.17 193.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 217.17 293.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 190.5 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5609,43 +6927,198 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 106.68 162.56 0)
+		(property "Height" "7.3"
+			(at 217.17 493.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 106.68 162.56 0)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 217.17 593.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 106.68 167.64 0)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 217.17 693.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 				(hide yes)
 			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 217.17 793.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 217.17 893.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "f966e433-a717-4c4c-aa4e-4e62439f8186")
 		)
 		(pin "2"
-			(uuid "2cf33481-2ada-4bc5-a333-dd003dd3f07c")
+			(uuid "b6f007a6-ecf4-4dc1-98f6-68014a94342f")
 		)
 		(pin "1"
-			(uuid "6dc98108-888a-456a-9dc3-158cce77d327")
+			(uuid "6d33e0ef-9292-4422-9d21-86a437a692fd")
+		)
+		(pin "4"
+			(uuid "8c5097a5-8753-4f53-a43d-f1c79ef17ce8")
+		)
+		(instances
+			(project ""
+				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
+					(reference "B_On1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Button_Gerard:COM-10302")
+		(at 153.67 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e4c01d19-4eef-4622-bc70-1b5230b9514b")
+		(property "Reference" "B_Right3"
+			(at 168.91 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "COM-10302"
+			(at 168.91 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:Button_COM10302"
+			(at 180.34 224.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sparkfun.com/datasheets/Components/Buttons/TSA12110%20TACT%20SWITCH.jpg"
+			(at 180.34 324.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "SparkFun Accessories Tactile Button Assortment"
+			(at 153.67 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "7.3"
+			(at 180.34 524.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "474-COM-10302"
+			(at 180.34 624.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/SparkFun/COM-10302?qs=WyAARYrbSnaYi0oOM0cIVQ%3D%3D"
+			(at 180.34 724.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "SparkFun"
+			(at 180.34 824.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "COM-10302"
+			(at 180.34 924.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "3484b9dc-9ca5-4301-9813-a1cc7be5b32c")
+		)
+		(pin "1"
+			(uuid "4b0b1207-5dba-42a2-87f6-424cbd86f1f1")
+		)
+		(pin "4"
+			(uuid "a68978c7-33d9-493a-9591-4853c68985c6")
+		)
+		(pin "2"
+			(uuid "115d5ce6-48a1-40ea-8af9-56451df98b61")
 		)
 		(instances
 			(project "Calculadorra"
 				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_1")
+					(reference "B_Right3")
 					(unit 1)
 				)
 			)
@@ -5653,7 +7126,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 128.27 86.36 0)
+		(at 105.41 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5662,7 +7135,7 @@
 		(fields_autoplaced yes)
 		(uuid "e77a2b94-c16d-43d6-b288-27cf796f7e91")
 		(property "Reference" "#PWR05"
-			(at 128.27 92.71 0)
+			(at 105.41 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5671,7 +7144,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 128.27 91.44 0)
+			(at 105.41 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5679,7 +7152,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 86.36 0)
+			(at 105.41 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5688,7 +7161,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 86.36 0)
+			(at 105.41 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5697,7 +7170,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 128.27 86.36 0)
+			(at 105.41 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5718,145 +7191,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 119.38 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ebdec6e9-4f7e-4dd1-aff7-0019612bae79")
-		(property "Reference" "B_(1"
-			(at 119.38 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 119.38 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 119.38 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 119.38 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 119.38 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "98723245-9eb3-4e7f-97b3-76b6fd0fc1a1")
-		)
-		(pin "1"
-			(uuid "27c52082-e346-43d1-a1cb-7fefad394288")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_(1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 132.08 147.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f47c76c5-1b1b-4d84-8425-3a61ca66c9ac")
-		(property "Reference" "B_9"
-			(at 132.08 142.494 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 132.08 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
-			(at 132.08 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 132.08 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7d24ef78-8f12-485c-8490-1446c60c4e9d")
-		)
-		(pin "1"
-			(uuid "df00c3d3-2fd8-4706-b529-8b41bad33f7f")
-		)
-		(instances
-			(project "Calculadorra"
-				(path "/f0879cd9-1f91-4947-9c65-292f7671d223"
-					(reference "B_9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 64.77 41.91 90)
+		(at 41.91 22.86 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5865,7 +7201,7 @@
 		(fields_autoplaced yes)
 		(uuid "fe1145e7-2d07-484f-9307-6ac0fcd3cc2a")
 		(property "Reference" "#FLG01"
-			(at 62.865 41.91 0)
+			(at 40.005 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5874,7 +7210,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 60.96 41.9099 90)
+			(at 38.1 22.8599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5883,7 +7219,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 64.77 41.91 0)
+			(at 41.91 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5892,7 +7228,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 41.91 0)
+			(at 41.91 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5901,7 +7237,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 64.77 41.91 0)
+			(at 41.91 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
