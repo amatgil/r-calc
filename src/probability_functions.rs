@@ -129,3 +129,42 @@ pub mod normal {
 //   | |/ _ \/ __| __/ __|
 //   | |  __/\__ \ |_\__ \
 //   |_|\___||___/\__|___/
+
+#[test]
+fn newton_identity() {
+    let f = |x| x;
+    let fp = |_x| 1.0;
+
+    let r = newton(120.0, f, fp);
+    assert!(r.unwrap() - 0.0 < 0.001);
+}
+
+#[test]
+fn newton_2x() {
+    let f = |x| 2.0 * x;
+    let fp = |_x| 2.0;
+
+    let r = newton(120.0, f, fp);
+    dbg!(r);
+    assert!(r.unwrap() - 0.0 < 0.001);
+}
+
+#[test]
+fn newton_2x_affine() {
+    let f = |x| 2.0 * x + 7.0;
+    let fp = |_x| 2.0;
+
+    let r = newton(120.0, f, fp);
+    dbg!(r);
+    assert!(r.unwrap() - -3.5 < 0.001);
+}
+
+#[test]
+fn newton_sqrt_stuff() {
+    let f = |x: Float| ((2.0 * x).sqrt() - 23.0) / 2.0;
+    let fp = |x: Float| 1.0 / (2.0 * (2.0 * x).sqrt());
+
+    let r = newton(120.0, f, fp);
+    dbg!(r);
+    assert!(r.unwrap() - 529.0 / 2.0 < 0.001);
+}
