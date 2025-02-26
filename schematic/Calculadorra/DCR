@@ -1,0 +1,25 @@
+** Drc report for Calculadorra.kicad_pcb **
+** Created on 2025-02-22T01:33:14+0100 **
+
+** Found 4 DRC violations **
+[invalid_outline]: La placa tiene un contorno mal formado (no se han encontrado bordes en la capa Edge.Cuts)
+    Anulación local; error
+    @(0,0000 mm, 0,0000 mm): PCB
+[silk_overlap]: Solapamiento de serigrafía
+    Regla: restricciones de configuración de placa para serigrafía; warning
+    @(91,4750 mm, 71,5950 mm): Segmento en F.Silkscreen
+    @(98,4600 mm, 70,7060 mm): Reference field of B_Right1
+[silk_overlap]: Solapamiento de serigrafía
+    Regla: restricciones de configuración de placa para serigrafía; warning
+    @(91,4750 mm, 151,5950 mm): Segmento en F.Silkscreen
+    @(98,4600 mm, 150,7060 mm): Reference field of B_)1
+[silk_overlap]: Solapamiento de serigrafía
+    Regla: restricciones de configuración de placa para serigrafía; warning
+    @(78,9600 mm, 150,7060 mm): Reference field of B_(1
+    @(71,9750 mm, 151,5950 mm): Segmento en F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
